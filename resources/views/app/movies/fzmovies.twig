@@ -1,0 +1,37 @@
+{% extends 'layouts/app.twig' %}
+
+{% block scripts %}
+    <script src="/assets/js/app/movie/fzmovies.js"></script>
+    {% include 'js-templates/link-extraction.twig' %}
+{% endblock scripts %}
+
+{% block contents %}
+    <div class="card">
+        <div class="card-header">
+            <a href="https://fzmovies.net">FZMovies</a> Extractor
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                <div>
+                    <i class="fa fa-lightbulb text-warning"></i> Visit <a href="https://fzmovies.net">Fzmovies</a>,
+                    copy movie link and paste it in the input field below.
+                </div>
+                <div class="font-italic mt-1">Link sample:
+                    <b>https://fzmovies.net/movie-The%20Equalizer%20--hmp4.htm</b></div>
+            </div>
+            <div id="link-extraction-status" class="mt-4"></div>
+            <form class="mt-4" id="form-fzmovies">
+                <div class="input-group">
+                    <input type="url" name="fzmovies-url" class="form-control"
+                           placeholder="https://fzmovies.net/movie-The%20Equalizer%20--hmp4.htm">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-md btn-indigo m-0">
+                            <i class="fa fa-search"></i> Fetch
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock contents %}
+

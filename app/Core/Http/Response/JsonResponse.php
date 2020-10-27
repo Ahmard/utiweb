@@ -30,4 +30,20 @@ final class JsonResponse extends BaseResponse
     {
         return new static($body);
     }
+
+    public function success(array $data)
+    {
+        return $this->body([
+            'success' => true,
+            'data' => $data
+        ]);
+    }
+
+    public function error(array $data)
+    {
+        return $this->body([
+            'success' => false,
+            'data' => $data
+        ]);
+    }
 }

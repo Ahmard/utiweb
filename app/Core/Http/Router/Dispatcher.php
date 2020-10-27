@@ -15,14 +15,18 @@ class Dispatcher
         $path = $request->getUri()->getPath();
         $method = $request->getMethod();
         if (false !== $pos = strpos($path, '?')) {
-            $uri = substr($path, 0, $pos);
+            $path = substr($path, 0, $pos);
         }
         $path = rawurldecode($path);
 
 
         $collector = Collector::create()
-            ->collectFile('routes.php')
+            ->collectFile(root_path('routes.php'), [
+                'namespace' => 'App\Http\Controllers\\'
+            ])
             ->register();
+            
+        dump($collector->getCollectedRoutes());
 
 
         return WebRouteDispatcher::create($collector)->dispatch($method, $path);

@@ -4,6 +4,7 @@
 namespace App\Core\Http\Router;
 
 
+use App\Core\Helpers\Classes\FormHelper;
 use Exception;
 use Psr\Http\Message\ServerRequestInterface;
 use WebRoute\DispatchResult;
@@ -27,13 +28,10 @@ class Matcher
         $namespacedController = $routeData['namespace'] . $controllerClass;
 
         //Initialize form helpers
-        //FormHelper::setRequest($request);
+        FormHelper::setRequest($request);
 
         //Call defined method
-        $instantiatedController = (new $namespacedController())->_initAndFeed_([
-            'request' => $request,
-            'params' => $requestParams
-        ]);
+        $instantiatedController = (new $namespacedController());
 
         if (!method_exists($instantiatedController, $controllerMethod)) {
             return new Exception("Method {$namespacedController}::{$controllerMethod}() does not exists.");

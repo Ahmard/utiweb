@@ -4,11 +4,18 @@
 namespace App\Core\Http\Router;
 
 
+use App\Core\Http\Response\ResponseInterface;
+use Exception;
 use Psr\Http\Message\ServerRequestInterface;
 use WebRoute\DispatchResult;
 
 class Router
 {
+    /**
+     * @param ServerRequestInterface $request
+     * @param DispatchResult $dispatchResult
+     * @return ResponseInterface|Exception|mixed
+     */
     public static function route(ServerRequestInterface $request, DispatchResult $dispatchResult)
     {
         $response = null;
@@ -17,11 +24,13 @@ class Router
                 $response = Matcher::match($request, $dispatchResult);
                 break;
             case $dispatchResult->isNotFound():
-                echo "Page not found";
+                $response = response()->notFound();
                 break;
             case $dispatchResult->isMethodNotAllowed():
-                echo "Request method not allowed";
+                $response = response()->methodNotAllowed();
                 break;
+            default:
+                $response = response()->internalServerError();
         }
 
         return $response;

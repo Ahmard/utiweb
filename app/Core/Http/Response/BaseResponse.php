@@ -5,6 +5,8 @@ namespace App\Core\Http\Response;
 
 
 use App\Core\Http\View\View;
+use App\Core\ResponseGenerator;
+use Psr\Http\Message\ServerRequestInterface;
 
 class BaseResponse implements ResponseInterface
 {
@@ -87,6 +89,16 @@ class BaseResponse implements ResponseInterface
     {
         $this->respondWith = $response;
         return $response;
+    }
+
+    public function send(ServerRequestInterface $request)
+    {
+        if($this->hasWith()){
+            $this->getWith()->send($request);
+            exit();
+        }
+
+        ResponseGenerator::generate($this)->send($request);
     }
 
     public function getStatusCode(): int

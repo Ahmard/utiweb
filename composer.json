@@ -11,13 +11,15 @@
   ],
   "require": {
     "php": "^7.4",
+    "ext-json": "*",
     "ahmard/quick-route": "^1.0",
     "ahmard/uticlass": "^1.0",
     "ahmard/web-route": "^1.0",
     "ahmard/preact": "^1.0",
     "twig/twig": "^3.1",
     "vlucas/phpdotenv": "^5.2",
-    "sunrise/http-server-request": "^1.0"
+    "sunrise/http-server-request": "^1.0",
+    "symfony/validator": "^5.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^9"
