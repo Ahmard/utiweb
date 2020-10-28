@@ -7,13 +7,13 @@ namespace App\Core\Http\Router;
 use App\Core\Helpers\Classes\FormHelper;
 use Exception;
 use Psr\Http\Message\ServerRequestInterface;
-use WebRoute\DispatchResult;
+use QuickRoute\Route\DispatchResult;
 
 class Matcher
 {
     public static function match(ServerRequestInterface $request, DispatchResult $dispatchResult)
     {
-        $routeData = $dispatchResult->getRoute()->getRouteData();
+        $routeData = $dispatchResult->getRoute();
         $requestParams = $dispatchResult->getUrlParameters();
         //Handle controller
         $controller = $routeData['controller'];

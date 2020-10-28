@@ -7,7 +7,7 @@ namespace App\Core\Http\Router;
 use App\Core\Http\Response\ResponseInterface;
 use Exception;
 use Psr\Http\Message\ServerRequestInterface;
-use WebRoute\DispatchResult;
+use QuickRoute\Route\DispatchResult;
 
 class Router
 {

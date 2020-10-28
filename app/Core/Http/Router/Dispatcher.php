@@ -6,7 +6,7 @@ namespace App\Core\Http\Router;
 
 use Psr\Http\Message\ServerRequestInterface;
 use QuickRoute\Route\Collector;
-use WebRoute\Dispatcher as WebRouteDispatcher;
+use QuickRoute\Route\Dispatcher as QuickRouteDispatcher;
 
 class Dispatcher
 {
@@ -25,10 +25,7 @@ class Dispatcher
                 'namespace' => 'App\Http\Controllers\\'
             ])
             ->register();
-            
-        dump($collector->getCollectedRoutes());
 
-
-        return WebRouteDispatcher::create($collector)->dispatch($method, $path);
+        return QuickRouteDispatcher::create($collector)->dispatch($method, $path);
     }
 }

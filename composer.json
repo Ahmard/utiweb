@@ -12,9 +12,8 @@
   "require": {
     "php": "^7.4",
     "ext-json": "*",
-    "ahmard/quick-route": "^1.0",
+    "ahmard/quick-route": "^2.0",
     "ahmard/uticlass": "^1.0",
-    "ahmard/web-route": "^1.0",
     "ahmard/preact": "^1.0",
     "twig/twig": "^3.1",
     "vlucas/phpdotenv": "^5.2",
