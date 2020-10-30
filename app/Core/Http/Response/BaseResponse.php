@@ -72,7 +72,7 @@ class BaseResponse implements ResponseInterface
 
     public function view(string $viewFile, array $params = []): ResponseInterface
     {
-        $this->body(View::load($viewFile, $params));
+        $this->view = View::load($viewFile, $params);
         return $this;
     }
 

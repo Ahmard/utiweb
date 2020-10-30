@@ -21,9 +21,7 @@ class Dispatcher
 
 
         $collector = Collector::create()
-            ->collectFile(root_path('routes.php'), [
-                'namespace' => 'App\Http\Controllers\\'
-            ])
+            ->collectFile(root_path('routes.php'))
             ->register();
 
         return QuickRouteDispatcher::create($collector)->dispatch($method, $path);

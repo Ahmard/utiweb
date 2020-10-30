@@ -12,6 +12,7 @@
   "require": {
     "php": "^7.4",
     "ext-json": "*",
+    "ext-pdo": "*",
     "ahmard/quick-route": "^2.0",
     "ahmard/uticlass": "^1.0",
     "ahmard/preact": "^1.0",

@@ -4,24 +4,36 @@ use QuickRoute\Route;
 
 Route::get('/', 'MainController@index');
 
-Route::prefix('movies')->group(function (){
+Route::prefix('contact')->group(function () {
+    Route::get('/', 'ContactController@index');
+    Route::get('send-message', 'ContactController@sendMessage');
+});
+
+Route::prefix('movies')->group(function () {
     Route::get('/', 'MovieController@index');
     Route::get('fzmovies', 'MovieController@fzmovies');
     Route::get('netnaija', 'MovieController@netnaija');
 });
 
-Route::prefix('tvshows')->group(function (){
+Route::prefix('tvshows')->group(function () {
     Route::get('/', 'TVShowController@index');
     Route::get('480mkv-com', 'TVShowController@femkvcom');
 });
 
 Route::prefix('api')
     ->namespace('Api')
-    ->group(function (){
+    ->group(function () {
+        //CONTACT
+        Route::prefix('contact')
+            ->namespace('Contact')
+            ->group(function () {
+                Route::post('send-message', 'MessageController@sendMessage');
+            });
+
         //MOVIES
         Route::prefix('movies')
             ->namespace('Movies')
-            ->group(function (){
+            ->group(function () {
                 Route::get('fzmovies/{url}', 'FZMoviesController@index');
                 Route::get('netnaija/{url}', 'NetNaijaController@index');
             });
@@ -29,7 +41,7 @@ Route::prefix('api')
         //TV SHOWS
         Route::prefix('tvshows')
             ->namespace('TVShows')
-            ->group(function (){
+            ->group(function () {
                 Route::get('480mkv-com/{url}', 'FEMkvComController@index');
             });
     });

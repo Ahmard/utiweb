@@ -42,9 +42,7 @@ class ResponseGenerator
 
     public function __invoke(ServerRequestInterface $request)
     {
-        header("Status: {$this->code}");
-        header("Reason: {$this->reason}");
-        header("Version: {$this->version}");
+        header("HTTP/{$this->version} {$this->code} {$this->reason}", true, $this->code);
         header("X-Powered-By: {$_ENV['APP_NAME']}");
         foreach ($this->headers as $headerName => $headerValue){
             header("{$headerName}: {$headerValue}");
@@ -56,6 +54,6 @@ class ResponseGenerator
     public function send(ServerRequestInterface $request)
     {
         echo $this->__invoke($request);
-        exit();
+        exit($this->code);
     }
 }

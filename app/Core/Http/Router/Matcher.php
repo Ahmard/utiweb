@@ -14,6 +14,7 @@ class Matcher
     public static function match(ServerRequestInterface $request, DispatchResult $dispatchResult)
     {
         $routeData = $dispatchResult->getRoute();
+
         $requestParams = $dispatchResult->getUrlParameters();
         //Handle controller
         $controller = $routeData['controller'];
@@ -25,7 +26,7 @@ class Matcher
         $controllerClass = $explodedController[0];
         $controllerMethod = $explodedController[1];
 
-        $namespacedController = $routeData['namespace'] . $controllerClass;
+        $namespacedController = $_ENV['CONTROLLER_NAMESPACE'] . $routeData['namespace'] . $controllerClass;
 
         //Initialize form helpers
         FormHelper::setRequest($request);

@@ -4,26 +4,24 @@ $(function () {
     let $button = $form.find('button[type="submit"]');
     let $linkExtractionStatus = $('#link-extraction-status');
     $form.submit(function (event) {
-        event.preventDefault();
+        let link = performBasicLinkAction(event, $inputUrl, $button, $linkExtractionStatus);
 
-        $button.attr('disabled', 'disabled').html('<i class="fa fa-spinner fa-pulse"></i> Fetching');
-        $inputUrl.attr('disabled', 'disabled');
-        $linkExtractionStatus.html('');
-        let link = btoa($inputUrl.val());
+        if (link) {
+            fetchLinkData('tvshows/480mkv-com/' + link)
+                .then(function (episodes) {
+                    $button.removeAttr('disabled').html('<i class="fa fa-search"></i> Fetch');
+                    $inputUrl.removeAttr('disabled');
 
-        $.ajax({
-            url: '/api/tvshows/480mkv-com/' + link,
-            error: ajaxErrorHandler
-        }).then(function (response) {
-            $button.removeAttr('disabled').html('<i class="fa fa-search"></i> Fetch');
-            $inputUrl.removeAttr('disabled');
+                    $linkExtractionStatus.html('');
+                    episodes.forEach(function (episode) {
+                        $linkExtractionStatus.append(templateLinkExtractionEpisodeItem(episode));
+                    });
 
-            $linkExtractionStatus.html(templateLinkExtractionSuccess({
-                href: response.data.url,
-                name: response.data.name || 'Download'
-            }));
-
-            console.log(response);
-        });
+                })
+                .catch(function (error) {
+                    $button.removeAttr('disabled').html('<i class="fa fa-search"></i> Fetch');
+                    $inputUrl.removeAttr('disabled');
+                });
+        }
     });
 });

@@ -19,6 +19,7 @@ require 'vendor/autoload.php';
 //Create request instance
 $request = ServerRequestFactory::fromGlobals();
 
+
 /**
  * @param Throwable $exception
  */

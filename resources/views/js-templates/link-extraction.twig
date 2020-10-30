@@ -1,19 +1,36 @@
 {% verbatim %}
+    <template id="template-link-extraction-episode-item">
+        <div class="list-group">
+            <div class="list-group-item z-depth-3 font-weight-bold card-header p-3 text-uppercase text-center">{{name}}</div>
+            {{#each links~}}
+                <div class="list-group-item text-success z-depth-1 px-3 py-2 d-flex justify-content-between">
+                    <span class="font-weight-bold"><i class="fa fa-check-circle text-success"></i> {{name}}</span>
+                    <div><a href="{{href}}"><i class="fa fa-download"></i> Download</a></div>
+                </div>
+            {{~/each}}
+        </div>
+    </template>
+
     <template id="template-link-extraction-success">
-        <div class="alert alert-success p-3 d-flex justify-content-between">
+        <div class="alert alert-success z-depth-1 px-3 py-2 d-flex justify-content-between">
             <span>Link extracted successfully <i class="fa fa-check-circle text-success"></i></span>
             <div><a href="{{href}}"><i class="fa fa-download"></i> {{name}}</a></div>
         </div>
     </template>
 
     <template id="template-link-extraction-error">
-        <div class="alert alert-danger z-depth-2 p-3">
-            <i class="fa fa-exclamation-circle text-danger"></i> Link extraction failed!
+        <div class="alert alert-danger z-depth-1 px-3 py-2">
+            <i class="fa fa-exclamation-circle text-danger"></i>
+            {{errorMessage message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
     </template>
 
     <script>
-        let templateLinkExtractionSuccess = Handlebars.compile($('#template-link-extraction-success').html());
-        let templateLinkExtractionError = Handlebars.compile($('#template-link-extraction-error').html());
+        const templateLinkExtractionEpisodeItem = Handlebars.compile($('#template-link-extraction-episode-item').html());
+        const templateLinkExtractionSuccess = Handlebars.compile($('#template-link-extraction-success').html());
+        const templateLinkExtractionError = Handlebars.compile($('#template-link-extraction-error').html());
     </script>
 {% endverbatim %}

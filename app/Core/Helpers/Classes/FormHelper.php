@@ -19,7 +19,7 @@ class FormHelper
 
     public static function addFormError(string $inputName, string $inputError)
     {
-        if (is_array(self::$formErrors[$inputName])) {
+        if (is_array(self::$formErrors[$inputName] ?? null)) {
             self::$formErrors[$inputName][] = $inputError;
         } else {
             self::$formErrors[$inputName] = [$inputError];

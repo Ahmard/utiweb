@@ -142,8 +142,6 @@ class Response
 
     /**
      * @param mixed $body
-     * @param int $statusCode
-     * @param array $headers
      * @return ResponseInterface
      */
     public function json($body = [])

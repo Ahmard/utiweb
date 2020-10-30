@@ -39,7 +39,7 @@ class RequestHelper
     {
         if (
             self::$request->hasHeader('X-Requested-With')
-            && self::$request->getHeaderLine('X-Requested-With') == 'XMLHttpRequest'
+            && strtolower(self::$request->getHeaderLine('X-Requested-With')) == 'xmlhttprequest'
         ) {
             return true;
         }

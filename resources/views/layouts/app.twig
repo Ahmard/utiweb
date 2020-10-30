@@ -35,7 +35,7 @@
 <nav class="navbar primary-color-dark fixed-top navbar-expand-lg scrolling-navbar double-nav">
     <!-- Breadcrumb -->
     <div class="breadcrumb-dn mr-auto">
-        <a href="{{ site.url }}" class="text-white pt-4">
+        <a href="/" class="text-white pt-4">
             <div class="px-3 py-2 font-weight-bolder">
                 <i class="fa fa-home"></i>
                 {{ site.name|upper }}
@@ -137,19 +137,18 @@
 <!-- Footer -->
 
 <script src="/assets/js/jquery-3.5.1.min.js"></script>
+<script src="/assets/js/jquery.ajax-retry.min.js"></script>
 <script src="/assets/js/bootstrap.bundle.min.js"></script>
 <script src="/assets/js/mdb.min.js"></script>
-<script src="/assets/js/moment.min.js"></script>
+<script src="/assets/js/sweetalert.min.js"></script>
 <script src="/assets/js/handlebars.min-v4.7.6.js"></script>
 <script src="/assets/js/EventEmitter.min.js"></script>
 <script src="/assets/js/howler.min.js"></script>
+<script src="/assets/js/app/ui.js"></script>
+<script src="/assets/js/app/ajax.js"></script>
 <script src="/assets/js/app/root.js"></script>
 
 <script>
-
-    let $elRoot = $('#root');
-    let $modal = $('#modal_general');
-
     $(function () {
         // Tooltips Initialization
         $('[data-toggle="tooltip"]').tooltip();

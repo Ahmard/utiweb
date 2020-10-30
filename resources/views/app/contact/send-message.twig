@@ -1,0 +1,54 @@
+{% extends 'layouts/app.twig' %}
+
+{% block scripts %}
+    <script src="/assets/js/app/contact/send-message.js"></script>
+{% endblock scripts %}
+
+{% block contents %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md mt-2">
+                <div class="card">
+                    <div class="card-header">MESSAGE US</div>
+                    <div class="card-body">
+                        <div class="card-text">
+                            Hi, thank you for taking your time to contact us.<br>
+                            Please let us know what you feel about this little program.<br>
+                            We will get back to you as soon as we can.<br>
+                            Please do not resend your message.<br>
+                            Thank you!!!.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md mt-2">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="contact/send-message" method="post" id="form-send-message">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fa fa-user-alt"></i></div>
+                                </div>
+                                <input type="text" name="name" class="form-control" placeholder="Your Name">
+                            </div>
+                            <div class="input-group mt-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fa fa-at"></i></div>
+                                </div>
+                                <input type="email" name="email" class="form-control" placeholder="Your Email">
+                            </div>
+                            <div class="input-group mt-2">
+                                <textarea name="message" rows="4" class="form-control"
+                                  placeholder="Your message here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-block btn-primary mt-3">
+                                <i class="fa fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock contents %}

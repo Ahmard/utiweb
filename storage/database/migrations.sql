@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS messages
+(
+    id      INTEGER PRIMARY KEY AUTOINCREMENT,
+    name    VARCHAR(250) NOT NULL,
+    email   VARCHAR(500) NOT NULL,
+    message TEXT(5000)   NOT NULL,
+    time    INTEGER(15) NOT NULL
+);

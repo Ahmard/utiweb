@@ -43,7 +43,7 @@ final class JsonResponse extends BaseResponse
     {
         return $this->body([
             'success' => false,
-            'data' => $data
+            'error' => $data
         ]);
     }
 }
