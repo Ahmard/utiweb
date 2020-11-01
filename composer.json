@@ -14,12 +14,13 @@
     "ext-json": "*",
     "ext-pdo": "*",
     "ahmard/quick-route": "^2.0",
-    "ahmard/uticlass": "^1.0",
+    "ahmard/uticlass": "^1.1",
     "ahmard/preact": "^1.0",
     "twig/twig": "^3.1",
     "vlucas/phpdotenv": "^5.2",
     "sunrise/http-server-request": "^1.0",
-    "symfony/validator": "^5.1"
+    "symfony/validator": "^5.1",
+    "botman/botman": "^2.6"
   },
   "require-dev": {
     "phpunit/phpunit": "^9"

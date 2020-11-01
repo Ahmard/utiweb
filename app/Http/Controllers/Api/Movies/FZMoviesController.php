@@ -12,10 +12,17 @@ class FZMoviesController extends Controller
 {
     public function index(ServerRequestInterface $request, array $params)
     {
-        sleep(2);
         $movieLink = base64_decode($params['url']);
-        $downloadLink = (new FZMovies($movieLink))->get();
+        $chosenLink = $params['chosen'] ?? 1;
+
+        $downloadLink = FZMovies::init($movieLink)->get($chosenLink);
+        $expName = explode('/', $downloadLink);
+        $fileName = end($expName);
+        $fileName = explode('(fzmovies.net)', $fileName);
+        $fileName = substr(current($fileName), 0, -1);
+
         return response()->json()->success([
+            'name' => $fileName,
             'url' => $downloadLink
         ]);
     }

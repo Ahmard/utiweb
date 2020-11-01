@@ -1,0 +1,37 @@
+{% extends 'layouts/app.twig' %}
+
+{% block scripts %}
+    <script src="/assets/js/app/others/zippyshare.js"></script>
+    {% include 'js-templates/link-extraction.twig' %}
+{% endblock scripts %}
+
+{% block contents %}
+    <div class="card">
+        <div class="card-header">
+            <a href="https://www118.zippyshare.com/">ZippyShare</a> Extractor
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                <div>
+                    <i class="fa fa-lightbulb text-warning"></i> Visit <a href="https://www118.zippyshare.com/">ZippyShare</a>,
+                    copy movie link and paste it in the input field below.
+                </div>
+                <div class="font-italic mt-1">Link sample:
+                    <b>https://www118.zippyshare.com/v/5pwuoWgg/file.html</b></div>
+            </div>
+            <div id="link-extraction-status" class="mt-4"></div>
+            <form class="mt-4" id="form-zippyshare">
+                <div class="input-group">
+                    <input type="url" name="zippyshare-url" class="form-control"
+                           placeholder="https://www118.zippyshare.com/v/5pwuoWgg/file.html">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-md btn-indigo m-0">
+                            <i class="fa fa-search"></i> Fetch
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock contents %}
+

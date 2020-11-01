@@ -20,6 +20,11 @@ Route::prefix('tvshows')->group(function () {
     Route::get('480mkv-com', 'TVShowController@femkvcom');
 });
 
+Route::prefix('others')->group(function (){
+    Route::get('/', 'OthersController@index');
+    Route::get('zippyshare', 'OthersController@zippyShare');
+});
+
 Route::prefix('api')
     ->namespace('Api')
     ->group(function () {
@@ -34,7 +39,7 @@ Route::prefix('api')
         Route::prefix('movies')
             ->namespace('Movies')
             ->group(function () {
-                Route::get('fzmovies/{url}', 'FZMoviesController@index');
+                Route::get('fzmovies/{chosen}/{url}', 'FZMoviesController@index');
                 Route::get('netnaija/{url}', 'NetNaijaController@index');
             });
 
@@ -43,5 +48,12 @@ Route::prefix('api')
             ->namespace('TVShows')
             ->group(function () {
                 Route::get('480mkv-com/{url}', 'FEMkvComController@index');
+            });
+
+        //OTHERS
+        Route::prefix('others')
+            ->namespace('Others')
+            ->group(function () {
+                Route::get('zippyshare/{url}', 'ZippyShareController@index');
             });
     });

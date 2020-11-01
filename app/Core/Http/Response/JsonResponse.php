@@ -31,7 +31,7 @@ final class JsonResponse extends BaseResponse
         return new static($body);
     }
 
-    public function success(array $data)
+    public function success($data)
     {
         return $this->body([
             'success' => true,
