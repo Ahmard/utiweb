@@ -23,12 +23,16 @@ class View
 
         $twig->addGlobal('site', [
             'name' => $_ENV['APP_NAME'],
-            'url' => $_ENV['APP_URL']
+            'url' => $_ENV['APP_URL'],
+            'desc' => $_ENV['APP_DESC'],
+            'keywords' => $_ENV['APP_KEYWORDS'],
         ]);
 
         $template =  $twig->load($viewFile);
 
-        return $template->render($data);
+        return $template->render([
+            'page' => $data
+        ]);
     }
 
     /**

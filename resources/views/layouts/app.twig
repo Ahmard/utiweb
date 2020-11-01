@@ -7,11 +7,12 @@
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>{{ page.title ?? site.name }}</title>
+    <title>{{ page.title ? (page.title ~ ' - ' ~ site.name) : site.name }}</title>
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
-    <meta name="description" content="A web-based utilities">
+    <meta name="description" content="{{ page.desc ?? site.desc }}">
+    <meta name="keywords" content="{{ page.keywords ?? site.keywords }}">
     <meta name="msapplication-tap-highlight" content="no">
 
     <!-- Font Awesome -->
@@ -48,18 +49,26 @@
         <ul class="nav navbar-nav nav-flex-icons ml-auto">
             <!-- Dropdown -->
             <li class="nav-item">
-                <a href="/movies" class="nav-link btn btn-outline-cyan btn-sm waves-effect">
+                <a href="/movies" class="nav-link btn btn-outline-default btn-sm waves-effect">
+                    <i class="fa fa-film" style="font-size: 14px"></i>
                     <span class="d-none d-md-inline-block font-weight-bold header-button">
-                        <i class="fa fa-film"></i>
                         Movies
                     </span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/tvshows" class="nav-link btn btn-outline-cyan btn-sm waves-effect">
+                <a href="/tvshows" class="nav-link btn btn-outline-default btn-sm waves-effect">
+                    <i class="fa fa-tv" style="font-size: 14px"></i>
                     <span class="d-none d-md-inline-block font-weight-bold header-button">
-                        <i class="fa fa-tv"></i>
                         TV Shows
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/others" class="nav-link btn btn-outline-default btn-sm waves-effect">
+                    <i class="fa fa-archive" style="font-size: 14px"></i>
+                    <span class="d-none d-md-inline-block font-weight-bold header-button">
+                        Others
                     </span>
                 </a>
             </li>
@@ -101,7 +110,8 @@
     <div class="col-md">
         <div class="">
             The source code of this website can be found on <a href="https://github.com/Ahmard/utiweb">GitHub</a>.<br/>
-            Please feel free to submit your <b>Pull Requests</b> as well as any encountered <b>Issues</b>.
+            Please feel free to submit your <a href="https://github.com/Ahmard/utiweb/pulls"><b>Pull Requests</b></a>
+            as well as any encountered <a href="https://github.com/Ahmard/utiweb/issues"><b>Issues</b></a>.
         </div>
     </div>
     <div class="col-md">

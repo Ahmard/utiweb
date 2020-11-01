@@ -53,10 +53,10 @@ class MessageController extends Controller
 
         $pdo = Database::create();
         $prepared = $pdo->prepare("INSERT INTO messages(name, email, message, time) VALUES (:name, :email, :message, :time)");
-        $prepared->bindParam(':name', $postedData['name']);
-        $prepared->bindParam(':email', $postedData['email']);
-        $prepared->bindParam(':message', $postedData['message']);
-        $prepared->bindParam(':time', $time);
+        $prepared->bindValue(':name', $postedData['name']);
+        $prepared->bindValue(':email', $postedData['email']);
+        $prepared->bindValue(':message', $postedData['message']);
+        $prepared->bindValue(':time', $time);
         $prepared->execute();
 
         return  response()->json()->success([
