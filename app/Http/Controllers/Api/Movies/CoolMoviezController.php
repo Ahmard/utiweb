@@ -6,18 +6,18 @@ namespace App\Http\Controllers\Api\Movies;
 
 use App\Http\Controllers\Controller;
 use Psr\Http\Message\ServerRequestInterface;
-use Uticlass\Video\NetNaija;
+use Uticlass\Video\CoolMoviez;
 
-class NetNaijaController extends Controller
+class CoolMoviezController extends Controller
 {
     public function index(ServerRequestInterface $request, array $params)
     {
         $movieLink = base64_decode($params['url']);
-        $downloadLink = NetNaija::init($movieLink)->get()->linkTwo();
+        $downloadLink = CoolMoviez::init($movieLink)->get();
         $expName = explode('/', $downloadLink);
         $fileName = end($expName);
-        $fileName = explode('netnaija', $fileName);
-        $fileName = substr(current($fileName), 0, -1);
+        $fileName = explode('-(', $fileName);
+        $fileName = current($fileName);
 
         return response()->json()->success([
             'name' => $fileName,

@@ -20,16 +20,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="190eae54-c2f6-4195-8c1c-d47673241b98" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Response/JsonResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Response/JsonResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Movies/FZMoviesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Movies/FZMoviesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Movies/NetNaijaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Movies/NetNaijaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TVShows/FEMkvComController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TVShows/FEMkvComController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app/movie/fzmovies.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/movie/fzmovies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Bot/Conversations/MovieConversation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Core/Http/Response/PlainResponse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BotController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payload.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/app/bot/chat-frontend.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/logs/error-02_11_2020-12_11_44.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/logs/error-02_11_2020-12_13_31.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/logs/error-02_11_2020-14_22_05.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/logs/error-02_11_2020-14_33_06.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/logs/error-04_11_2020-12_53_27.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Utility Web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Utility Web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Core/Http/Response/BaseResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Response/BaseResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Core/ResponseGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/ResponseGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-duotone-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-duotone-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-duotone-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-duotone-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-duotone-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-light-300.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-light-300.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-light-300.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-light-300.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-light-300.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-solid-900.woff" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/movies/fzmovies.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/movies/fzmovies.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/js-templates/link-extraction.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/js-templates/link-extraction.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,6 +189,7 @@
       <path value="$PROJECT_DIR$/vendor/react/dns" />
       <path value="$PROJECT_DIR$/vendor/react/promise-timer" />
       <path value="$PROJECT_DIR$/vendor/spatie/macroable" />
+      <path value="$PROJECT_DIR$/vendor/botman/driver-web" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jSMq3ipeWY5xAtHxHjMmipv0vq" />
@@ -229,6 +262,10 @@
       <workItem from="1604213301955" duration="157000" />
       <workItem from="1604217256896" duration="883000" />
       <workItem from="1604245833575" duration="7437000" />
+      <workItem from="1604313397732" duration="10271000" />
+      <workItem from="1604336908375" duration="115000" />
+      <workItem from="1604423382997" duration="1356000" />
+      <workItem from="1604485258502" duration="2932000" />
     </task>
     <servers />
   </component>
@@ -291,18 +328,18 @@
       <screen x="60" y="27" width="1306" height="741" />
     </state>
     <state width="1264" height="174" key="GridCell.Tab.0.right/60.27.1306.741@60.27.1306.741" timestamp="1603812737309" />
-    <state x="503" y="128" width="554" height="559" key="NewPhpClassDialog" timestamp="1604250751528">
+    <state x="503" y="128" width="554" height="559" key="NewPhpClassDialog" timestamp="1604323921087">
       <screen x="60" y="27" width="1306" height="741" />
     </state>
-    <state x="503" y="128" width="554" height="559" key="NewPhpClassDialog/60.27.1306.741@60.27.1306.741" timestamp="1604250751528" />
+    <state x="503" y="128" width="554" height="559" key="NewPhpClassDialog/60.27.1306.741@60.27.1306.741" timestamp="1604323921087" />
     <state x="552" y="324" width="312" height="154" key="NewPhpFileDialog" timestamp="1604086099489">
       <screen x="60" y="27" width="1306" height="741" />
     </state>
     <state x="552" y="324" width="312" height="154" key="NewPhpFileDialog/60.27.1306.741@60.27.1306.741" timestamp="1604086099489" />
-    <state x="232" y="31" width="962" height="737" key="SettingsEditor" timestamp="1604251751027">
+    <state x="232" y="31" width="962" height="737" key="SettingsEditor" timestamp="1604485288949">
       <screen x="60" y="27" width="1306" height="741" />
     </state>
-    <state x="232" y="31" width="962" height="737" key="SettingsEditor/60.27.1306.741@60.27.1306.741" timestamp="1604251751027" />
+    <state x="232" y="31" width="962" height="737" key="SettingsEditor/60.27.1306.741@60.27.1306.741" timestamp="1604485288949" />
     <state x="609" y="298" width="283" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1604086888397">
       <screen x="60" y="27" width="1306" height="741" />
     </state>

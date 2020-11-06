@@ -11,6 +11,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/ahmard/quick-route" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ahmard/uticlass" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/botman/botman" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/botman/driver-web" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cache/adapter-common" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cache/filesystem-adapter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cache/tag-interop" />
@@ -109,5 +110,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="botman-web-widget" level="application" />
   </component>
 </module>

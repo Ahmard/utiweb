@@ -20,7 +20,8 @@
     "vlucas/phpdotenv": "^5.2",
     "sunrise/http-server-request": "^1.0",
     "symfony/validator": "^5.1",
-    "botman/botman": "^2.6"
+    "botman/botman": "^2.6",
+    "botman/driver-web": "^1.5"
   },
   "require-dev": {
     "phpunit/phpunit": "^9"

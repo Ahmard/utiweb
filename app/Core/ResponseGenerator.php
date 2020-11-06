@@ -42,10 +42,12 @@ class ResponseGenerator
 
     public function __invoke(ServerRequestInterface $request)
     {
-        header("HTTP/{$this->version} {$this->code} {$this->reason}", true, $this->code);
-        header("X-Powered-By: {$_ENV['APP_NAME']}");
-        foreach ($this->headers as $headerName => $headerValue){
-            header("{$headerName}: {$headerValue}");
+        if(! headers_sent()){
+            header("HTTP/{$this->version} {$this->code} {$this->reason}", true, $this->code);
+            header("X-Powered-By: {$_ENV['APP_NAME']}");
+            foreach ($this->headers as $headerName => $headerValue){
+                header("{$headerName}: {$headerValue}");
+            }
         }
 
         return $this->body;

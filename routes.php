@@ -13,6 +13,7 @@ Route::prefix('movies')->group(function () {
     Route::get('/', 'MovieController@index');
     Route::get('fzmovies', 'MovieController@fzmovies');
     Route::get('netnaija', 'MovieController@netnaija');
+    Route::get('coolmoviez', 'MovieController@coolmoviez');
 });
 
 Route::prefix('tvshows')->group(function () {
@@ -35,12 +36,19 @@ Route::prefix('api')
                 Route::post('send-message', 'MessageController@sendMessage');
             });
 
+        //BOT
+        Route::prefix('bot')->group(function (){
+            Route::get('fetch-frontend', 'BotController@fetchFrontEnd');
+            Route::post('server', 'BotController@server');
+        });
+
         //MOVIES
         Route::prefix('movies')
             ->namespace('Movies')
             ->group(function () {
                 Route::get('fzmovies/{chosen}/{url}', 'FZMoviesController@index');
                 Route::get('netnaija/{url}', 'NetNaijaController@index');
+                Route::get('coolmoviez/{url}', 'CoolMoviezController@index');
             });
 
         //TV SHOWS

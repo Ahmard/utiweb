@@ -32,4 +32,13 @@ class MovieController extends Controller
             'keywords' => 'netnaija downloader, netnaija download link extractor'
         ]);
     }
+
+    public function coolmoviez()
+    {
+        return view('app/movies/coolmoviez.twig', [
+            'title' => 'CoolMoviez downloader',
+            'desc' => 'CoolMoviez|MyCoolMoviez|CooLmovieZ.live download link extractor/downloader.',
+            'keywords' => 'CooLmovieZ.live, coolmoviez.shop, mycoolmoviez, coolmoviez downloader, coolmoviez download link extractor'
+        ]);
+    }
 }

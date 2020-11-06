@@ -8,7 +8,7 @@ use App\Core\Http\View\View;
 use App\Core\ResponseGenerator;
 use Psr\Http\Message\ServerRequestInterface;
 
-class BaseResponse implements ResponseInterface
+abstract class BaseResponse implements ResponseInterface
 {
 
     protected int $statusCode = 200;

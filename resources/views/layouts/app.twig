@@ -6,11 +6,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-    <title>{{ page.title ? (page.title ~ ' - ' ~ site.name) : site.name }}</title>
-
     <meta name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
     <meta name="description" content="{{ page.desc ?? site.desc }}">
     <meta name="keywords" content="{{ page.keywords ?? site.keywords }}">
     <meta name="msapplication-tap-highlight" content="no">
@@ -22,10 +19,15 @@
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="/assets/css/mdb.min.css">
 
+    {% block css %}
+    {% endblock css %}
+
+    <title>{{ page.title ? (page.title ~ ' - ' ~ site.name) : site.name }}</title>
+
     <!-- Your custom styles (optional) -->
     <style>
         .header-button {
-            font-size: 10px;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -49,25 +51,25 @@
         <ul class="nav navbar-nav nav-flex-icons ml-auto">
             <!-- Dropdown -->
             <li class="nav-item">
-                <a href="/movies" class="nav-link btn btn-outline-default btn-sm waves-effect">
-                    <i class="fa fa-film" style="font-size: 14px"></i>
-                    <span class="d-none d-md-inline-block font-weight-bold header-button">
+                <a href="/movies" class="nav-link btn btn-outline-default btn-sm waves-effect header-button">
+                    <i class="fa fa-film"></i>
+                    <span class="d-none d-md-inline-block font-weight-bold">
                         Movies
                     </span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/tvshows" class="nav-link btn btn-outline-default btn-sm waves-effect">
-                    <i class="fa fa-tv" style="font-size: 14px"></i>
-                    <span class="d-none d-md-inline-block font-weight-bold header-button">
+                <a href="/tvshows" class="nav-link btn btn-outline-default btn-sm waves-effect header-button">
+                    <i class="fa fa-tv"></i>
+                    <span class="d-none d-md-inline-block font-weight-bold">
                         TV Shows
                     </span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/others" class="nav-link btn btn-outline-default btn-sm waves-effect">
-                    <i class="fa fa-archive" style="font-size: 14px"></i>
-                    <span class="d-none d-md-inline-block font-weight-bold header-button">
+                <a href="/others" class="nav-link btn btn-outline-default btn-sm waves-effect header-button">
+                    <i class="fa fa-archive"></i>
+                    <span class="d-none d-md-inline-block font-weight-bold">
                         Others
                     </span>
                 </a>
