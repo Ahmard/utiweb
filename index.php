@@ -2,7 +2,6 @@
 
 use App\Core\Helpers\Classes\RequestHelper;
 use App\Core\Http\Response\InternalServerErrorResponse;
-use App\Core\Http\Response\ResponseInterface;
 use App\Core\Http\Router\Dispatcher;
 use App\Core\Http\Router\Router;
 use App\Core\ResponseGenerator;
@@ -14,6 +13,7 @@ if ('/' !== $uri && file_exists($uri)) {
     return false;
 }
 
+$start = microtime(true);
 require 'vendor/autoload.php';
 
 //Create request instance

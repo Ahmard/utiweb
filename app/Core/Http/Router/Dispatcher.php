@@ -14,14 +14,10 @@ class Dispatcher
     {
         $path = $request->getUri()->getPath();
         $method = $request->getMethod();
-        if (false !== $pos = strpos($path, '?')) {
-            $path = substr($path, 0, $pos);
-        }
-        $path = rawurldecode($path);
-
 
         $collector = Collector::create()
             ->collectFile(root_path('routes.php'))
+            ->cache(storage_path('cache/route'), storage_path('cache/route/definitions.json'))
             ->register();
 
         return QuickRouteDispatcher::create($collector)->dispatch($method, $path);

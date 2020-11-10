@@ -36,12 +36,6 @@ Route::prefix('api')
                 Route::post('send-message', 'MessageController@sendMessage');
             });
 
-        //BOT
-        Route::prefix('bot')->group(function (){
-            Route::get('fetch-frontend', 'BotController@fetchFrontEnd');
-            Route::post('server', 'BotController@server');
-        });
-
         //MOVIES
         Route::prefix('movies')
             ->namespace('Movies')

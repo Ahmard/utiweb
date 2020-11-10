@@ -124,16 +124,16 @@
         },
         {
             "name": "ahmard/quick-route",
-            "version": "2.1.3",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ahmard/quick-route.git",
-                "reference": "fdfe5be3296290b82222f9629d5bf9347f8d6a57"
+                "reference": "110debb2f262093dedd0b0a5ab2b8bac1aeff513"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ahmard/quick-route/zipball/fdfe5be3296290b82222f9629d5bf9347f8d6a57",
-                "reference": "fdfe5be3296290b82222f9629d5bf9347f8d6a57",
+                "url": "https://api.github.com/repos/Ahmard/quick-route/zipball/110debb2f262093dedd0b0a5ab2b8bac1aeff513",
+                "reference": "110debb2f262093dedd0b0a5ab2b8bac1aeff513",
                 "shasum": ""
             },
             "require": {
@@ -147,7 +147,8 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "QuickRoute\\": "src/"
+                    "QuickRoute\\": "src/",
+                    "QuickRoute\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -163,9 +164,9 @@
             "description": "Simple http router designed to look just like Laravel's router",
             "support": {
                 "issues": "https://github.com/Ahmard/quick-route/issues",
-                "source": "https://github.com/Ahmard/quick-route/tree/2.1.3"
+                "source": "https://github.com/Ahmard/quick-route/tree/2.1.4"
             },
-            "time": "2020-11-04T12:05:36+00:00"
+            "time": "2020-11-10T00:03:13+00:00"
         },
         {
             "name": "ahmard/uticlass",

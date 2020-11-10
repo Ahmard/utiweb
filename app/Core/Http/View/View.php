@@ -17,11 +17,11 @@ class View
 
         $loader = new FilesystemLoader(view_path());
         $twig = new Environment($loader, [
-            //'cache' => storage_path('cache'),
+            'cache' => storage_path('cache/twig'),
         ]);
 
-
         $twig->addGlobal('site', [
+            's' => $_SERVER,
             'name' => $_ENV['APP_NAME'],
             'url' => $_ENV['APP_URL'],
             'desc' => $_ENV['APP_DESC'],
