@@ -20,9 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="190eae54-c2f6-4195-8c1c-d47673241b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/iterator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Router/Dispatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Router/Dispatcher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/EventEmitter.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/howler.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/moment.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/contact/send-message.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/contact/send-message.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,6 +237,7 @@
       <workItem from="1604821218916" duration="22000" />
       <workItem from="1604836485934" duration="1107000" />
       <workItem from="1604842354184" duration="545000" />
+      <workItem from="1605052074209" duration="3156000" />
     </task>
     <servers />
   </component>
