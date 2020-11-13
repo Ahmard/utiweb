@@ -20,12 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="190eae54-c2f6-4195-8c1c-d47673241b98" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/storage/cache/twig/36/3636bc65916e315be76db39e8f916260ad5ca03dd4155891d4ef53a8be2d95e6.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/cache/twig/60/60075c6574b7d18e72ab93c8bbc3a1e271b6107e14248154754cdbd0cd55ef10.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/cache/twig/73/733cab135239b28af64e18d59d3a34c853b58970feab4063a9f9dfad48da2208.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/cache/twig/b2/b2c4ba1f178a04ac4206b0e1176461c34212a9b0660152cfc4d6aab02231ea17.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/cache/twig/b8/b81cd0b97956aaa5a691267d6f3fae0e76eef33e5fa2bbc1fc05e35f6d4d9d72.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/cache/twig/b8/b8ff35010cb2f1d81bf4c10800322235bd315f747444f6e1ba5c679ffc270a9c.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/cache/twig/f3/f33ed5f5002b0cbe5c1e4fba6660465bae25db9686963e0d8e905025beb53a4a.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/cache/twig/f3/f3f496d6f801835033fcdb06a0195d48e56bd7fbfe278ab84bc2bf5b731a6c32.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/logs/error-12_11_2020-23_44_39.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/logs/error-12_11_2020-23_54_13.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/logs/error-12_11_2020-23_54_15.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/logs/error-12_11_2020-23_54_34.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/EventEmitter.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/howler.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/moment.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/contact/send-message.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/contact/send-message.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Core/Http/Router/Matcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Router/Matcher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/cache/route/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/cache/route/routes.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +247,10 @@
       <workItem from="1604821218916" duration="22000" />
       <workItem from="1604836485934" duration="1107000" />
       <workItem from="1604842354184" duration="545000" />
-      <workItem from="1605052074209" duration="3156000" />
+      <workItem from="1605052074209" duration="3917000" />
+      <workItem from="1605089304362" duration="157000" />
+      <workItem from="1605220886833" duration="706000" />
+      <workItem from="1605223583840" duration="1517000" />
     </task>
     <servers />
   </component>
