@@ -6,17 +6,16 @@ namespace App\Core\Http\Response;
 
 final class NotFoundResponse extends BaseResponse
 {
-    public function __construct()
+    public static function create(): ResponseInterface
     {
-        $this->with(
+        return (new static())->withResponse(
             MultiPurposeResponse::create()
-                ->statusCode(404)
-                ->reason('resources not found.')
-                ->body([
+                ->withStatus(404, 'resources not found.')
+                ->withJson([
                     'status' => false,
                     'message' => 'The resources you are looking does not exists.'
                 ])
-                ->view('system/404')
+                ->withView('system/404')
         );
     }
 }

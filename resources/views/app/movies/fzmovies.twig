@@ -1,11 +1,11 @@
 {% extends 'layouts/app.twig' %}
 
-{% block scripts %}
+{% block script %}
     <script src="/assets/js/app/movie/fzmovies.js"></script>
     {% include 'js-templates/link-extraction.twig' %}
-{% endblock scripts %}
+{% endblock script %}
 
-{% block contents %}
+{% block content %}
     <div class="card">
         <div class="card-header">
             <a target="_blank" href="https://fzmovies.net">FZMovies</a> Extractor
@@ -41,5 +41,5 @@
             </form>
         </div>
     </div>
-{% endblock contents %}
+{% endblock content %}
 

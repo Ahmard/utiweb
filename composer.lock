@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2a5e63307a4b1e5851afc23b33ed6ef",
+    "content-hash": "0ad84466141cab29cb501fb708635966",
     "packages": [
         {
             "name": "ahmard/guzwrap",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ahmard/guzwrap.git",
-                "reference": "0720ac7a6dd4b31834dd4248632460926a750e63"
+                "reference": "58b6dde2b9827b2820738d852fbbe07bf7d7940e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ahmard/guzwrap/zipball/0720ac7a6dd4b31834dd4248632460926a750e63",
-                "reference": "0720ac7a6dd4b31834dd4248632460926a750e63",
+                "url": "https://api.github.com/repos/Ahmard/guzwrap/zipball/58b6dde2b9827b2820738d852fbbe07bf7d7940e",
+                "reference": "58b6dde2b9827b2820738d852fbbe07bf7d7940e",
                 "shasum": ""
             },
             "require": {
@@ -38,9 +38,9 @@
             "description": "A wrapper around popular php http client, \"GuzzleHttp\"",
             "support": {
                 "issues": "https://github.com/Ahmard/guzwrap/issues",
-                "source": "https://github.com/Ahmard/guzwrap/tree/1.2.2"
+                "source": "https://github.com/Ahmard/guzwrap/tree/1.2.3"
             },
-            "time": "2020-11-05T23:32:37+00:00"
+            "time": "2020-11-14T19:21:55+00:00"
         },
         {
             "name": "ahmard/preact",
@@ -459,6 +459,116 @@
                 "source": "https://github.com/FriendsOfPHP/Goutte/tree/v4.0.1"
             },
             "time": "2020-10-14T06:49:09+00:00"
+        },
+        {
+            "name": "fig/http-message-util",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message-util.git",
+                "reference": "3242caa9da7221a304b8f84eb9eaddae0a7cf422"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message-util/zipball/3242caa9da7221a304b8f84eb9eaddae0a7cf422",
+                "reference": "3242caa9da7221a304b8f84eb9eaddae0a7cf422",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3 || ^7.0"
+            },
+            "suggest": {
+                "psr/http-message": "The package containing the PSR-7 interfaces"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fig\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Utility classes and constants for use with PSR-7 (psr/http-message)",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/http-message-util/issues",
+                "source": "https://github.com/php-fig/http-message-util/tree/1.1.4"
+            },
+            "time": "2020-02-05T20:36:27+00:00"
+        },
+        {
+            "name": "firebase/php-jwt",
+            "version": "v5.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "feb0e820b8436873675fd3aca04f3728eb2185cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/feb0e820b8436873675fd3aca04f3728eb2185cb",
+                "reference": "feb0e820b8436873675fd3aca04f3728eb2185cb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.8 <=9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Firebase\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Neuman Vong",
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anant Narayanan",
+                    "email": "anant@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+            "homepage": "https://github.com/firebase/php-jwt",
+            "keywords": [
+                "jwt",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/firebase/php-jwt/issues",
+                "source": "https://github.com/firebase/php-jwt/tree/master"
+            },
+            "time": "2020-03-25T18:49:23+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -943,6 +1053,306 @@
             "time": "2020-06-30T18:43:34+00:00"
         },
         {
+            "name": "laminas/laminas-diactoros",
+            "version": "2.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-diactoros.git",
+                "reference": "36ef09b73e884135d2059cc498c938e90821bb57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-diactoros/zipball/36ef09b73e884135d2059cc498c938e90821bb57",
+                "reference": "36ef09b73e884135d2059cc498c938e90821bb57",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-zendframework-bridge": "^1.0",
+                "php": "^7.1",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.0"
+            },
+            "conflict": {
+                "phpspec/prophecy": "<1.9.0"
+            },
+            "provide": {
+                "psr/http-factory-implementation": "1.0",
+                "psr/http-message-implementation": "1.0"
+            },
+            "replace": {
+                "zendframework/zend-diactoros": "^2.2.1"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "ext-dom": "*",
+                "ext-gd": "*",
+                "ext-libxml": "*",
+                "http-interop/http-factory-tests": "^0.5.0",
+                "laminas/laminas-coding-standard": "~1.0.0",
+                "php-http/psr7-integration-tests": "^1.0",
+                "phpunit/phpunit": "^7.5.18"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "config-provider": "Laminas\\Diactoros\\ConfigProvider",
+                    "module": "Laminas\\Diactoros"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions/create_uploaded_file.php",
+                    "src/functions/marshal_headers_from_sapi.php",
+                    "src/functions/marshal_method_from_sapi.php",
+                    "src/functions/marshal_protocol_version_from_sapi.php",
+                    "src/functions/marshal_uri_from_sapi.php",
+                    "src/functions/normalize_server.php",
+                    "src/functions/normalize_uploaded_files.php",
+                    "src/functions/parse_cookie_header.php",
+                    "src/functions/create_uploaded_file.legacy.php",
+                    "src/functions/marshal_headers_from_sapi.legacy.php",
+                    "src/functions/marshal_method_from_sapi.legacy.php",
+                    "src/functions/marshal_protocol_version_from_sapi.legacy.php",
+                    "src/functions/marshal_uri_from_sapi.legacy.php",
+                    "src/functions/normalize_server.legacy.php",
+                    "src/functions/normalize_uploaded_files.legacy.php",
+                    "src/functions/parse_cookie_header.legacy.php"
+                ],
+                "psr-4": {
+                    "Laminas\\Diactoros\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "PSR HTTP Message implementations",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "http",
+                "laminas",
+                "psr",
+                "psr-17",
+                "psr-7"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-diactoros/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-diactoros/issues",
+                "rss": "https://github.com/laminas/laminas-diactoros/releases.atom",
+                "source": "https://github.com/laminas/laminas-diactoros"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2020-09-03T14:29:41+00:00"
+        },
+        {
+            "name": "laminas/laminas-escaper",
+            "version": "2.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-escaper.git",
+                "reference": "25f2a053eadfa92ddacb609dcbbc39362610da70"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-escaper/zipball/25f2a053eadfa92ddacb609dcbbc39362610da70",
+                "reference": "25f2a053eadfa92ddacb609dcbbc39362610da70",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-zendframework-bridge": "^1.0",
+                "php": "^5.6 || ^7.0"
+            },
+            "replace": {
+                "zendframework/zend-escaper": "self.version"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~1.0.0",
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6.x-dev",
+                    "dev-develop": "2.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Escaper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Securely and safely escape HTML, HTML attributes, JavaScript, CSS, and URLs",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "escaper",
+                "laminas"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-escaper/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-escaper/issues",
+                "rss": "https://github.com/laminas/laminas-escaper/releases.atom",
+                "source": "https://github.com/laminas/laminas-escaper"
+            },
+            "time": "2019-12-31T16:43:30+00:00"
+        },
+        {
+            "name": "laminas/laminas-stratigility",
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-stratigility.git",
+                "reference": "d6336b873fe8f766f84b82164f2a25e4decd6a9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-stratigility/zipball/d6336b873fe8f766f84b82164f2a25e4decd6a9a",
+                "reference": "d6336b873fe8f766f84b82164f2a25e4decd6a9a",
+                "shasum": ""
+            },
+            "require": {
+                "fig/http-message-util": "^1.1",
+                "laminas/laminas-escaper": "^2.3",
+                "laminas/laminas-zendframework-bridge": "^1.0",
+                "php": "^7.3 || ~8.0.0",
+                "psr/http-message": "^1.0",
+                "psr/http-server-middleware": "^1.0"
+            },
+            "conflict": {
+                "laminas/laminas-diactoros": "<1.7.1"
+            },
+            "replace": {
+                "zendframework/zend-stratigility": "^3.2.0"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~1.0.0",
+                "laminas/laminas-diactoros": "^1.7.1",
+                "malukenho/docheader": "^0.1.6",
+                "phpspec/prophecy": "^1.12",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.3"
+            },
+            "suggest": {
+                "psr/http-message-implementation": "Please install a psr/http-message-implementation to consume Stratigility; e.g., laminas/laminas-diactoros"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions/double-pass-middleware.php",
+                    "src/functions/host.php",
+                    "src/functions/middleware.php",
+                    "src/functions/path.php",
+                    "src/functions/double-pass-middleware.legacy.php",
+                    "src/functions/host.legacy.php",
+                    "src/functions/middleware.legacy.php",
+                    "src/functions/path.legacy.php"
+                ],
+                "psr-4": {
+                    "Laminas\\Stratigility\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "PSR-7 middleware foundation for building and dispatching middleware pipelines",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "http",
+                "laminas",
+                "middleware",
+                "psr-15",
+                "psr-7"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-stratigility/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-stratigility/issues",
+                "rss": "https://github.com/laminas/laminas-stratigility/releases.atom",
+                "source": "https://github.com/laminas/laminas-stratigility"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2020-10-20T10:38:04+00:00"
+        },
+        {
+            "name": "laminas/laminas-zendframework-bridge",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-zendframework-bridge.git",
+                "reference": "6ede70583e101030bcace4dcddd648f760ddf642"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/6ede70583e101030bcace4dcddd648f760ddf642",
+                "reference": "6ede70583e101030bcace4dcddd648f760ddf642",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5 || ^8.1 || ^9.3",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "module": "Laminas\\ZendFrameworkBridge"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/autoload.php"
+                ],
+                "psr-4": {
+                    "Laminas\\ZendFrameworkBridge\\": "src//"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Alias legacy ZF class names to Laminas Project equivalents.",
+            "keywords": [
+                "ZendFramework",
+                "autoloading",
+                "laminas",
+                "zf"
+            ],
+            "support": {
+                "forum": "https://discourse.laminas.dev/",
+                "issues": "https://github.com/laminas/laminas-zendframework-bridge/issues",
+                "rss": "https://github.com/laminas/laminas-zendframework-bridge/releases.atom",
+                "source": "https://github.com/laminas/laminas-zendframework-bridge"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2020-09-14T14:23:00+00:00"
+        },
+        {
             "name": "league/flysystem",
             "version": "1.1.3",
             "source": {
@@ -1422,6 +1832,120 @@
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
+            "name": "psr/http-server-handler",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-server-handler.git",
+                "reference": "aff2f80e33b7f026ec96bb42f63242dc50ffcae7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-server-handler/zipball/aff2f80e33b7f026ec96bb42f63242dc50ffcae7",
+                "reference": "aff2f80e33b7f026ec96bb42f63242dc50ffcae7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "psr/http-message": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Server\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP server-side request handler",
+            "keywords": [
+                "handler",
+                "http",
+                "http-interop",
+                "psr",
+                "psr-15",
+                "psr-7",
+                "request",
+                "response",
+                "server"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/http-server-handler/issues",
+                "source": "https://github.com/php-fig/http-server-handler/tree/master"
+            },
+            "time": "2018-10-30T16:46:14+00:00"
+        },
+        {
+            "name": "psr/http-server-middleware",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-server-middleware.git",
+                "reference": "2296f45510945530b9dceb8bcedb5cb84d40c5f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-server-middleware/zipball/2296f45510945530b9dceb8bcedb5cb84d40c5f5",
+                "reference": "2296f45510945530b9dceb8bcedb5cb84d40c5f5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "psr/http-message": "^1.0",
+                "psr/http-server-handler": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Server\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP server-side middleware",
+            "keywords": [
+                "http",
+                "http-interop",
+                "middleware",
+                "psr",
+                "psr-15",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/http-server-middleware/issues",
+                "source": "https://github.com/php-fig/http-server-middleware/tree/master"
+            },
+            "time": "2018-10-30T17:12:04+00:00"
+        },
+        {
             "name": "psr/log",
             "version": "1.1.3",
             "source": {
@@ -1615,323 +2139,6 @@
                 "source": "https://github.com/reactphp/promise/tree/v2.8.0"
             },
             "time": "2020-05-12T15:16:56+00:00"
-        },
-        {
-            "name": "sunrise/http-header",
-            "version": "v1.0.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sunrise-php/http-header.git",
-                "reference": "c226f101b8a236e484dbea3aa1ebce8f01374e90"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sunrise-php/http-header/zipball/c226f101b8a236e484dbea3aa1ebce8f01374e90",
-                "reference": "c226f101b8a236e484dbea3aa1ebce8f01374e90",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1",
-                "psr/http-message": "^1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "7.5.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Sunrise\\Http\\Header\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anatoly Fenric",
-                    "email": "anatoly@fenric.ru",
-                    "homepage": "https://anatoly.fenric.ru/"
-                }
-            ],
-            "description": "Sunrise HTTP Header interface for PHP 7.1+ based on PSR-7",
-            "homepage": "https://github.com/sunrise-php/http-header",
-            "keywords": [
-                "HTTP-header",
-                "fenric",
-                "psr-7",
-                "sunrise"
-            ],
-            "support": {
-                "issues": "https://github.com/sunrise-php/http-header/issues",
-                "source": "https://github.com/sunrise-php/http-header/tree/master"
-            },
-            "time": "2019-02-25T18:29:14+00:00"
-        },
-        {
-            "name": "sunrise/http-message",
-            "version": "v1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sunrise-php/http-message.git",
-                "reference": "37a4dfe2e0fa650a48eab54fb198fb43c9b21f4d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sunrise-php/http-message/zipball/37a4dfe2e0fa650a48eab54fb198fb43c9b21f4d",
-                "reference": "37a4dfe2e0fa650a48eab54fb198fb43c9b21f4d",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1",
-                "psr/http-factory": "^1.0",
-                "psr/http-message": "^1.0",
-                "sunrise/http-header": "^1.0",
-                "sunrise/stream": "^1.0",
-                "sunrise/uri": "^1.0"
-            },
-            "provide": {
-                "psr/http-message-implementation": "1.0"
-            },
-            "require-dev": {
-                "fig/http-message-util": "1.1.3",
-                "phpunit/phpunit": "7.5.20"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "data/phrases.php"
-                ],
-                "psr-4": {
-                    "Sunrise\\Http\\Message\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anatoly Fenric",
-                    "email": "anatoly@fenric.ru",
-                    "homepage": "https://anatoly.fenric.ru/"
-                }
-            ],
-            "description": "Sunrise HTTP message wrapper for PHP 7.1+ based on RFC-7230, PSR-7 & PSR-17",
-            "homepage": "https://github.com/sunrise-php/http-message",
-            "keywords": [
-                "fenric",
-                "http-message",
-                "psr-17",
-                "psr-7",
-                "rfc-7230",
-                "sunrise"
-            ],
-            "support": {
-                "issues": "https://github.com/sunrise-php/http-message/issues",
-                "source": "https://github.com/sunrise-php/http-message/tree/master"
-            },
-            "time": "2020-04-13T02:39:08+00:00"
-        },
-        {
-            "name": "sunrise/http-server-request",
-            "version": "v1.0.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sunrise-php/http-server-request.git",
-                "reference": "c51ea9caaf4885f88a621bdc62c34803c64e43c7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sunrise-php/http-server-request/zipball/c51ea9caaf4885f88a621bdc62c34803c64e43c7",
-                "reference": "c51ea9caaf4885f88a621bdc62c34803c64e43c7",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1",
-                "psr/http-factory": "^1.0",
-                "psr/http-message": "^1.0",
-                "sunrise/http-message": "^1.0",
-                "sunrise/stream": "^1.0",
-                "sunrise/uri": "^1.0"
-            },
-            "provide": {
-                "psr/http-message-implementation": "1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "7.5.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Sunrise\\Http\\ServerRequest\\": "src/"
-                },
-                "files": [
-                    "functions/request_body.php",
-                    "functions/request_files.php",
-                    "functions/request_headers.php",
-                    "functions/request_http_version.php",
-                    "functions/request_method.php",
-                    "functions/request_uri.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anatoly Fenric",
-                    "email": "anatoly@fenric.ru",
-                    "homepage": "https://anatoly.fenric.ru/"
-                },
-                {
-                    "name": "李昀陞 (Peter)",
-                    "email": "peter279k@gmail.com",
-                    "homepage": "https://github.com/peter279k"
-                }
-            ],
-            "description": "Sunrise HTTP Server Request wrapper for PHP 7.1+ based on PSR-7 & PSR-17",
-            "homepage": "https://github.com/sunrise-php/http-server-request",
-            "keywords": [
-                "fenric",
-                "http-server-request",
-                "psr-17",
-                "psr-7",
-                "sunrise"
-            ],
-            "support": {
-                "issues": "https://github.com/sunrise-php/http-server-request/issues",
-                "source": "https://github.com/sunrise-php/http-server-request/tree/v1.0.12"
-            },
-            "time": "2020-03-29T03:10:51+00:00"
-        },
-        {
-            "name": "sunrise/stream",
-            "version": "v1.0.21",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sunrise-php/stream.git",
-                "reference": "43fb91e36375b792a8c11853c23aa6efbb71fdbe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sunrise-php/stream/zipball/43fb91e36375b792a8c11853c23aa6efbb71fdbe",
-                "reference": "43fb91e36375b792a8c11853c23aa6efbb71fdbe",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1",
-                "psr/http-factory": "^1.0",
-                "psr/http-message": "^1.0"
-            },
-            "provide": {
-                "psr/http-message-implementation": "1.0"
-            },
-            "require-dev": {
-                "php-http/psr7-integration-tests": "dev-master",
-                "phpunit/phpunit": "7.5.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Sunrise\\Stream\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anatoly Fenric",
-                    "email": "anatoly@fenric.ru",
-                    "homepage": "https://anatoly.fenric.ru/"
-                },
-                {
-                    "name": "李昀陞 (Peter)",
-                    "email": "peter279k@gmail.com",
-                    "homepage": "https://github.com/peter279k"
-                }
-            ],
-            "description": "Simple Stream wrapper for PHP 7.1+ based on PSR-7 & PSR-17",
-            "homepage": "https://github.com/sunrise-php/stream",
-            "keywords": [
-                "fenric",
-                "psr-17",
-                "psr-7",
-                "stream",
-                "sunrise"
-            ],
-            "support": {
-                "issues": "https://github.com/sunrise-php/stream/issues",
-                "source": "https://github.com/sunrise-php/stream/tree/master"
-            },
-            "time": "2019-03-05T10:21:54+00:00"
-        },
-        {
-            "name": "sunrise/uri",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sunrise-php/uri.git",
-                "reference": "dfe7db6ecad7e7341a083012024c9521b9ef2bde"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sunrise-php/uri/zipball/dfe7db6ecad7e7341a083012024c9521b9ef2bde",
-                "reference": "dfe7db6ecad7e7341a083012024c9521b9ef2bde",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1",
-                "psr/http-factory": "^1.0",
-                "psr/http-message": "^1.0"
-            },
-            "provide": {
-                "psr/http-message-implementation": "1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "7.5.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Sunrise\\Uri\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anatoly Fenric",
-                    "email": "anatoly@fenric.ru",
-                    "homepage": "https://anatoly.fenric.ru/"
-                },
-                {
-                    "name": "李昀陞 (Peter)",
-                    "email": "peter279k@gmail.com",
-                    "homepage": "https://github.com/peter279k"
-                }
-            ],
-            "description": "Simple URI wrapper for PHP 7.1+ based on RFC-3986, PSR-7 & PSR-17",
-            "homepage": "https://github.com/sunrise-php/uri",
-            "keywords": [
-                "fenric",
-                "parser",
-                "psr-17",
-                "psr-7",
-                "rfc-3986",
-                "sunrise",
-                "uri"
-            ],
-            "support": {
-                "issues": "https://github.com/sunrise-php/uri/issues",
-                "source": "https://github.com/sunrise-php/uri/tree/master"
-            },
-            "time": "2020-04-12T18:46:18+00:00"
         },
         {
             "name": "symfony/browser-kit",
@@ -3652,16 +3859,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.10.1",
+            "version": "1.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "969b211f9a51aa1f6c01d1d2aef56d3bd91598e5"
+                "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/969b211f9a51aa1f6c01d1d2aef56d3bd91598e5",
-                "reference": "969b211f9a51aa1f6c01d1d2aef56d3bd91598e5",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/776f831124e9c62e1a2c601ecc52e776d8bb7220",
+                "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220",
                 "shasum": ""
             },
             "require": {
@@ -3698,7 +3905,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.x"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.10.2"
             },
             "funding": [
                 {
@@ -3706,7 +3913,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-06-29T13:22:24+00:00"
+            "time": "2020-11-13T09:40:50+00:00"
         },
         {
             "name": "nikic/php-parser",

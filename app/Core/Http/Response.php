@@ -11,6 +11,7 @@ use App\Core\Http\Response\NotFoundResponse;
 use App\Core\Http\Response\RedirectResponse;
 use App\Core\Http\Response\ResponseInterface;
 use App\Core\Http\View\View;
+use Laminas\Diactoros\Stream;
 use Throwable;
 
 /**
@@ -70,16 +71,28 @@ class Response
     /**
      * Send 200 status response
      * @param string $body
-     * @param array $headers
      * @return ResponseInterface
      */
-    public function ok(string $body, $headers = []): ResponseInterface
+    public function ok(string $body): ResponseInterface
     {
         return $this->with(
             HtmlResponse::create()
-                ->body($body)
-                ->headers($headers)
+                ->withBody(new Stream($body))
         );
+    }
+
+    /**
+     * Send response with classes
+     * @param ResponseInterface $response
+     * @return ResponseInterface
+     */
+    public function with(ResponseInterface $response): ResponseInterface
+    {
+        if ($response->hasResponse()) {
+            return $this->with($response->getResponse());
+        }
+
+        return $response;
     }
 
     /**
@@ -90,20 +103,6 @@ class Response
     public function view(string $view, array $data = [])
     {
         return $this->with(HtmlResponse::create(View::load($view, $data)));
-    }
-
-    /**
-     * Send response with classes
-     * @param ResponseInterface $response
-     * @return ResponseInterface
-     */
-    public function with(ResponseInterface $response): ResponseInterface
-    {
-        if($response->hasWith()){
-            return $this->with($response->getWith());
-        }
-
-        return $response;
     }
 
     /**

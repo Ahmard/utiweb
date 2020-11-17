@@ -8,26 +8,19 @@ use App\Core\Error;
 
 final class InternalServerErrorResponse extends BaseResponse
 {
-    public function __construct($exception)
+    public static function create($exception = null): ResponseInterface
     {
         $error = Error::create($exception)->getMessage() ?? 'Internal server error.';
-        $this->with(
+        return (new static())->withResponse(
             MultiPurposeResponse::create()
-                ->statusCode(500)
-                ->reason('internal server error.')
-                ->body([
+                ->withStatus(500, 'internal server error.')
+                ->withJson([
                     'status' => false,
                     'message' => $error
                 ])
-                ->view('system/500', [
-                    'exception' => $exception
+                ->withView('system/500', [
+                    'exception' => $error
                 ])
         );
-
-    }
-
-    public static function create($exception = null): ResponseInterface
-    {
-        return new static($exception);
     }
 }

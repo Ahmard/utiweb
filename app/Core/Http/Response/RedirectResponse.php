@@ -6,25 +6,18 @@ namespace App\Core\Http\Response;
 
 final class RedirectResponse extends BaseResponse
 {
-    public function __construct(string $url)
+    public static function create(string $url = '/'): ResponseInterface
     {
-        $this->with(
+        return (new static())->withResponse(
             MultiPurposeResponse::create()
-                ->statusCode(302)
-                ->headers([
-                    'Location' => $url
-                ])
-                ->body([
+                ->withStatus(302, 'Found')
+                ->withHeader('Location', $url)
+                ->withJson([
                     'message' => "Redirecting yo to {$url}"
                 ])
-                ->view('system/302', [
+                ->withView('system/302', [
                     'url' => $url
                 ])
         );
-    }
-
-    public static function create(string $url = '/'): ResponseInterface
-    {
-        return new static($url);
     }
 }

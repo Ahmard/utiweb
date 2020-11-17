@@ -7,8 +7,7 @@ $slash = DIRECTORY_SEPARATOR;
 
 function url($url = null)
 {
-    global $serverConfig;
-    return "http://{$serverConfig['host']}:{$serverConfig['port']}/{$url}";
+    return "{$_ENV['APP_URL']}/{$url}";
 }
 
 /**

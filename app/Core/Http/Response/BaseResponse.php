@@ -6,25 +6,20 @@ namespace App\Core\Http\Response;
 
 use App\Core\Http\View\View;
 use App\Core\ResponseGenerator;
+use Laminas\Diactoros\Response;
+use Laminas\Diactoros\Stream;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Message\StreamInterface;
 
-abstract class BaseResponse implements ResponseInterface
+abstract class BaseResponse extends Response implements ResponseInterface
 {
+    protected const STREAM_FILE = 'php://memory';
 
-    protected int $statusCode = 200;
+    protected StreamInterface $body;
 
-    /**
-     * @var mixed
-     */
-    protected $body = null;
+    protected string $jsonData;
 
     protected $view = null;
-
-    protected array $headers = [];
-
-    protected string $reason = 'ok';
-
-    protected string $version = '1.1';
 
     protected ResponseInterface $respondWith;
 
@@ -34,58 +29,19 @@ abstract class BaseResponse implements ResponseInterface
         return new static();
     }
 
-    public function statusCode(int $code = 200): ResponseInterface
+    public function withJson($arrayWithJson): ResponseInterface
     {
-        if (200 !== $code) {
-            $this->statusCode = $code;
-        }
-
+        $this->jsonData = json_encode($arrayWithJson);
         return $this;
     }
 
-    public function headers($headers = []): ResponseInterface
-    {
-        if ([] !== $headers) {
-            $this->headers += $headers;
-        }
-
-        return $this;
-    }
-
-    public function reason(string $reason = 'ok'): ResponseInterface
-    {
-        if ('ok' !== $reason) {
-            $this->reason = $reason;
-        }
-
-        return $this;
-    }
-
-    public function version(string $version = '1.1'): ResponseInterface
-    {
-        if ('1.1' !== $version) {
-            $this->version = $version;
-        }
-
-        return $this;
-    }
-
-    public function view(string $viewFile, array $params = []): ResponseInterface
+    public function withView(string $viewFile, array $params = []): ResponseInterface
     {
         $this->view = View::load($viewFile, $params);
         return $this;
     }
 
-    public function body($body = null): ResponseInterface
-    {
-        if (null !== $body) {
-            $this->body = $body;
-        }
-
-        return $this;
-    }
-
-    public function with(ResponseInterface $response): ResponseInterface
+    public function withResponse(ResponseInterface $response): ResponseInterface
     {
         $this->respondWith = $response;
         return $response;
@@ -93,32 +49,22 @@ abstract class BaseResponse implements ResponseInterface
 
     public function send(ServerRequestInterface $request)
     {
-        if($this->hasWith()){
-            $this->getWith()->send($request);
+        if ($this->hasResponse()) {
+            $this->getResponse()->send($request);
             exit();
         }
 
         ResponseGenerator::generate($this)->send($request);
     }
 
-    public function getStatusCode(): int
+    public function hasResponse(): bool
     {
-        return $this->statusCode;
+        return isset($this->respondWith);
     }
 
-    public function getReason(): string
+    public function getResponse(): ResponseInterface
     {
-        return $this->reason;
-    }
-
-    public function getHeaders(): array
-    {
-        return $this->headers;
-    }
-
-    public function getBody()
-    {
-        return $this->body;
+        return $this->respondWith;
     }
 
     public function getView()
@@ -126,23 +72,26 @@ abstract class BaseResponse implements ResponseInterface
         return $this->view;
     }
 
-    public function getVersion(): string
+    public function getJson(): string
     {
-        return $this->version;
-    }
-
-    public function getWith(): ResponseInterface
-    {
-        return $this->respondWith;
-    }
-
-    public function hasWith(): bool
-    {
-        return isset($this->respondWith);
+        return $this->jsonData;
     }
 
     public function hasView(): bool
     {
         return isset($this->view);
+    }
+
+    /**
+     * Create stream of string
+     * @param string $body
+     * @return ResponseInterface
+     */
+    protected function writeBodyStream(string $body): ResponseInterface
+    {
+        $stream = new Stream(self::STREAM_FILE, 'w+');
+        $stream->write($body);
+        $stream->rewind();
+        return parent::withBody($stream);
     }
 }

@@ -1,23 +1,20 @@
 {% extends 'layouts/app.twig' %}
 
-{% block contents %}
+{% block content %}
     <div class="card card-danger">
         <div class="card-header bg-danger text-white">
             500(Internal Server Error)
         </div>
         <div class="card-body text-danger font-weight-bolder">
             <div class="ml-2">
-                {% if exception %}
-                    {% if exception.getMessage() %}
-                        {{ exception.getMessage() }}
-                    {% else %}
-                        {{ exception }}
-                    {% endif %}
+                {% if page.exception %}
+                    {{ page.exception }}
                 {% else %}
-                    Server ran in to an error while processing your request.
+                    Server ran in to an error while processing your request.<br/>
+                    This error has been logged, and it will be fixed.
                 {% endif %}
             </div>
-            <a href="/" class="btn btn-sm btn-outline-success z-depth-0">Let's go home <i class="fa fa-chevron-right"></i> </a>
+            <a href="/" class="btn btn-sm btn-outline-success mt-2 z-depth-0">Let's go home <i class="fa fa-chevron-right"></i> </a>
         </div>
     </div>
-{% endblock contents %}
+{% endblock content %}

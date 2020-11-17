@@ -1,0 +1,38 @@
+{% extends 'layouts/admin.twig' %}
+
+{% block script %}
+    <script src="/assets/js/app/admin/messaging.js"></script>
+    <script src="/assets/js/sweetalert.min.js"></script>
+{% endblock script %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header left-border d-flex justify-content-between">
+            <div class="p-3 font-weight-bolder text-primary text-uppercase">Messages</div>
+            <div>
+                <a href="{{ site.adminRoute('message/readied', true) }}" class="btn btn-md btn-primary z-depth-0">
+                    <i class="fa fa-envelope"></i> Read Messages
+                </a>
+            </div>
+        </div>
+        <div class="card-body left-border p-4 z-depth-1 font-italic">
+            <div class="list-group">
+                {% for message in page.messages  %}
+                    <a data-message="{{ message|json_encode }}" class="list-group-item list-group-item-action" onclick="viewMessage(this)">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <i class="fa fa-user-secret"></i>
+                                <b>{{ message.name }}</b>
+                            </div>
+
+                            <div>
+                                <i class="fa fa-clock"></i>
+                                {{ message.time|date('M/d D - H:i:s') }}
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

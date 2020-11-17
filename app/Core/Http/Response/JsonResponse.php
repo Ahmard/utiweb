@@ -4,46 +4,63 @@
 namespace App\Core\Http\Response;
 
 
+use Psr\Http\Message\StreamInterface;
+use Throwable;
+
 final class JsonResponse extends BaseResponse
 {
-    public function __construct($body)
-    {
-        $this->body($body);
-
-        $this->headers = [
-            'Content-Type' => 'application/json'
-        ];
-    }
-
-    public function body($body = []): ResponseInterface
-    {
-        if (!is_string($body)) {
-            $body = json_encode($body);
-        }
-
-        $this->body = $body;
-
-        return $this;
-    }
 
     public static function create($body = []): ResponseInterface
     {
-        return new static($body);
+        return (new static())->withJson($body)
+            ->withAddedHeader('Content-Type', 'application/json');
     }
 
+    /**
+     * Respond with success response
+     * @param array|object $data An array or object
+     * @return ResponseInterface
+     */
     public function success($data)
     {
-        return $this->body([
+        return $this->withBody([
             'success' => true,
             'data' => $data
         ]);
     }
 
-    public function error(array $data)
+    /**
+     * @param array|object $body
+     * @return ResponseInterface
+     */
+    public function withBody($body = []): ResponseInterface
     {
-        return $this->body([
+        return $this->withJson($body);
+    }
+
+    /**
+     * Respond with error response
+     * @param array|string|Throwable $errorData An error message
+     * @return ResponseInterface
+     */
+    public function error($errorData)
+    {
+        return $this->withBody([
             'success' => false,
-            'error' => $data
+            'error' => $errorData
         ]);
+    }
+
+    public function getBody(): StreamInterface
+    {
+        //This method will be recursively called,
+        //so we need to know when to quit.
+        static $willReturn = false;
+        if ($willReturn) {
+            return parent::getBody();
+        }
+
+        $willReturn = true;
+        return $this->writeBodyStream($this->getJson())->getBody();
     }
 }

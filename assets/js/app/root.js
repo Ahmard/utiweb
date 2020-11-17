@@ -1,3 +1,7 @@
+window.onerror = function(event){
+    alert('An error occurred, please refresh this page and try again.');
+    console.log(event);
+};
 
 Handlebars.registerHelper('errorMessage', function (message) {
     if (! message){
@@ -13,7 +17,7 @@ let ajaxErrorHandler = function (error) {
 };
 
 let fetchLinkData = function (link) {
-    return  new Promise(function (resolve, reject) {
+    return new Promise(function (resolve, reject) {
         $ajax.get(link).success(function (...arguments) {
             resolve(...arguments);
         }).error(function (error) {

@@ -38,13 +38,13 @@ class MessageController extends Controller
 
         //Format error
         $formErrors = [];
-        foreach ($errors as $key => $violations){
+        foreach ($errors as $key => $violations) {
             foreach ($violations as $violation) {
                 $formErrors[$key][] = $violation->getMessage();
             }
         }
 
-        if (0 !== count($formErrors)){
+        if (0 !== count($formErrors)) {
             return response()->json()->error([
                 'message' => 'Invalid Data',
                 'errors' => $formErrors
@@ -59,7 +59,7 @@ class MessageController extends Controller
         $prepared->bindValue(':time', $time);
         $prepared->execute();
 
-        return  response()->json()->success([
+        return response()->json()->success([
             'message' => 'Your message has been received.<br/>Please do not resend your message.'
         ]);
     }

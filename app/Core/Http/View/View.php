@@ -3,6 +3,7 @@
 
 namespace App\Core\Http\View;
 
+use App\Core\Helpers\Classes\TwigSiteHelper;
 use Exception;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
@@ -16,19 +17,15 @@ class View
         }
 
         $loader = new FilesystemLoader(view_path());
-        $twig = new Environment($loader, [
-            'cache' => storage_path('cache/twig'),
-        ]);
+        $twigOptions = [];
 
-        $twig->addGlobal('site', [
-            's' => $_SERVER,
-            'name' => $_ENV['APP_NAME'],
-            'url' => $_ENV['APP_URL'],
-            'desc' => $_ENV['APP_DESC'],
-            'keywords' => $_ENV['APP_KEYWORDS'],
-        ]);
+        if ($_ENV['APP_ENVIRONMENT'] == 'production') {
+            $twigOptions['cache'] = storage_path('cache/twig');
+        }
 
-        $template =  $twig->load($viewFile);
+        $twig = new Environment($loader, $twigOptions);
+        $twig->addGlobal('site', new TwigSiteHelper());
+        $template = $twig->load($viewFile);
 
         return $template->render([
             'page' => $data

@@ -14,6 +14,17 @@
         'method' => 'GET',
         'middleware' => '',
       ),
+      '/admin' => 
+      array (
+        'prefix' => '/admin',
+        'append' => '',
+        'prepend' => '',
+        'namespace' => 'Admin\\',
+        'name' => '',
+        'handler' => 'MainController@index',
+        'method' => 'GET',
+        'middleware' => '',
+      ),
       '/contact' => 
       array (
         'prefix' => '/contact',
@@ -127,6 +138,17 @@
     ),
     'POST' => 
     array (
+      '/admin/login' => 
+      array (
+        'prefix' => '/admin/login',
+        'append' => '',
+        'prepend' => '',
+        'namespace' => 'Admin\\',
+        'name' => '',
+        'handler' => 'MainController@login',
+        'method' => 'POST',
+        'middleware' => '',
+      ),
       '/api/contact/send-message' => 
       array (
         'prefix' => '/api/contact/send-message',
@@ -146,10 +168,82 @@
     array (
       0 => 
       array (
-        'regex' => '~^(?|/api/movies/fzmovies/([^/]+)/([^/]+)|/api/movies/netnaija/([^/]+)()()|/api/movies/coolmoviez/([^/]+)()()()|/api/tvshows/480mkv\\-com/([^/]+)()()()()|/api/others/zippyshare/([^/]+)()()()()())$~',
+        'regex' => '~^(?|/admin/message/([^/]+)|/admin/message/readied/([^/]+)()|/admin/message/unread/([^/]+)()()|/admin/error/([^/]+)()()()|/api/movies/fzmovies/([^/]+)/([^/]+)()()()|/api/movies/netnaija/([^/]+)()()()()()|/api/movies/coolmoviez/([^/]+)()()()()()()|/api/tvshows/480mkv\\-com/([^/]+)()()()()()()()|/api/others/zippyshare/([^/]+)()()()()()()()())$~',
         'routeMap' => 
         array (
+          2 => 
+          array (
+            0 => 
+            array (
+              'prefix' => '/admin/message/{token}',
+              'append' => '{token}',
+              'prepend' => '',
+              'namespace' => 'Admin\\',
+              'name' => '',
+              'handler' => 'MessageController@index',
+              'method' => 'GET',
+              'middleware' => 'admin',
+            ),
+            1 => 
+            array (
+              'token' => 'token',
+            ),
+          ),
           3 => 
+          array (
+            0 => 
+            array (
+              'prefix' => '/admin/message/readied/{token}',
+              'append' => '{token}',
+              'prepend' => '',
+              'namespace' => 'Admin\\',
+              'name' => '',
+              'handler' => 'MessageController@readied',
+              'method' => 'GET',
+              'middleware' => 'admin',
+            ),
+            1 => 
+            array (
+              'token' => 'token',
+            ),
+          ),
+          4 => 
+          array (
+            0 => 
+            array (
+              'prefix' => '/admin/message/unread/{token}',
+              'append' => '{token}',
+              'prepend' => '',
+              'namespace' => 'Admin\\',
+              'name' => '',
+              'handler' => 'MessageController@unread',
+              'method' => 'GET',
+              'middleware' => 'admin',
+            ),
+            1 => 
+            array (
+              'token' => 'token',
+            ),
+          ),
+          5 => 
+          array (
+            0 => 
+            array (
+              'prefix' => '/admin/error/{token}',
+              'append' => '{token}',
+              'prepend' => '',
+              'namespace' => 'Admin\\',
+              'name' => '',
+              'handler' => 'ErrorController@index',
+              'method' => 'GET',
+              'middleware' => 'admin',
+            ),
+            1 => 
+            array (
+              'token' => 'token',
+            ),
+          ),
+          6 => 
           array (
             0 => 
             array (
@@ -168,7 +262,7 @@
               'url' => 'url',
             ),
           ),
-          4 => 
+          7 => 
           array (
             0 => 
             array (
@@ -186,7 +280,7 @@
               'url' => 'url',
             ),
           ),
-          5 => 
+          8 => 
           array (
             0 => 
             array (
@@ -204,7 +298,7 @@
               'url' => 'url',
             ),
           ),
-          6 => 
+          9 => 
           array (
             0 => 
             array (
@@ -222,7 +316,7 @@
               'url' => 'url',
             ),
           ),
-          7 => 
+          10 => 
           array (
             0 => 
             array (
@@ -238,6 +332,110 @@
             1 => 
             array (
               'url' => 'url',
+            ),
+          ),
+        ),
+      ),
+    ),
+    'POST' => 
+    array (
+      0 => 
+      array (
+        'regex' => '~^(?|/admin/error/delete/([^/]+))$~',
+        'routeMap' => 
+        array (
+          2 => 
+          array (
+            0 => 
+            array (
+              'prefix' => '/admin/error/delete/{token}',
+              'append' => '{token}',
+              'prepend' => '',
+              'namespace' => 'Admin\\',
+              'name' => '',
+              'handler' => 'MainController@delete',
+              'method' => 'POST',
+              'middleware' => 'admin',
+            ),
+            1 => 
+            array (
+              'token' => 'token',
+            ),
+          ),
+        ),
+      ),
+    ),
+    'PATCH' => 
+    array (
+      0 => 
+      array (
+        'regex' => '~^(?|/api/admin/message/([^/]+)/([^/]+))$~',
+        'routeMap' => 
+        array (
+          3 => 
+          array (
+            0 => 
+            array (
+              'prefix' => '/api/admin/message/{messageId}/{token}',
+              'append' => '{token}',
+              'prepend' => '',
+              'namespace' => 'Api\\Admin\\',
+              'name' => '',
+              'handler' => 'MessageController@markAsRead',
+              'method' => 'PATCH',
+              'middleware' => '',
+            ),
+            1 => 
+            array (
+              'messageId' => 'messageId',
+              'token' => 'token',
+            ),
+          ),
+        ),
+      ),
+    ),
+    'DELETE' => 
+    array (
+      0 => 
+      array (
+        'regex' => '~^(?|/api/admin/message/([^/]+)/([^/]+)|/api/admin/error/([^/]+)()())$~',
+        'routeMap' => 
+        array (
+          3 => 
+          array (
+            0 => 
+            array (
+              'prefix' => '/api/admin/message/{messageId}/{token}',
+              'append' => '{token}',
+              'prepend' => '',
+              'namespace' => 'Api\\Admin\\',
+              'name' => '',
+              'handler' => 'MessageController@delete',
+              'method' => 'DELETE',
+              'middleware' => '',
+            ),
+            1 => 
+            array (
+              'messageId' => 'messageId',
+              'token' => 'token',
+            ),
+          ),
+          4 => 
+          array (
+            0 => 
+            array (
+              'prefix' => '/api/admin/error/{token}',
+              'append' => '{token}',
+              'prepend' => '',
+              'namespace' => 'Api\\Admin\\',
+              'name' => '',
+              'handler' => 'ErrorController@delete',
+              'method' => 'DELETE',
+              'middleware' => '',
+            ),
+            1 => 
+            array (
+              'token' => 'token',
             ),
           ),
         ),

@@ -3,7 +3,6 @@
 use App\Core\Helpers\Classes\FormHelper;
 use App\Core\Helpers\Classes\RequestHelper;
 use App\Core\Http\Response;
-Use App\Core\Http\Response\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
@@ -20,7 +19,7 @@ function response(int $statusCode = 200)
  * Send http response with source file content
  * @param string $viewPath
  * @param array $data
- * @return \App\Core\ResponseGenerator
+ * @return Response\ResponseInterface
  */
 function view(string $viewPath, array $data = [])
 {
@@ -30,9 +29,10 @@ function view(string $viewPath, array $data = [])
 /**
  * Redirect to new url
  * @param string $url
- * @return \React\Http\Message\Response
+ * @return Response\ResponseInterface
  */
-function redirect(string $url){
+function redirect(string $url)
+{
     return \response()->redirect($url);
 }
 
