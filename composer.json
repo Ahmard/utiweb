@@ -30,5 +30,10 @@
     "psr-4": {
       "App\\": "app/"
     }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
   }
 }
