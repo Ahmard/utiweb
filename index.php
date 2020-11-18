@@ -1,9 +1,5 @@
 <?php
 
-if ('production' === $_ENV['APP_ENVIRONMENT']) {
-    error_reporting(E_ERROR);
-}
-
 use App\Core\Helpers\Classes\RequestHelper;
 use App\Core\Http\RequestHandler;
 use App\Core\Http\Response\InternalServerErrorResponse;
@@ -11,6 +7,7 @@ use App\Core\ResponseGenerator;
 use Dotenv\Dotenv;
 use Laminas\Diactoros\ServerRequestFactory;
 
+//From line 10-14 should be removed when used in apache
 $uri = $_SERVER['REQUEST_URI'];
 if ('/' !== $uri && file_exists($uri)) {
     return false;
@@ -18,10 +15,6 @@ if ('/' !== $uri && file_exists($uri)) {
 
 $start = microtime(true);
 require 'vendor/autoload.php';
-
-//Create request instance
-$request = ServerRequestFactory::fromGlobals();
-
 
 /**
  * @param Throwable $exception
@@ -48,11 +41,18 @@ function handleApplicationException(Throwable $exception, $willTerminate = true)
 //Handle all exceptions thrown
 set_exception_handler('handleApplicationException');
 
-try {
-    //Load environment variables
-    $dotenv = Dotenv::createImmutable(__DIR__);
-    $dotenv->load();
+//Create request instance
+$request = ServerRequestFactory::fromGlobals();
 
+//Load environment variables
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+if ('production' === $_ENV['APP_ENVIRONMENT']) {
+    error_reporting(E_ERROR);
+}
+
+try {
     //Http request helper
     RequestHelper::setRequest($request);
 

@@ -20,83 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="190eae54-c2f6-4195-8c1c-d47673241b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Core/Auth/Auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Core/Auth/Token.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Core/Helpers/Classes/TwigSiteHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Core/Http/Middleware/Middleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Core/Http/Middleware/RoutingMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Core/Http/RequestHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Core/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ErrorController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MainController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MessageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/ErrorController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/MessageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/AuthMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/VisitCounterMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Statistic.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/utiweb-logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/app/admin/error.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/app/admin/messaging.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/app/admin/error/index.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/app/admin/index.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/app/admin/login.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/app/admin/message/index.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/app/admin/message/readied.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/admin.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/logs/error/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/logs/error/16_11_2020-21_54_16.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/statistics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Utility Web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Utility Web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/57043ee8-f56d-471e-a1d9-362784c1595b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/57043ee8-f56d-471e-a1d9-362784c1595b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Helpers/generalHelperFunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Helpers/generalHelperFunctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Helpers/httpHelperFunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Helpers/httpHelperFunctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Response.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Response/BaseResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Response/BaseResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Response/HtmlResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Response/HtmlResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Response/InternalServerErrorResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Response/InternalServerErrorResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Response/JsonResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Response/JsonResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Response/MethodNotAllowedResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Response/MethodNotAllowedResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Response/MultiPurposeResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Response/MultiPurposeResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Response/NotFoundResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Response/NotFoundResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Response/RedirectResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Response/RedirectResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Response/ResponseInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Response/ResponseInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Router/Matcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Router/Matcher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/Router/Router.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Http/View/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/View/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/ResponseGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/ResponseGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Contact/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Contact/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app/root.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/root.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/contact/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/contact/index.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/contact/send-message.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/contact/send-message.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/movies/coolmoviez.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/movies/coolmoviez.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/movies/fzmovies.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/movies/fzmovies.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/movies/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/movies/index.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/movies/netnaija.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/movies/netnaija.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/others/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/others/index.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/others/zippyshare.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/others/zippyshare.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/tvshow/480mkv-com.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/tvshow/480mkv-com.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/tvshow/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/tvshow/index.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/system/404.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/404.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/system/405.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/405.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/system/500.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/500.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/cache/route/definitions.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/cache/route/definitions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/cache/route/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/cache/route/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/database/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/storage/database/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/database/migrations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/storage/database/migrations.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,6 +255,7 @@
       <workItem from="1605547848852" duration="615000" />
       <workItem from="1605549646070" duration="15143000" />
       <workItem from="1605565762101" duration="865000" />
+      <workItem from="1605711803948" duration="332000" />
     </task>
     <servers />
   </component>

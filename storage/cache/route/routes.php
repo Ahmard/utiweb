@@ -168,10 +168,28 @@
     array (
       0 => 
       array (
-        'regex' => '~^(?|/admin/message/([^/]+)|/admin/message/readied/([^/]+)()|/admin/message/unread/([^/]+)()()|/admin/error/([^/]+)()()()|/api/movies/fzmovies/([^/]+)/([^/]+)()()()|/api/movies/netnaija/([^/]+)()()()()()|/api/movies/coolmoviez/([^/]+)()()()()()()|/api/tvshows/480mkv\\-com/([^/]+)()()()()()()()|/api/others/zippyshare/([^/]+)()()()()()()()())$~',
+        'regex' => '~^(?|/admin/([^/]+)|/admin/message/([^/]+)()|/admin/message/readied/([^/]+)()()|/admin/message/unread/([^/]+)()()()|/admin/error/([^/]+)()()()()|/api/movies/fzmovies/([^/]+)/([^/]+)()()()()|/api/movies/netnaija/([^/]+)()()()()()()|/api/movies/coolmoviez/([^/]+)()()()()()()()|/api/tvshows/480mkv\\-com/([^/]+)()()()()()()()()|/api/others/zippyshare/([^/]+)()()()()()()()()())$~',
         'routeMap' => 
         array (
           2 => 
+          array (
+            0 => 
+            array (
+              'prefix' => '/admin/{token}',
+              'append' => '{token}',
+              'prepend' => '',
+              'namespace' => 'Admin\\',
+              'name' => '',
+              'handler' => 'MainController@index',
+              'method' => 'GET',
+              'middleware' => 'admin',
+            ),
+            1 => 
+            array (
+              'token' => 'token',
+            ),
+          ),
+          3 => 
           array (
             0 => 
             array (
@@ -189,7 +207,7 @@
               'token' => 'token',
             ),
           ),
-          3 => 
+          4 => 
           array (
             0 => 
             array (
@@ -207,7 +225,7 @@
               'token' => 'token',
             ),
           ),
-          4 => 
+          5 => 
           array (
             0 => 
             array (
@@ -225,7 +243,7 @@
               'token' => 'token',
             ),
           ),
-          5 => 
+          6 => 
           array (
             0 => 
             array (
@@ -243,7 +261,7 @@
               'token' => 'token',
             ),
           ),
-          6 => 
+          7 => 
           array (
             0 => 
             array (
@@ -262,7 +280,7 @@
               'url' => 'url',
             ),
           ),
-          7 => 
+          8 => 
           array (
             0 => 
             array (
@@ -280,7 +298,7 @@
               'url' => 'url',
             ),
           ),
-          8 => 
+          9 => 
           array (
             0 => 
             array (
@@ -298,7 +316,7 @@
               'url' => 'url',
             ),
           ),
-          9 => 
+          10 => 
           array (
             0 => 
             array (
@@ -316,7 +334,7 @@
               'url' => 'url',
             ),
           ),
-          10 => 
+          11 => 
           array (
             0 => 
             array (
