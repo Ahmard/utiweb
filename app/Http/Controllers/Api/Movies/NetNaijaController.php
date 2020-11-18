@@ -17,7 +17,7 @@ class NetNaijaController extends Controller
         $expName = explode('/', $downloadLink);
         $fileName = end($expName);
         $fileName = explode('netnaija', $fileName);
-        $fileName = substr(current($fileName), 0, -1);
+        $fileName = current($fileName);
 
         return response()->json()->success([
             'name' => $fileName,
