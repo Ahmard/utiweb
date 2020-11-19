@@ -46,6 +46,8 @@ Route::prefix('movies')->group(function () {
 Route::prefix('tvshows')->group(function () {
     Route::get('/', 'TVShowController@index');
     Route::get('480mkv-com', 'TVShowController@femkvcom');
+    Route::get('o2tvseries-com', 'TVShowController@o2tvseriescom');
+    Route::get('o2tvseries-co-za', 'TVShowController@o2tvseriescoza');
 });
 
 Route::prefix('others')->group(function () {
@@ -95,6 +97,8 @@ Route::prefix('api')
             ->namespace('TVShows')
             ->group(function () {
                 Route::get('480mkv-com/{url}', 'FEMkvComController@index');
+                Route::get('o2tvseries-com/{url}', 'O2TvSeriesComController@index');
+                Route::get('o2tvseries-co-za/{url}', 'O2TvSeriesCoZaController@index');
             });
 
         //OTHERS

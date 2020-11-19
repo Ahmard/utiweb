@@ -1,29 +1,29 @@
 {% extends 'layouts/app.twig' %}
 
 {% block script %}
-    <script src="/assets/js/app/tvshows/480mkv-com.js"></script>
+    <script src="/assets/js/app/tvshows/o2tvseries-co-za.js"></script>
     {% include 'js-templates/link-extraction.twig' %}
 {% endblock script %}
 
 {% block content %}
     <div class="card">
         <div class="card-header">
-            <a target="_blank" href="https://480mkv.com">480mkv.com</a> Extractor
+            <a target="_blank" href="https://o2tvseries.co.za">O2TVSeries.co.za</a> Extractor
         </div>
         <div class="card-body">
             <div class="card-text">
                 <div>
-                    <i class="fa fa-lightbulb text-warning"></i> Visit <a target="_blank" href="https://480mkv.com">480mkv.com</a>,
+                    <i class="fa fa-lightbulb text-warning"></i> Visit <a target="_blank" href="https://o2tvseries.coo.za">O2TVSeries.coo.za</a>,
                     copy movie link and paste it in the input field below.
                 </div>
                 <div class="font-italic mt-1">Link sample:
-                    <b>https://tvshows.480mkv.com/grand-army-2020-season-1-complete-480p-webrip-all-episodes/</b></div>
+                    <b>https://o2tvseries.co/id/38593/fbi-most-wanted.html</b></div>
             </div>
             <div id="link-extraction-status" class="mt-4 list-group"></div>
-            <form class="mt-4" id="form-femkvcom">
+            <form class="mt-4" id="form-o2tvseriescoza">
                 <div class="input-group">
-                    <input type="url" name="femkvcom-url" class="form-control"
-                           placeholder="https://tvshows.480mkv.com/grand-army-2020-season-1-complete-480p-webrip-all-episodes/">
+                    <input type="url" name="o2tvseriescoza-url" class="form-control"
+                           placeholder="https://o2tvseries.co/id/38593/fbi-most-wanted.html">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-md btn-indigo m-0">
                             <i class="fa fa-search"></i> Fetch

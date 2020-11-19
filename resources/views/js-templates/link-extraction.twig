@@ -1,4 +1,27 @@
 {% verbatim %}
+    <template id="template-link-extraction-o2tvseries">
+        <div class="list-group">
+            <div class="border border-primary pb-2 mt-3">
+                <div class="list-group-item font-weight-bold card-header p-3 text-uppercase text-center bg-primary">{{name}}</div>
+                {{#each episodes~}}
+                    <div class="mx-3">
+                        <div class="list-group-item p-3 mt-2">
+                            <a href="{{href}}" class="" target="_blank"><i class="fa fa-list-alt"></i> Episode {{name}}</a>
+                        </div>
+                        {{#each links~}}
+                            <div class="mx-3">
+                                <div class="list-group-item text-success z-depth-1 px-3 py-2 d-flex justify-content-between">
+                                    <span class="font-weight-bold"><i class="fa fa-check-circle text-success"></i> {{name}}</span>
+                                    <div><a target="_blank" href="{{href}}"><i class="fa fa-download"></i> Download</a></div>
+                                </div>
+                            </div>
+                        {{~/each}}
+                    </div>
+                {{~/each}}
+            </div>
+        </div>
+    </template>
+
     <template id="template-link-extraction-episode-item">
         <div class="list-group">
             <div class="list-group-item z-depth-3 font-weight-bold card-header p-3 text-uppercase text-center">{{name}}</div>
@@ -29,6 +52,7 @@
     </template>
 
     <script>
+        const templateLinkExtractionO2TVSeries = Handlebars.compile($('#template-link-extraction-o2tvseries').html());
         const templateLinkExtractionEpisodeItem = Handlebars.compile($('#template-link-extraction-episode-item').html());
         const templateLinkExtractionSuccess = Handlebars.compile($('#template-link-extraction-success').html());
         const templateLinkExtractionError = Handlebars.compile($('#template-link-extraction-error').html());

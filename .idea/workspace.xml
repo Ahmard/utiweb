@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="190eae54-c2f6-4195-8c1c-d47673241b98" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/statistics.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/statistics.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +257,8 @@
       <workItem from="1605547848852" duration="615000" />
       <workItem from="1605549646070" duration="15143000" />
       <workItem from="1605565762101" duration="865000" />
-      <workItem from="1605711803948" duration="332000" />
+      <workItem from="1605711803948" duration="978000" />
+      <workItem from="1605726659625" duration="1394000" />
     </task>
     <servers />
   </component>
@@ -347,10 +350,10 @@
       <screen x="60" y="27" width="1306" height="741" />
     </state>
     <state x="232" y="31" width="962" height="737" key="SettingsEditor/60.27.1306.741@60.27.1306.741" timestamp="1604485288949" />
-    <state width="498" height="445" key="SwitcherDM" timestamp="1605496733644">
+    <state width="498" height="445" key="SwitcherDM" timestamp="1605712238442">
       <screen x="56" y="27" width="1310" height="741" />
     </state>
-    <state width="498" height="445" key="SwitcherDM/56.27.1310.741@56.27.1310.741" timestamp="1605496733644" />
+    <state width="498" height="445" key="SwitcherDM/56.27.1310.741@56.27.1310.741" timestamp="1605712238442" />
     <state x="609" y="298" width="283" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1604086888397">
       <screen x="60" y="27" width="1306" height="741" />
     </state>

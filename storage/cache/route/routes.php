@@ -113,6 +113,28 @@
         'method' => 'GET',
         'middleware' => '',
       ),
+      '/tvshows/o2tvseries-com' => 
+      array (
+        'prefix' => '/tvshows/o2tvseries-com',
+        'append' => '',
+        'prepend' => '',
+        'namespace' => '',
+        'name' => '',
+        'handler' => 'TVShowController@o2tvseriescom',
+        'method' => 'GET',
+        'middleware' => '',
+      ),
+      '/tvshows/o2tvseries-co-za' => 
+      array (
+        'prefix' => '/tvshows/o2tvseries-co-za',
+        'append' => '',
+        'prepend' => '',
+        'namespace' => '',
+        'name' => '',
+        'handler' => 'TVShowController@o2tvseriescoza',
+        'method' => 'GET',
+        'middleware' => '',
+      ),
       '/others' => 
       array (
         'prefix' => '/others',
@@ -168,7 +190,7 @@
     array (
       0 => 
       array (
-        'regex' => '~^(?|/admin/([^/]+)|/admin/message/([^/]+)()|/admin/message/readied/([^/]+)()()|/admin/message/unread/([^/]+)()()()|/admin/error/([^/]+)()()()()|/api/movies/fzmovies/([^/]+)/([^/]+)()()()()|/api/movies/netnaija/([^/]+)()()()()()()|/api/movies/coolmoviez/([^/]+)()()()()()()()|/api/tvshows/480mkv\\-com/([^/]+)()()()()()()()()|/api/others/zippyshare/([^/]+)()()()()()()()()())$~',
+        'regex' => '~^(?|/admin/([^/]+)|/admin/message/([^/]+)()|/admin/message/readied/([^/]+)()()|/admin/message/unread/([^/]+)()()()|/admin/error/([^/]+)()()()()|/api/movies/fzmovies/([^/]+)/([^/]+)()()()()|/api/movies/netnaija/([^/]+)()()()()()()|/api/movies/coolmoviez/([^/]+)()()()()()()()|/api/tvshows/480mkv\\-com/([^/]+)()()()()()()()()|/api/tvshows/o2tvseries\\-com/([^/]+)()()()()()()()()()|/api/tvshows/o2tvseries\\-co\\-za/([^/]+)()()()()()()()()()()|/api/others/zippyshare/([^/]+)()()()()()()()()()()())$~',
         'routeMap' => 
         array (
           2 => 
@@ -335,6 +357,42 @@
             ),
           ),
           11 => 
+          array (
+            0 => 
+            array (
+              'prefix' => '/api/tvshows/o2tvseries-com/{url}',
+              'append' => '',
+              'prepend' => '',
+              'namespace' => 'Api\\TVShows\\',
+              'name' => '',
+              'handler' => 'O2TvSeriesComController@index',
+              'method' => 'GET',
+              'middleware' => '',
+            ),
+            1 => 
+            array (
+              'url' => 'url',
+            ),
+          ),
+          12 => 
+          array (
+            0 => 
+            array (
+              'prefix' => '/api/tvshows/o2tvseries-co-za/{url}',
+              'append' => '',
+              'prepend' => '',
+              'namespace' => 'Api\\TVShows\\',
+              'name' => '',
+              'handler' => 'O2TvSeriesCoZaController@index',
+              'method' => 'GET',
+              'middleware' => '',
+            ),
+            1 => 
+            array (
+              'url' => 'url',
+            ),
+          ),
+          13 => 
           array (
             0 => 
             array (
