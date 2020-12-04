@@ -30,7 +30,7 @@ class ResponseGenerator
         $this->reason = $reason;
     }
 
-    public static function generate(ResponseInterface $response)
+    public static function generate(ResponseInterface $response): ResponseGenerator
     {
         return new self(
             $response->getStatusCode(),
@@ -47,7 +47,7 @@ class ResponseGenerator
         exit($this->code);
     }
 
-    public function __invoke(ServerRequestInterface $request)
+    public function __invoke(ServerRequestInterface $request): StreamInterface
     {
         if (!headers_sent()) {
             header("HTTP/{$this->version} {$this->code} {$this->reason}", true, $this->code);

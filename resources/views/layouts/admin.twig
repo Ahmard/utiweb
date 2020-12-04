@@ -157,6 +157,12 @@
     <a class="border-bottom z-depth-1" href="{{ site.adminRoute('error', true) }}">
         <i class="fa fa-bug"></i> Errors
     </a>
+    <a class="border-bottom z-depth-1" href="{{ site.adminRoute('statistic', true) }}">
+        <i class="fa fa-list-alt"></i> Statistic
+    </a>
+    <a class="border-bottom z-depth-1" href="{{ site.adminRoute('notification', true) }}">
+        <i class="fa fa-bell"></i> Notifications
+    </a>
 </div>
 
 <!-- Main layout -->
@@ -245,19 +251,6 @@
     $(function () {
         // Tooltips Initialization
         $('[data-toggle="tooltip"]').tooltip();
-
-        $('#dark-mode').on('click', function (e) {
-            e.preventDefault();
-            $('footer').toggleClass('mdb-color lighten-4 dark-card-admin');
-            $('body, .navbar').toggleClass('white-skin navy-blue-skin');
-            $(this).toggleClass('white text-dark btn-outline-black');
-            $('body').toggleClass('dark-bg-admin');
-            $('.card').toggleClass('dark-card-admin');
-            $('h6, .card, p, td, th, i, li a, h4, input, label').not(
-                '#slide-out i, #slide-out a, .dropdown-item i, .dropdown-item').toggleClass('text-white');
-            $('.btn-dash').toggleClass('grey blue').toggleClass('lighten-3 darken-3');
-            $('.gradient-card-header').toggleClass('white dark-card-admin');
-        });
     });
 
 </script>

@@ -1,0 +1,63 @@
+{% extends 'layouts/app.twig' %}
+
+{% block script %}
+    <script src="/assets/js/app/search.js"></script>
+    <script>
+        $('#form-search-fzmovies').submit(function (event) {
+            event.preventDefault();
+            APP.search.femkvcom(event.target);
+        });
+    </script>
+{% endblock script %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">Search <a target="_blank" href="https://480mkv.com">480mkv.com</a></div>
+        <div class="card-body">
+            <form class="mx-2" id="form-search-fzmovies" action="search/femkvcom">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-search"></i></div>
+                    </div>
+                    <input type="search" name="q" class="form-control"
+                           placeholder="Search Something, Example: Dickinson">
+                </div>
+                <div class="row">
+                    <div class="col-md">
+                        <div class="input-group mt-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-pager"></i></div>
+                            </div>
+                            <input type="number" name="page_number" value="1" placeholder="Page Number" class="form-control">
+                            <div class="input-group-append">
+                                <button id="btn-submit-search" type="submit"
+                                        class="m-0 btn btn-md success-color-dark text-white">
+                                    <i class="fa fa-search-plus"></i> Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="mx-2 my-4" id="search-results"></div>
+        </div>
+    </div>
+
+    {% verbatim %}
+        <script type="text/x-handlebars-template" id="template-page-numbers">
+            <div class="font-weight-bold mx-2 mt-4 mb-3">
+                Total Pages:
+                <span class="text-success">{{totalPages}}</span>
+            </div>
+        </script>
+        <script type="text/x-handlebars-template" id="template-search-result">
+            <a onclick="APP.search.getVideoLink(this)" class="search-result media z-depth-1 p-2 my-1" data-href="{{href}}">
+                <img width="80" height="80" class="mx-2 mt-1" src="{{image}}" alt="Generic placeholder image">
+                <div class="media-body">
+                   <h5 class="mt-0 mb-1 text-primary font-weight-bold">{{title}}</h5>
+                   {{desc}}
+                </div>
+            </a>
+        </script>
+    {% endverbatim %}
+{% endblock content %}

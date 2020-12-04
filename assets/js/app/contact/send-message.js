@@ -2,7 +2,7 @@ $(function () {
     let form = document.getElementById('form-send-message');
     form.onsubmit = function (event) {
         event.preventDefault();
-        APP.UI.Form.showLoader(form, '<i class fa fa-spinner fa-spin></i> Sending Your Message');
+        APP.UI.Form.showLoader(form, '<i class="fa fa-spinner fa-spin"></i> Sending Your Message');
 
         $ajax.submitForm(form)
             .success(function (response) {

@@ -1,5 +1,6 @@
 window.onerror = function(event){
-    alert('An error occurred, please refresh this page and try again.');
+    console.log(JSON.stringify(event))
+    //alert('An error occurred, please refresh this page and try again.');
     console.log(event);
 };
 
@@ -43,3 +44,5 @@ let performBasicLinkAction = function (event, $inputUrl, $button, $linkExtractio
     $linkExtractionStatus.html('');
     return btoa($inputUrl.val());
 };
+
+const $modal = $('#modal_general');

@@ -4,39 +4,34 @@ window.APP = {};
  * Core ui
  * Modal
  */
-(function(ns){
-	let obj = ns.UI = {};
+(function (ns) {
+    ns.UI = {};
+
+    let animatedDotInterval = [];
+
+    let buttonLoadings = {};
 
 
-	let animatedDotInterval = [];
-
-	let buttonLoadings = {};
-
-
-    function faFactory(type, iconName, size)
-    {
-        size = size ? ' fa-'+size+'x' : '';
-        return '<i class="'+type+' fa-'+iconName+size+'"></i>';
+    function faFactory(type, iconName, size) {
+        size = size ? ' fa-' + size + 'x' : '';
+        return '<i class="' + type + ' fa-' + iconName + size + '"></i>';
     }
 
 
-    obj.fa = function(iconName, size)
-    {
+    ns.UI.fa = function (iconName, size) {
         return faFactory('fa', iconName, size);
     };
 
 
-    obj.fas = function(iconName, size)
-    {
+    ns.UI.fas = function (iconName, size) {
         return faFactory('fas', iconName, size);
     };
 
 
-    obj.alert = function(type, message, closeable = false)
-    {
+    ns.UI.alert = function (type, message, closeable = false) {
         let openTag = '<div class="alert alert-' + type + '" role="alert">';
         let closeTag = '</div>';
-        if(closeable){
+        if (closeable) {
             openTag = '<div class="alert alert-' + type + ' alert-dismissible fade show" role="alert">';
             closeTag = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>';
         }
@@ -44,64 +39,61 @@ window.APP = {};
     };
 
 
-    obj.submitForm = function(form, options)
-    {
+    ns.UI.submitForm = function (form, options) {
         let button = form.querySelector('button[type="submit"]');
-        obj.waitButton(button, options);
+        ns.UI.waitButton(button, options);
 
-        return obj;
+        return ns.UI;
     };
 
 
-    obj.waitButton = function(button, options)
-    {
-        if(typeof button == 'string'){
+    ns.UI.waitButton = function (button, options) {
+        if (typeof button == 'string') {
             button = document.getElementById(button);
         }
         let willShow = true;
-        if(options.required){
-            for(let i=0; i<options.required.length; i++){
-                if($(options.required[i]).val() === ''){
+        if (options.required) {
+            for (let i = 0; i < options.required.length; i++) {
+                if ($(options.required[i]).val() === '') {
                     willShow = false;
                     break;
                 }
             }
         }
-        if(willShow){
+
+        if (willShow) {
             button.setAttribute('class', button.getAttribute('class') + ' disabled');
             button.setAttribute('disabled', 'disabled');
-            obj.animDots(button, options);
+            ns.UI.animDots(button, options);
         }
 
-        return obj;
+        return ns.UI;
     };
 
 
-    obj.showButtonLoader = function(button, text = '', faClass = '')
-    {
+    ns.UI.showButtonLoader = function (button, text = '', faClass = '') {
         let $button = ns.UI.El.getJQ(button);
         //save current state
         let buttonId = $button.attr('id')
-        if(buttonId){
+        if (buttonId) {
             buttonId = buttonId.replaceAll('-', '');
             buttonLoadings[buttonId] = $button.html();
         }
 
         $button.addClass('disabled')
-            .html(obj.fa('spinner fa-pulse '+faClass) +' '+ text)
+            .html(ns.UI.fa('spinner fa-pulse ' + faClass) + ' ' + text)
             .attr('disabled', 'disabled');
 
-        return obj;
+        return ns.UI;
     };
 
 
-    obj.hideButtonLoader = function(button, text)
-    {
+    ns.UI.hideButtonLoader = function (button, text) {
         let $button = ns.UI.El.getJQ(button);
         $button.removeClass('disabled')
         //get stored text, if any
         let oldText;
-        if(! text){
+        if (!text) {
             let buttonId = $button.attr('id').replaceAll('-', '');
             oldText = buttonLoadings[buttonId];
         }
@@ -109,25 +101,24 @@ window.APP = {};
         $button.removeAttr('disabled');
         $button.find('.waves-ripple').remove();
 
-        return obj;
+        return ns.UI;
     };
 
 
-    obj.animDots = function (el, options)
-    {
-    	let waitMsg = '';
-        if(typeof el == 'string'){
+    ns.UI.animDots = function (el, options) {
+        let waitMsg = '';
+        if (typeof el == 'string') {
             el = document.getElementById(el);
         }
         //if message is provided in second param instead of options
-        if(typeof options == 'string'){
+        if (typeof options == 'string') {
             waitMsg = options;
         }
         let numberOfDots = options.dots || 3;
         let timeInterval = options.interval || 200;
-        if(options.text !== false){
-	        waitMsg = options.text || waitMsg;
-	        waitMsg = waitMsg || 'please wait';
+        if (options.text !== false) {
+            waitMsg = options.text || waitMsg;
+            waitMsg = waitMsg || 'please wait';
         }
         let dotClass = options.dotclass || 'text-warning';
         let textClass = options.textclass || 'text-white';
@@ -143,12 +134,12 @@ window.APP = {};
 
         //Run the dots
         let dotsCount = 0;
-        let dot = '<b class="'+dotClass+'">.</b>';
-        let text = '<i id="animated-dots-wait" class="'+textClass+'">' + waitMsg + '</i>';
+        let dot = '<b class="' + dotClass + '">.</b>';
+        let text = '<i id="animated-dots-wait" class="' + textClass + '">' + waitMsg + '</i>';
 
         el_running.innerHTML = text;
         //if we don't need waiting message
-        if(options.text === false){
+        if (options.text === false) {
             el_running.innerHTML += dot;
             //we will use dot as default value instead
             text = dot;
@@ -171,7 +162,7 @@ window.APP = {};
     };//animatedDots
 
 
-    obj.stopAnimDots = function (elementId) {
+    ns.UI.stopAnimDots = function (elementId) {
         clearInterval(animatedDotInterval[elementId]);
         document.getElementById(elementId).innerHTML = '';
     };
@@ -181,18 +172,17 @@ window.APP = {};
 /**
  * Form
  */
-(function(ns){
-    let obj = ns.Form = {};
+(function (ns) {
+    ns.Form = {};
 
     let formLoadingButton = {};
     let formLoadingButtonText = {};
 
 
-    obj.submit = ns.submitForm;
+    ns.Form.submit = ns.submitForm;
 
-    obj.showLoader = function(form, text = 'Submitting')
-    {
-        if(typeof form == 'string'){
+    ns.Form.showLoader = function (form, text = 'Submitting') {
+        if (typeof form == 'string') {
             form = document.getElementById(form)
         }
 
@@ -205,24 +195,23 @@ window.APP = {};
 
         ns.showButtonLoader(button, text)
 
-        return obj;
+        return ns.Form;
     };
 
 
-    obj.hideLoader = function(formId, text)
-    {
-        if(typeof form != 'string'){
+    ns.Form.hideLoader = function (formId, text) {
+        if (typeof formId != 'string') {
             formId = formId.getAttribute('id');
         }
 
         formId = formId.replaceAll('-', '');
         let button = formLoadingButton[formId];
 
-        let buttonText = formLoadingButtonText[formId];
+        let buttonText = text || formLoadingButtonText[formId];
 
         ns.hideButtonLoader(button, buttonText);
 
-        return obj;
+        return ns.Form;
     }
 })(window.APP.UI);
 
@@ -230,10 +219,10 @@ window.APP = {};
 /**
  * Modal
  */
-(function(ns){
+(function (ns) {
 
 
-    function Modal(id){
+    function Modal(id) {
         this.setId(id);
     }
 
@@ -267,7 +256,7 @@ window.APP = {};
     proto.isShown = false;
 
     proto.setId = function (mId) {
-    	//set modal id
+        //set modal id
         this.modalId = "#modal_" + mId;
         //set footer id
         this.closeButtonId = this.modalId + this.closeButtonIdentifier;
@@ -283,16 +272,14 @@ window.APP = {};
     };
 
 
-    proto.useGeneral = function()
-    {
-    	return new Modal('general');
+    proto.useGeneral = function () {
+        return new Modal('general');
     };
 
 
-    proto.on = function(onEvent, callback)
-    {
+    proto.on = function (onEvent, callback) {
         let obj = this;
-        $(this.getId()).on(onEvent+'.bs.modal', function (e) {
+        $(this.getId()).on(onEvent + '.bs.modal', function (e) {
             return callback(obj);
         });
 
@@ -300,10 +287,9 @@ window.APP = {};
     };
 
 
-    proto.one = function(onEvent, callback)
-    {
+    proto.one = function (onEvent, callback) {
         let obj = this;
-        $(this.getId()).one(onEvent+'.bs.modal', function (e) {
+        $(this.getId()).one(onEvent + '.bs.modal', function (e) {
             return callback(obj);
         });
 
@@ -311,16 +297,15 @@ window.APP = {};
     };
 
 
-    proto.off = function(onEvent)
-    {
-        $(this.getId()).off(onEvent+'.bs.modal');
+    proto.off = function (onEvent) {
+        $(this.getId()).off(onEvent + '.bs.modal');
 
         return this;
     };
 
 
     proto.decideId = function (mId) {
-        if (! mId) {
+        if (!mId) {
             return this.modalId;
         }
         return mId;
@@ -350,11 +335,10 @@ window.APP = {};
     };
 
 
-    proto.actOnHF = function(element, action)
-    {
-    	switch(action){
+    proto.actOnHF = function (element, action) {
+        switch (action) {
             case false:
-            	element.hide();
+                element.hide();
                 break;
             case true:
                 element.show();
@@ -365,20 +349,19 @@ window.APP = {};
     };
 
 
-    proto.showLoader = function(showHeaderAndFooter, willShowFooter)
-    {
-    	showHeaderAndFooter = showHeaderAndFooter || false;
-    	if(! this.modalId){
-        	this.useGeneral();
-    	}
+    proto.showLoader = function (showHeaderAndFooter, willShowFooter) {
+        showHeaderAndFooter = showHeaderAndFooter || false;
+        if (!this.modalId) {
+            this.useGeneral();
+        }
         //if we'll hide header and footer
-        if(willShowFooter !== undefined){
-        	this.footer(willShowFooter);
-        	if(showHeaderAndFooter){
-        		this.header(showHeaderAndFooter);
-        	}
-        }else{
-        	this.header(showHeaderAndFooter).footer(showHeaderAndFooter);
+        if (willShowFooter !== undefined) {
+            this.footer(willShowFooter);
+            if (showHeaderAndFooter) {
+                this.header(showHeaderAndFooter);
+            }
+        } else {
+            this.header(showHeaderAndFooter).footer(showHeaderAndFooter);
         }
 
         this.setBody('<div class="text-center"><i class="m-3 fa fa-3x text-info fa-spinner fa-pulse"></i><br/>Loading...</div>');
@@ -388,80 +371,71 @@ window.APP = {};
     };
 
 
-    proto.hideLoader = function(willNotCloseModal)
-    {
+    proto.hideLoader = function (willNotCloseModal) {
         this.header(true).footer(true);
-        if(willNotCloseModal){
-        	this.hide();
+        if (willNotCloseModal) {
+            this.hide();
         }
 
         return this;
     };
 
 
-    proto.closeButton = function(action)
-    {
-    	if(action === true || action === undefined){
-    		this.getCloseButton().show();
-    	}else{
-    		this.getCloseButton().hide();
-    	}
+    proto.closeButton = function (action) {
+        if (action === true || action === undefined) {
+            this.getCloseButton().show();
+        } else {
+            this.getCloseButton().hide();
+        }
 
-    	return this;
+        return this;
     };
 
 
-    proto.getHeaderCloseButton = function()
-    {
+    proto.getHeaderCloseButton = function () {
         return $(this.closeButtonId);
     };
 
 
-    proto.header = function(actionOrHtml)
-    {
-    	if(typeof actionOrHtml == 'boolean'){
-    		this.isHeaderHidden = true;
-    		return this.actOnHF($(this.getId()).find('.modal-header'), actionOrHtml);
-    	}
+    proto.header = function (actionOrHtml) {
+        if (typeof actionOrHtml == 'boolean') {
+            this.isHeaderHidden = true;
+            return this.actOnHF($(this.getId()).find('.modal-header'), actionOrHtml);
+        }
 
         return this.setHeader(actionOrHtml);
     };
 
 
-    proto.body = function(html)
-    {
-    	return this.setBody(html);
+    proto.body = function (html) {
+        return this.setBody(html);
     };
 
 
-    proto.footer = function(actionOrHtml)
-    {
-    	if(typeof actionOrHtml == 'boolean'){
-    		this.isFooterHidden = true;
-    		return this.actOnHF($(this.getId()).find('.modal-footer'), actionOrHtml);
-    	}
+    proto.footer = function (actionOrHtml) {
+        if (typeof actionOrHtml == 'boolean') {
+            this.isFooterHidden = true;
+            return this.actOnHF($(this.getId()).find('.modal-footer'), actionOrHtml);
+        }
 
         return this.setFooter(actionOrHtml);
     };
 
 
-    proto.setHeader = function (content)
-    {
+    proto.setHeader = function (content) {
         $(this.getId()).find('.modal-title').html(content);
 
         return this;
     };
 
 
-    proto.setBody = function (content)
-    {
+    proto.setBody = function (content) {
         $(this.getId()).find('.modal-body').html(content);
 
         return this;
     };
 
-    proto.setFooter = function (content)
-    {
+    proto.setFooter = function (content) {
         $(this.getId()).find('.modal-footer').html(content);
 
         return this;
@@ -471,20 +445,20 @@ window.APP = {};
 })(window.APP);
 
 
-(function(ns){
-    let obj = ns.UI.El = {};
+(function (ns) {
+    ns.UI.El = {};
 
-    obj.getJQ = function(element){
-        switch(typeof element){
+    ns.UI.El.getJQ = function (element) {
+        switch (typeof element) {
             case 'string':
-                if(element.indexOf('#') > -1){
+                if (element.indexOf('#') > -1) {
                     return $(element);
                 }
 
                 //we have to put #
-                return $('#'+element);
+                return $('#' + element);
             case 'object':
-                if(element instanceof jQuery){
+                if (element instanceof jQuery) {
                     return element;
                 }
                 return $(element);

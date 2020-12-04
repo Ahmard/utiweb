@@ -1,0 +1,7 @@
+parameters:
+    level: 2
+    paths:
+        - index.php
+        - app
+        - resources
+        - storage

@@ -5,21 +5,20 @@ namespace App\Http\Middleware;
 
 
 use App\Core\Http\Middleware\Middleware;
-use App\Statistic;
+use App\Core\Http\Response\JsonResponse;
+use App\Url;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
-class VisitCounterMiddleware extends Middleware
+class ValidateRouteUrlParam extends Middleware
 {
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        $explodedPath = explode('/', $request->getUri()->getPath());
-        Statistic::getInstance($request)->addVisit();
-        if (in_array('api', $explodedPath)){
-            return $handler->handle($request);
+        if (!Url::isValidParamUrl()) {
+            return JsonResponse::error('The provided url is invalid, check your url and try again.');
         }
 
-        return $handler->handle($request);
+        return parent::process($request, $handler);
     }
 }

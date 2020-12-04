@@ -1,14 +1,11 @@
 let currentMessage;
 let clickedMessageElement;
-let $modal;
 
 let viewMessage;
 let markMessageAsRead;
 let deleteMessage;
 
 $(function () {
-    $modal = $('#modal_general');
-
     viewMessage = function (element) {
         clickedMessageElement = element;
         currentMessage = JSON.parse(element.getAttribute('data-message'));
@@ -37,11 +34,11 @@ $(function () {
     };
 
     markMessageAsRead = function (button, messageId) {
-        $(button).addClass('disabled').html('<i class="fa fa-spinner fa-spin"></i> Deleting');
+        $(button).addClass('disabled').html('<i class="fa fa-spinner fa-spin"></i> Marking');
 
         $ajax.patch(`admin/message/${messageId}/${TOKEN}`)
             .success(function (response) {
-                //$modal.modal('hide');
+                $modal.modal('hide');
                 swal('Message', 'Message has been marked as read.', 'success');
 
                 //Remove the element
@@ -50,7 +47,7 @@ $(function () {
     };
 
     deleteMessage = function (button, messageId) {
-        $(button).addClass('disabled').html('<i class="fa fa-spinner fa-spin"></i> Marking');
+        $(button).addClass('disabled').html('<i class="fa fa-spinner fa-spin"></i> Deleting');
 
         $ajax.delete(`admin/message/${messageId}/${TOKEN}`)
             .success(function (response) {

@@ -8,6 +8,7 @@ use App\Core\Http\View\View;
 use App\Core\ResponseGenerator;
 use Laminas\Diactoros\Response;
 use Laminas\Diactoros\Stream;
+use Nette\Utils\Json;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
 
@@ -31,7 +32,7 @@ abstract class BaseResponse extends Response implements ResponseInterface
 
     public function withJson($arrayWithJson): ResponseInterface
     {
-        $this->jsonData = json_encode($arrayWithJson);
+        $this->jsonData = Json::encode($arrayWithJson);
         return $this;
     }
 

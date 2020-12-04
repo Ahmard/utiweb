@@ -10,7 +10,7 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 //Helper functions
-require('app/Core/Helpers/generalHelperFunctions.php');
+require('app/Core/Helpers/helperFunctions.php');
 
 $plainSQL = file_get_contents(root_path("storage/database/migrations.sql"));
 

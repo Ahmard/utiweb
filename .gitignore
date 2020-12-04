@@ -1,2 +1,5 @@
 .env
+storage/database/database.db
+storage/logs/error/*.log*
 vendor
+.idea

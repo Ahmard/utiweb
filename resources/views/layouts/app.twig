@@ -70,10 +70,10 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/others" class="nav-link btn btn-outline-default btn-sm waves-effect header-button">
-                    <i class="fa fa-archive"></i>
+                <a href="/search" class="nav-link btn btn-success btn-sm waves-effect header-button">
+                    <i class="fa fa-search"></i>
                     <span class="d-none d-md-inline-block font-weight-bold">
-                        Others
+                        Search
                     </span>
                 </a>
             </li>
@@ -84,10 +84,16 @@
 
 <!-- Main layout -->
 <main style="padding-top:80px">
-    <div class="container mt-5" id="root">
-        {% block content %}
-
-        {% endblock content %}
+    <div class="container mt-3" id="root">
+        <div class="notifications">
+            {% for notification in page.notifications  %}
+                <div class="notification">{{ notification.notification|raw }}</div>
+            {% endfor %}
+        </div>
+        <div class="page-content mt-4">
+            {% block content %}
+            {% endblock content %}
+        </div>
     </div>
 </main>
 

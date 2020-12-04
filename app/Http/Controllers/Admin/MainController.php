@@ -6,7 +6,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Core\Auth\Auth;
 use App\Core\Auth\Token;
+use App\Core\Database;
 use App\Http\Controllers\Controller;
+use App\Notification;
+use App\Statistic;
+use PDO;
 use Psr\Http\Message\ServerRequestInterface;
 use Symfony\Component\Validator\Constraints\Length;
 
@@ -19,6 +23,15 @@ class MainController extends Controller
         }
 
         return view('app/admin/login');
+    }
+
+    public function statistic(ServerRequestInterface $request)
+    {
+        $stats = Statistic::getInstance($request)->get();
+
+        return view('app/admin/statistic', [
+            'stats' => $stats,
+        ]);
     }
 
     public function login(ServerRequestInterface $request)

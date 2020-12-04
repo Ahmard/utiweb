@@ -1,0 +1,85 @@
+{% extends 'layouts/admin.twig' %}
+
+{% block css %}
+    <style type="text/css" media="screen">
+        body {
+            overflow: hidden;
+        }
+
+        #editor {
+            margin: 50px 20px;
+            position: absolute;
+            height: 170px;
+            border: #0b51c5 solid 1px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .editorCard {
+            height: 240px;
+        }
+
+        .createButton {
+            margin-top: 175px;
+        }
+    </style>
+{% endblock css %}
+
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-html.min.js"></script>
+    <script src="/assets/js/sweetalert.min.js"></script>
+
+    <script>
+        // trigger extension
+        ace.require("ace/ext/language_tools");
+        const editor = ace.edit("editor");
+        editor.session.setMode("ace/mode/html");
+        editor.setTheme("ace/theme/monokai");
+        // enable autocompletion and snippets
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: true
+        });
+    </script>
+
+    <script src="/assets/js/app/admin/notification.js"></script>
+
+    <script>
+        APP.notification.initUpdateForm();
+    </script>
+{% endblock script %}
+
+{% block content %}
+    <div class="container">
+        <div style="margin-left: -5px">
+            <a href="{{ site.adminRoute('notification/' ~ site.authToken ~ '/?view='~page.notification.id) }}"
+               class="btn btn-lg btn-primary z-depth-0">
+                <i class="fa fa-chevron-circle-left"></i> View
+            </a>
+        </div>
+        <div class="card">
+            <div class="card-header left-border">Update Notification</div>
+            <div class="card-body p-4 z-depth-1 font-italic left-border editorCard">
+                <form method="post" id="form-update-notification"
+                      action="admin/notification/{{ page.notification.id }}/{{ site.authToken }}"
+                      data-id="{{ page.notification.id }}">
+                    <div>
+                        <pre name="notification" id="editor">{{ page.notification.notification }}</pre>
+                    </div>
+                    <div class="createButton">
+                        <button type="submit" class="btn btn-md btn-primary btn-block">
+                            <i class="fa fa-save"></i> Update Notification
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

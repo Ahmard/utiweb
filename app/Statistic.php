@@ -4,28 +4,22 @@
 namespace App;
 
 
+use App\Core\Database;
+use App\Core\Http\Router\Dispatcher;
 use Psr\Http\Message\ServerRequestInterface;
-use stdClass;
 
 class Statistic
 {
     private static self $instance;
-
-    private string $filePath;
-
-    private stdClass $statistic;
 
     private ServerRequestInterface $request;
 
     public function __construct(ServerRequestInterface $request)
     {
         $this->request = $request;
-        $this->filePath = storage_path('statistics.json');
-        $jsonData = file_get_contents($this->filePath);
-        $this->statistic = json_decode($jsonData) ?? (new stdClass());
     }
 
-    public static function getInstance(ServerRequestInterface $request)
+    public static function getInstance(ServerRequestInterface $request): self
     {
         if (!isset(self::$instance)) {
             self::$instance = new self($request);
@@ -34,22 +28,35 @@ class Statistic
         return self::$instance;
     }
 
-    public function addVisit()
+    public function get(int $limit = 0): array
     {
-        if (!is_array($this->statistic->visits)) {
-            $this->statistic->visits = [];
+        $limitCondition = null;
+        if (0 != $limit){
+            $limitCondition = " ORDER BY id DESC LIMIT {$limit}";
         }
 
-        $this->statistic->visits[] = [
-            'path' => $this->request->getUri()->getPath(),
-            'time' => time(),
-        ];
-        return $this;
+        $query = Database::create()->query("SELECT * FROM statistics {$limitCondition}");
+        $query->execute();
+
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function saveChanges()
+    public function addVisit(): self
     {
-        $encodedContent = json_encode($this->statistic);
-        file_put_contents($this->filePath, $encodedContent);
+        $dispatchResult = Dispatcher::getDispatchResult();
+        $dispatchedRoute = $dispatchResult->getRoute();
+
+        if (false !== strpos($dispatchedRoute->getName(), 'scrapper.extractor')) {
+            $parameters = $dispatchResult->getUrlParameters();
+            $parameters['url'] = base64_decode($parameters['url']);
+
+            $query = Database::create()->prepare('INSERT INTO statistics(url, parameters, time) VALUES (:url, :parameters, :time)');
+            $query->bindValue(':url', htmlspecialchars($this->request->getUri()->getPath()));
+            $query->bindValue(':parameters', json_encode($parameters));
+            $query->bindValue(':time', time());
+            $query->execute();
+        }
+
+        return $this;
     }
 }

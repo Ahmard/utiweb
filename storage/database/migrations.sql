@@ -13,4 +13,19 @@ CREATE TABLE IF NOT EXISTS errors
     id     INTEGER PRIMARY KEY AUTOINCREMENT,
     file   VARCHAR(1000) NOT NULL,
     status INTEGER(1)    NOT NULL DEFAULT 0
-)
+);
+
+CREATE TABLE IF NOT EXISTS notifications
+(
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    notification TEXT       NOT NULL,
+    status       INTEGER(1) NOT NULL DEFAULT 1
+);
+
+CREATE TABLE IF NOT EXISTS statistics
+(
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    url        TEXT        NOT NULL,
+    parameters TEXT        NOT NULL,
+    time       INTEGER(30) NOT NULL
+);

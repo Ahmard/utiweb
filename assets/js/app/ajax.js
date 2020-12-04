@@ -5,15 +5,14 @@
 
     obj.requestFactory = function (url, method, params) {
         let requestObject;
-        if(typeof url === 'object'){
+        if (typeof url === 'object') {
             requestObject = url;
             requestObject.data = params;
-        }else{
-            requestObject = {
+        } else {
+            requestObject = $.extend({
                 url: url,
                 method: method,
-                data: params
-            };
+            }, params);
         }
 
         let req = obj.request(requestObject);
@@ -41,7 +40,7 @@
     obj.applyCustomizations = function (req) {
         req.success = function (callback) {
             req.then(function (...args) {
-                if(args[0].success){
+                if (args[0].success) {
                     if (args[0].success || args[0].success === undefined) {
                         let response = args[0];
                         let returnData = [...args];
@@ -57,7 +56,7 @@
 
         req.error = function (callback) {
             req.then(function (...args) {
-                if(! args[0].success){
+                if (!args[0].success) {
                     let response = args[0];
                     let returnData = [...args];
                     returnData[0] = response.error;
@@ -75,9 +74,10 @@
 
     obj.request = function (options) {
         let requestUrl = options.url;
-        let requestData = options.data;
+        let requestData = options.data || {};
         let requestMethod = options.method || 'GET';
         let requestDataType = options.dataType;// || 'JSON';
+
 
         //if form element is passed
         if (options.form) {
@@ -136,11 +136,11 @@
         }
 
         //Check if we have files to upload that are not in input fields
-        if(options.files){
-            if (! (requestData instanceof  FormData)){
+        if (options.files) {
+            if (!(requestData instanceof FormData)) {
                 let objectKeys = Object.keys(requestData || {});
                 //If data already exists, set it to FormData
-                if(objectKeys.length > 0){
+                if (objectKeys.length > 0) {
                     let newData = new FormData();
                     objectKeys.forEach(function (key) {
                         newData.append(key, requestData[key]);
@@ -150,7 +150,7 @@
             }
 
             //If requestData is not instance of FormData, then initialize is.
-            if(! (requestData instanceof  FormData)){
+            if (!(requestData instanceof FormData)) {
                 requestData = new FormData();
             }
 
@@ -163,11 +163,11 @@
         }
 
         //Check if input data is set
-        if(options.inputs){
-            options.inputs.forEach(function (input){
-                if(requestData instanceof FormData){
+        if (options.inputs) {
+            options.inputs.forEach(function (input) {
+                if (requestData instanceof FormData) {
                     requestData.append(input.name, input.value);
-                }else{
+                } else {
                     requestData[input.name] = input.value;
                 }
             });
@@ -220,7 +220,8 @@
         if (link.indexOf('http://') === -1) {
             url = window.location.origin + '/api/' + link;
         }
-        if (payload) {
+
+        if (0 !== Object.keys(payload).length) {
             //append payload
             let param = $.param(payload);
             if (link.indexOf('?') > -1) {
@@ -281,10 +282,10 @@
         let modal = new ns.UI.Modal('general');
         let html;
 
-        if(error.status !== 200){
-            if(error.responseJSON){
+        if (error.status !== 200) {
+            if (error.responseJSON) {
                 html = error.responseJSON.message;
-            }else{
+            } else {
                 error = error.statusText;
             }
         }

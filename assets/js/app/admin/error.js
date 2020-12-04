@@ -1,13 +1,10 @@
 let currentError;
 let clickedErrorElement;
-let $modal;
 
 let viewError;
 let deleteError;
 
 $(function () {
-    $modal = $('#modal_general');
-
     viewError = function (element) {
         clickedErrorElement = element;
         currentError = JSON.parse(element.getAttribute('data-error'));
@@ -29,7 +26,7 @@ $(function () {
     };
 
     deleteError = function (button, errorName) {
-        $(button).addClass('disabled').html('<i class="fa fa-spinner fa-spin"></i> Marking');
+        $(button).addClass('disabled').html('<i class="fa fa-spinner fa-spin"></i> Deleting');
 
         $ajax.delete(`admin/error/${TOKEN}?name=${errorName}`)
             .success(function (response) {

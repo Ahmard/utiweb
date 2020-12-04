@@ -6,6 +6,7 @@ namespace App\Core\Http\Router;
 
 use App\Core\Auth\Auth;
 use App\Core\Helpers\Classes\FormHelper;
+use App\Core\Http\Response\InternalServerErrorResponse;
 use App\Kernel;
 use Exception;
 use Laminas\Stratigility\MiddlewarePipe;
@@ -22,7 +23,7 @@ class Matcher
         Auth::handle($dispatchResult->getUrlParameters()['token'] ?? '');
 
         //Run middleware
-        $routeMiddlewares = $dispatchResult->getRoute()['middleware'];
+        $routeMiddlewares = $dispatchResult->getRoute()->getMiddleware();
         if ($routeMiddlewares) {
             $middlewares = explode('|', $routeMiddlewares);
             $kernelMiddlewares = (new Kernel())->routeMiddlewares;
@@ -53,7 +54,7 @@ class Matcher
         $requestParams = $dispatchResult->getUrlParameters();
 
         //Handle controller
-        $controller = $routeData['handler'];
+        $controller = $routeData->getHandler();
         if (is_callable($controller)) {
             return call_user_func($controller, $request, $requestParams);
         }
@@ -62,7 +63,7 @@ class Matcher
         $controllerClass = $explodedController[0];
         $controllerMethod = $explodedController[1];
 
-        $namespacedController = $_ENV['CONTROLLER_NAMESPACE'] . $routeData['namespace'] . $controllerClass;
+        $namespacedController = $_ENV['CONTROLLER_NAMESPACE'] . $routeData->getNamespace() . $controllerClass;
 
         //Initialize form helpers
         FormHelper::setRequest($request);
@@ -73,6 +74,8 @@ class Matcher
         if (!method_exists($instantiatedController, $controllerMethod)) {
             throw new Exception("Method {$namespacedController}::{$controllerMethod}() does not exists.");
         }
+
+        $response = InternalServerErrorResponse::create();
 
         try {
             $response = call_user_func(

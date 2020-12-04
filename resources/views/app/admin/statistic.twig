@@ -1,0 +1,57 @@
+{% extends 'layouts/admin.twig' %}
+
+{% block script %}
+    <script src="/assets/js/sweetalert.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn-delete-all').click(function (event) {
+                APP.UI.showButtonLoader(event.target, 'Deleting');
+            
+                $ajax.delete('admin/statistic/' + TOKEN)
+                    .success(function (response) {
+                        swal('Delete Stats', response.message, 'success');
+                        $('.statistics').html('');
+                    })
+                    .error(function (error) {
+                        swal('Delete Stats', error.message, 'success');
+                    })
+                    .done(function(){
+                        APP.UI.hideButtonLoader(event.target);
+                    });
+            });
+        });
+    </script>
+{% endblock script %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header left-border d-flex justify-content-between">
+            <div class="p-3 text-uppercase">Statistic</div>
+            <div>
+                <button id="btn-delete-all" type="button" class="btn btn-md btn-danger font-weight-bold">
+                    <i class="fa fa-trash-alt"></i> Delete All
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-4 z-depth-1 font-italic left-border">
+            <div class="list-group statistics">
+                {% for stat in page.stats %}
+                    {% set parameters = stat.parameters|json_decode|to_array %}
+                    <a class="list-group-item list-group-item-action d-flex justify-content-between">
+                        <div>
+                            <i class="fa fa-link"></i> {{ stat.url }}
+                            <ul>
+                                {% for name, value in parameters %}
+                                    <li><b>{{ name }}</b>: {{ value }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div>
+                            <i class="fa fa-clock"></i> {{ stat.time|date('H:i:s d/m/Y') }}
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

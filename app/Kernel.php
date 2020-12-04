@@ -5,6 +5,7 @@ namespace App;
 
 
 use App\Http\Middleware\AuthMiddleware;
+use App\Http\Middleware\ValidateRouteUrlParam;
 use App\Http\Middleware\VisitCounterMiddleware;
 
 class Kernel
@@ -15,5 +16,6 @@ class Kernel
 
     public array $routeMiddlewares = [
         'admin' => AuthMiddleware::class,
+        'url' => ValidateRouteUrlParam::class,
     ];
 }

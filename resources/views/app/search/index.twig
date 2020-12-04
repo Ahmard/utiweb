@@ -1,0 +1,23 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">Search</div>
+        <div class="card-body">
+            <div class="list-group">
+                <a href="/search/fzmovies" class="list-group-item list-group-item-action">
+                    <span>
+                        <i class="fa fa-search"></i>
+                        FZMovies [Movies]
+                    </span>
+                </a>
+                <a href="/search/480mkvcom" class="list-group-item list-group-item-action">
+                    <span>
+                        <i class="fa fa-search"></i>
+                        480mkv.com [TV Shows]
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

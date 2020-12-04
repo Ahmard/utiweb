@@ -8,13 +8,16 @@ use Dotenv\Dotenv;
 use Laminas\Diactoros\ServerRequestFactory;
 
 //From line 10-14 should be removed when used in apache
-$uri = $_SERVER['REQUEST_URI'];
+$uri = substr($_SERVER['REQUEST_URI'], 1);
 if ('/' !== $uri && file_exists($uri)) {
     return false;
 }
 
 $start = microtime(true);
 require 'vendor/autoload.php';
+
+//Create request instance
+$request = ServerRequestFactory::fromGlobals();
 
 /**
  * @param Throwable $exception
@@ -24,11 +27,12 @@ function handleApplicationException(Throwable $exception, $willTerminate = true)
 {
     global $request;
     //Save error log
-    $filename = __DIR__ . '/storage/logs/error/' . date('d_m_Y-H_i_s') . '.log';
+    $filename = __DIR__ . '/storage/logs/error/' . date('d_m_Y-H_i_s') . '.json';
     file_put_contents($filename, json_encode([
         'file' => $exception->getFile(),
         'line' => $exception->getLine(),
         'message' => $exception->getMessage(),
+        'uri' => $request->getUri()->getPath(),
         'trace' => $exception->getTraceAsString(),
     ], JSON_PRETTY_PRINT));
 
@@ -40,9 +44,6 @@ function handleApplicationException(Throwable $exception, $willTerminate = true)
 
 //Handle all exceptions thrown
 set_exception_handler('handleApplicationException');
-
-//Create request instance
-$request = ServerRequestFactory::fromGlobals();
 
 //Load environment variables
 $dotenv = Dotenv::createImmutable(__DIR__);
@@ -57,8 +58,7 @@ try {
     RequestHelper::setRequest($request);
 
     //Helper functions
-    require('app/Core/Helpers/generalHelperFunctions.php');
-    require('app/Core/Helpers/httpHelperFunctions.php');
+    require('app/Core/Helpers/helperFunctions.php');
 
     $response = RequestHandler::handle($request);
 

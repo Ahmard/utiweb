@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api\Contact;
 
 
 use App\Core\Database;
+use App\Core\Http\Response\JsonResponse;
+use App\Core\Http\Response\ResponseInterface;
 use App\Http\Controllers\Controller;
 use Psr\Http\Message\ServerRequestInterface;
 use Symfony\Component\Validator\Constraints\Email;
@@ -12,7 +14,7 @@ use Symfony\Component\Validator\Constraints\Length;
 
 class MessageController extends Controller
 {
-    public function sendMessage(ServerRequestInterface $request, array $params)
+    public function sendMessage(ServerRequestInterface $request): ResponseInterface
     {
         $postedData = $request->getParsedBody();
         $time = time();
@@ -45,7 +47,7 @@ class MessageController extends Controller
         }
 
         if (0 !== count($formErrors)) {
-            return response()->json()->error([
+            return JsonResponse::error([
                 'message' => 'Invalid Data',
                 'errors' => $formErrors
             ]);
@@ -55,11 +57,11 @@ class MessageController extends Controller
         $prepared = $pdo->prepare("INSERT INTO messages(name, email, message, time) VALUES (:name, :email, :message, :time)");
         $prepared->bindValue(':name', $postedData['name']);
         $prepared->bindValue(':email', $postedData['email']);
-        $prepared->bindValue(':message', $postedData['message']);
+        $prepared->bindValue(':message', htmlspecialchars($postedData['message']));
         $prepared->bindValue(':time', $time);
         $prepared->execute();
 
-        return response()->json()->success([
+        return JsonResponse::success([
             'message' => 'Your message has been received.<br/>Please do not resend your message.'
         ]);
     }

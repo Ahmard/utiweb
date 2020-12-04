@@ -28,7 +28,7 @@ interface ResponseInterface extends \Psr\Http\Message\ResponseInterface
     /**
      * Respond with json encoded data
      * @param array|object $arrayWithJson array or object
-     * @return mixed
+     * @return $this
      */
     public function withJson($arrayWithJson): self;
 

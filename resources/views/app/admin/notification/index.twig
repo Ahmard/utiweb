@@ -1,0 +1,125 @@
+{% extends 'layouts/admin.twig' %}
+
+{% block css %}
+    <style type="text/css" media="screen">
+        body {
+            overflow: hidden;
+        }
+
+        #editor {
+            margin: 50px 20px;
+            position: absolute;
+            height: 170px;
+            border: #0b51c5 solid 1px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .editorCard{
+            height: 240px;
+        }
+
+        .createButton{
+            margin-top: 175px;
+        }
+    </style>
+{% endblock css %}
+
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-html.min.js"></script>
+    <script src="/assets/js/sweetalert.min.js"></script>
+
+    <script>
+        // trigger extension
+        ace.require("ace/ext/language_tools");
+        const editor = ace.edit("editor");
+        editor.session.setMode("ace/mode/html");
+        editor.setTheme("ace/theme/monokai");
+        // enable autocompletion and snippets
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: true
+        });
+    </script>
+
+    <script src="/assets/js/app/admin/notification.js"></script>
+
+    <script>
+        APP.notification.initCreateForm();
+    </script>
+{% endblock script %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header left-border">Notifications</div>
+                    <div class="card-body p-4 z-depth-1 font-italic left-border">
+                        <div class="list-group" id="notifications">
+                            {% for notification in page.notifications  %}
+                                <button data-notif="{{ notification|json_encode }}"
+                                   id="notification-{{ notification.id }}"
+                                   class="list-group-item list-group-item-action"
+                                   onclick="APP.notification.view(this)">
+                                        <div>
+                                            {{ notification.notification|raw }}
+                                        </div>
+                                    </button>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header left-border">Create Notification</div>
+                    <div class="card-body p-4 z-depth-1 font-italic left-border editorCard">
+                        <form method="post" id="form-create-notification" action="admin/notification/{{ site.authToken }}">
+                            <div><pre name="notification" id="editor"></pre></div>
+                            <div class="createButton">
+                                <button type="submit" class="btn btn-md btn-primary btn-block">
+                                    <i class="fa fa-plus-circle"></i> Create Notification
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% verbatim %}
+        <template id="template-view-notification">
+            <div>{{{ notification }}}</div>
+            <div class="mt-2 d-flex justify-content-between">
+                <a href="/admin/notification/{{id}}/{{token}}" class="btn btn-md btn-primary">
+                    <i class="fa fa-pen-alt"></i> Update
+                </a>
+                <button data-id="{{id}}" class="btn btn-md btn-danger" onclick="APP.notification.delete(this)">
+                    <i class="fa fa-trash-alt"></i> Delete
+                </button>
+            </div>
+        </template>
+
+        <template id="template-notification">
+            <button data-notif="{{ notification.json }}"
+                id="notification-{{ notification.id }}"
+                class="list-group-item list-group-item-action"
+                onclick="APP.notification.view(this)">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        {{{ notification.notification }}}
+                    </div>
+                </div>
+            </button>
+        </template>
+    {% endverbatim %}
+{% endblock content %}
