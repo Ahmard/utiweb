@@ -38,6 +38,7 @@
       <change afterPath="$PROJECT_DIR$/resources/views/app/search/fzmovies.twig" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/app/search/index.twig" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/storage/routes/api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Utility Web.iml" beforeDir="false" />
@@ -92,8 +93,8 @@
       <change beforePath="$PROJECT_DIR$/assets/js/app/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/ajax.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app/contact/send-message.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/contact/send-message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app/movie/fzmovies.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/movie/fzmovies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app/movie/netnaija.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/movie/netnaija.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app/root.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/root.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/tvshows/480mkv-com.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/tvshows/480mkv-com.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/ui.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
@@ -103,7 +104,7 @@
       <change beforePath="$PROJECT_DIR$/resources/views/app/movies/fzmovies.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/movies/fzmovies.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/cache/route/definitions.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/cache/route/routes.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/database/migrations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/storage/database/migrations.sql" afterDir="false" />
@@ -260,7 +261,7 @@
       <workItem from="1607020568141" duration="6368000" />
       <workItem from="1607030214189" duration="1007000" />
       <workItem from="1607031253825" duration="95000" />
-      <workItem from="1607031369480" duration="8438000" />
+      <workItem from="1607031369480" duration="8771000" />
     </task>
     <servers />
   </component>

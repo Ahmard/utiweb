@@ -3,22 +3,32 @@
 namespace App\Http\Controllers;
 
 
+use App\Core\Http\Response\ResponseInterface;
 use Uticlass\Video\Search\FZMoviesSearch;
 
 class SearchController extends Controller
 {
-    public function index()
+    public function index(): ResponseInterface
     {
-        return view('app/search/index');
+        return view('app/search/index', [
+            'title' => 'Search movies/tv shows without ads',
+            'desc' => 'Search movies/tv shows without ads',
+        ]);
     }
 
-    public function fzmovies()
+    public function fzmovies(): ResponseInterface
     {
-        return view('app/search/fzmovies');
+        return view('app/search/fzmovies', [
+            'title' => 'Search fzmovies',
+            'desc' => 'Search fzmovies movies without ads',
+        ]);
     }
 
-    public function femkvcom()
+    public function femkvcom(): ResponseInterface
     {
-        return view('app/search/femkvcom');
+        return view('app/search/femkvcom', [
+            'title' => 'Search 480mkv.com',
+            'desc' => 'Search 480mkv.com tv shows without ads',
+        ]);
     }
 }
