@@ -76,7 +76,7 @@ window.APP = {};
         //save current state
         let buttonId = $button.attr('id')
         if (buttonId) {
-            buttonId = buttonId.replaceAll('-', '');
+            buttonId = buttonId.split('-').join('');
             buttonLoadings[buttonId] = $button.html();
         }
 
@@ -94,7 +94,7 @@ window.APP = {};
         //get stored text, if any
         let oldText;
         if (!text) {
-            let buttonId = $button.attr('id').replaceAll('-', '');
+            let buttonId = $button.attr('id').split('-').join('');
             oldText = buttonLoadings[buttonId];
         }
         $button.html(oldText || text);
@@ -189,7 +189,7 @@ window.APP = {};
         let button = form.querySelector('[type="submit"]');
 
         //save state
-        let formId = form.id.replaceAll('-', '');
+        let formId = form.id.split('-').join('');
         formLoadingButton[formId] = button;
         formLoadingButtonText[formId] = button.innerHTML;
 
@@ -204,7 +204,7 @@ window.APP = {};
             formId = formId.getAttribute('id');
         }
 
-        formId = formId.replaceAll('-', '');
+        formId = formId.split('-').join('');
         let button = formLoadingButton[formId];
 
         let buttonText = text || formLoadingButtonText[formId];
