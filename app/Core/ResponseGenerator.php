@@ -3,8 +3,7 @@
 
 namespace App\Core;
 
-
-use App\Core\Http\Response\ResponseInterface;
+use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
 
@@ -30,7 +29,7 @@ class ResponseGenerator
         $this->reason = $reason;
     }
 
-    public static function generate(ResponseInterface $response): ResponseGenerator
+    public static function generate(PsrResponseInterface $response): ResponseGenerator
     {
         return new self(
             $response->getStatusCode(),
@@ -41,7 +40,7 @@ class ResponseGenerator
         );
     }
 
-    public function send(ServerRequestInterface $request)
+    public function send(ServerRequestInterface $request): void
     {
         echo $this->__invoke($request)->getContents();
         exit($this->code);

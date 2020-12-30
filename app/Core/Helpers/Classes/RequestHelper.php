@@ -26,7 +26,7 @@ class RequestHelper
         self::$request = $request;
     }
 
-    public function __call($methodName, $arguments = [])
+    public function __call(string $methodName, array $arguments): ServerRequestInterface
     {
         if (method_exists(self::$request, $methodName)) {
             return call_user_func_array([self::$request, $methodName], $arguments);
@@ -35,7 +35,7 @@ class RequestHelper
         throw new Exception("Method RequestHelper::{$methodName}() does not exists.");
     }
 
-    public function expectsJson()
+    public function expectsJson(): bool
     {
         if (
             self::$request->hasHeader('X-Requested-With')
@@ -47,7 +47,7 @@ class RequestHelper
         return false;
     }
 
-    public function expectsHtml()
+    public function expectsHtml(): bool
     {
         $contentType = self::$request->getHeaderLine('Accept');
         $headers = explode(',', $contentType);

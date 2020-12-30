@@ -4,9 +4,11 @@
 namespace App\Http\Controllers;
 
 
+use App\Core\Http\Response\ResponseInterface;
+
 class MovieController extends Controller
 {
-    public function index()
+    public function index(): ResponseInterface
     {
         return view('app/movies/index.twig', [
             'title' => 'Movie downloader',
@@ -15,7 +17,7 @@ class MovieController extends Controller
         ]);
     }
 
-    public function fzmovies()
+    public function fzmovies(): ResponseInterface
     {
         return view('app/movies/fzmovies.twig', [
             'title' => 'FZMovies downloader',
@@ -24,7 +26,7 @@ class MovieController extends Controller
         ]);
     }
 
-    public function netnaija()
+    public function netnaija(): ResponseInterface
     {
         return view('app/movies/netnaija.twig', [
             'title' => 'NetNaija downloader',
@@ -33,7 +35,7 @@ class MovieController extends Controller
         ]);
     }
 
-    public function coolmoviez()
+    public function coolmoviez(): ResponseInterface
     {
         return view('app/movies/coolmoviez.twig', [
             'title' => 'CoolMoviez downloader',

@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Admin;
 use App\Core\Auth\Auth;
 use App\Core\Auth\Token;
 use App\Core\Database;
+use App\Core\Http\Response\ResponseInterface;
 use App\Http\Controllers\Controller;
 use App\Notification;
 use App\Statistic;
@@ -16,7 +17,7 @@ use Symfony\Component\Validator\Constraints\Length;
 
 class MainController extends Controller
 {
-    public function index()
+    public function index(): ResponseInterface
     {
         if (Auth::check()) {
             return view('app/admin/index');
@@ -25,7 +26,7 @@ class MainController extends Controller
         return view('app/admin/login');
     }
 
-    public function statistic(ServerRequestInterface $request)
+    public function statistic(ServerRequestInterface $request): ResponseInterface
     {
         $stats = Statistic::getInstance($request)->get();
 
@@ -34,7 +35,7 @@ class MainController extends Controller
         ]);
     }
 
-    public function login(ServerRequestInterface $request)
+    public function login(ServerRequestInterface $request): ResponseInterface
     {
         $inputs = $request->getParsedBody();
         $errors = validator()->validate($inputs, [

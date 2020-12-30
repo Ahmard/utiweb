@@ -10,7 +10,7 @@ class Database
 {
     private static PDO $pdo;
 
-    public static function create()
+    public static function create(): PDO
     {
         if (!isset(static::$pdo)) {
             $dbFile = root_path($_ENV['DB_FILE']);

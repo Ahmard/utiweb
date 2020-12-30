@@ -10,17 +10,17 @@ use Psr\Http\Message\ServerRequestInterface;
 $root = dirname(__DIR__, 3);
 $slash = DIRECTORY_SEPARATOR;
 
-function url($url = null): string
+function url(?string $url = null): string
 {
     return "{$_ENV['APP_URL']}/{$url}";
 }
 
 /**
  * Root directory path
- * @param null $path
+ * @param string|null $path
  * @return string
  */
-function root_path($path = null): string
+function root_path(?string $path = null): string
 {
     global $root, $slash;
     return "{$root}{$slash}{$path}";
@@ -29,10 +29,10 @@ function root_path($path = null): string
 
 /**
  * Application directory path
- * @param null $path
+ * @param string|null $path
  * @return string
  */
-function app_path($path = null): string
+function app_path(?string $path = null): string
 {
     global $root, $slash;
     return "{$root}{$slash}app{$slash}{$path}";
@@ -40,10 +40,10 @@ function app_path($path = null): string
 
 /**
  * Application view directory path
- * @param null $path
+ * @param string|null $path
  * @return string
  */
-function view_path($path = null): string
+function view_path(?string $path = null): string
 {
     global $root, $slash;
     return "{$root}{$slash}resources{$slash}views{$slash}{$path}";
@@ -51,10 +51,10 @@ function view_path($path = null): string
 
 /**
  * Storage directory path
- * @param null $path
+ * @param string|null $path
  * @return string
  */
-function storage_path($path = null): string
+function storage_path(?string $path = null): string
 {
     global $root, $slash;
     return "{$root}{$slash}storage{$slash}{$path}";
@@ -62,17 +62,17 @@ function storage_path($path = null): string
 
 /**
  * Controllers path
- * @param null $path
+ * @param string|null $path
  * @return string
  */
-function controller_path($path = null): string
+function controller_path(?string $path = null): string
 {
     global $root, $slash;
     return "{$root}{$slash}app{$slash}Http{$slash}Controllers{$slash}{$path}";
 }
 
 $loadedConfig = [];
-function config(string $file)
+function config(string $file): array
 {
     global $slash, $loadedConfig;
     if (array_key_exists($file, $loadedConfig)) {
@@ -123,11 +123,19 @@ function redirect(string $url): ResponseInterface
     return response()->redirect($url);
 }
 
+/**
+ * @param string $key
+ * @return mixed|null
+ */
 function old(string $key)
 {
     return FormHelper::getOldData($key);
 }
 
+/**
+ * @param string $key
+ * @return mixed
+ */
 function form_error(string $key)
 {
     return FormHelper::getFormError($key);

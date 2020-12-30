@@ -43,7 +43,7 @@ class TwigSiteHelper
         return url($url);
     }
 
-    public function adminRoute(string $path = '', $willAppendToken = false): string
+    public function adminRoute(string $path = '', bool $willAppendToken = false): string
     {
         $route = $this->adminRoute;
         if ('' !== $path) {

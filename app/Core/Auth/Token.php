@@ -14,6 +14,10 @@ final class Token
         return JWT::encode($user, $_ENV['APP_KEY'] ?? uniqid());
     }
 
+    /**
+     * @param string $jwtKey
+     * @return array|false
+     */
     public static function decode(string $jwtKey)
     {
         try {

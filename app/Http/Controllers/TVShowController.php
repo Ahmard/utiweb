@@ -4,9 +4,11 @@
 namespace App\Http\Controllers;
 
 
+use App\Core\Http\Response\ResponseInterface;
+
 class TVShowController extends Controller
 {
-    public function index()
+    public function index(): ResponseInterface
     {
         return view('app/tvshow/index', [
             'title' => 'TV Show downloader',
@@ -15,7 +17,7 @@ class TVShowController extends Controller
         ]);
     }
 
-    public function femkvcom()
+    public function femkvcom(): ResponseInterface
     {
         return view('app/tvshow/480mkv-com', [
             'title' => '480mkv.com downloader',
@@ -24,7 +26,7 @@ class TVShowController extends Controller
         ]);
     }
 
-    public function o2tvseriescom()
+    public function o2tvseriescom(): ResponseInterface
     {
         return view('app/tvshow/o2tvseries-com', [
             'title' => 'O2tvseries.com downloader',
@@ -33,7 +35,7 @@ class TVShowController extends Controller
         ]);
     }
 
-    public function o2tvseriescoza()
+    public function o2tvseriescoza(): ResponseInterface
     {
         return view('app/tvshow/o2tvseries-co-za', [
             'title' => 'O2tvseries.co.za downloader',

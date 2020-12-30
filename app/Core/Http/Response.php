@@ -100,7 +100,7 @@ class Response
      * @param array $data
      * @return ResponseInterface
      */
-    public function view(string $view, array $data = [])
+    public function view(string $view, array $data = []): ResponseInterface
     {
         return $this->with(HtmlResponse::create(View::load($view, $data)));
     }
@@ -109,7 +109,7 @@ class Response
      * Send 404 response
      * @return ResponseInterface
      */
-    public function notFound()
+    public function notFound(): ResponseInterface
     {
         return $this->with(NotFoundResponse::create());
     }
@@ -119,12 +119,12 @@ class Response
      * @param string|null|Throwable $exception
      * @return ResponseInterface
      */
-    public function internalServerError($exception = null)
+    public function internalServerError($exception = null): ResponseInterface
     {
         return $this->with(InternalServerErrorResponse::create($exception));
     }
 
-    public function methodNotAllowed()
+    public function methodNotAllowed(): ResponseInterface
     {
         return $this->with(MethodNotAllowedResponse::create());
     }
@@ -134,7 +134,7 @@ class Response
      * @param string $url
      * @return ResponseInterface
      */
-    public function redirect(string $url)
+    public function redirect(string $url): ResponseInterface
     {
         return $this->with(RedirectResponse::create($url));
     }
@@ -143,7 +143,7 @@ class Response
      * @param mixed $body
      * @return ResponseInterface
      */
-    public function json($body = [])
+    public function json($body = []): ResponseInterface
     {
         return $this->with(JsonResponse::create($body));
     }

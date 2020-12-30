@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Admin;
 
 
 use App\Core\Database;
+use App\Core\Http\Response\ResponseInterface;
 use App\Http\Controllers\Controller;
 use PDO;
 
 class MessageController extends Controller
 {
-    public function readied()
+    public function readied(): ResponseInterface
     {
         $connection = Database::create();
         $query = $connection->query('SELECT * FROM messages WHERE status = 1');
@@ -21,12 +22,12 @@ class MessageController extends Controller
         ]);
     }
 
-    public function unread()
+    public function unread(): ResponseInterface
     {
         return $this->index();
     }
 
-    public function index()
+    public function index(): ResponseInterface
     {
         $connection = Database::create();
         $query = $connection->query('SELECT * FROM messages WHERE status = 0');

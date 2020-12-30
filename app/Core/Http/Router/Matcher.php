@@ -6,6 +6,7 @@ namespace App\Core\Http\Router;
 
 use App\Core\Auth\Auth;
 use App\Core\Helpers\Classes\FormHelper;
+use App\Core\Http\Response;
 use App\Core\Http\Response\InternalServerErrorResponse;
 use App\Kernel;
 use Exception;
@@ -14,10 +15,11 @@ use Psr\Http\Message\ServerRequestInterface;
 use QuickRoute\Route\DispatchResult;
 use Throwable;
 use function Laminas\Stratigility\middleware;
+use Psr\Http\Message\ResponseInterface;
 
 class Matcher
 {
-    public static function match(ServerRequestInterface $request, DispatchResult $dispatchResult)
+    public static function match(ServerRequestInterface $request, DispatchResult $dispatchResult): ResponseInterface
     {
         //Initialise authentication class
         Auth::handle($dispatchResult->getUrlParameters()['token'] ?? '');
@@ -48,7 +50,7 @@ class Matcher
         return Matcher::route($request, $dispatchResult);
     }
 
-    private static function route(ServerRequestInterface $request, DispatchResult $dispatchResult)
+    private static function route(ServerRequestInterface $request, DispatchResult $dispatchResult): ResponseInterface
     {
         $routeData = $dispatchResult->getRoute();
         $requestParams = $dispatchResult->getUrlParameters();

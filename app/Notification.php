@@ -10,7 +10,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class Notification
 {
-    public static function create(ServerRequestInterface $request)
+    public static function create(ServerRequestInterface $request): string
     {
         $postedData = $request->getParsedBody();
         $pdo = Database::create();
@@ -22,7 +22,7 @@ class Notification
         return $pdo->lastInsertId();
     }
 
-    public static function update(ServerRequestInterface $request, int $notificationId)
+    public static function update(ServerRequestInterface $request, int $notificationId): void
     {
         $postedData = $request->getParsedBody();
         $pdo = Database::create();
@@ -31,11 +31,9 @@ class Notification
         $prepared->bindValue(':notification', base64_encode($postedData['notification']));
         $prepared->bindValue(':id', $notificationId);
         $prepared->execute();
-
-        return true;
     }
 
-    public static function delete(int $notificationId)
+    public static function delete(int $notificationId): bool
     {
         $connection = Database::create();
         $connection->query("DELETE FROM notifications WHERE id = {$notificationId};");
@@ -43,6 +41,10 @@ class Notification
         return true;
     }
 
+    /**
+     * @param int $notificationId
+     * @return mixed
+     */
     public static function get(int $notificationId)
     {
         $connection = Database::create();
@@ -53,7 +55,7 @@ class Notification
         return $notification;
     }
 
-    public static function getAll()
+    public static function getAll(): array
     {
         $notifications =  Database::create()
             ->query('SELECT * FROM notifications WHERE status = 1')

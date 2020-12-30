@@ -13,9 +13,9 @@ interface ResponseInterface extends \Psr\Http\Message\ResponseInterface
     /**
      * Use other response class instead
      * @param ResponseInterface $response
-     * @return $this
+     * @return ResponseInterface
      */
-    public function withResponse(self $response): self;
+    public function withResponse(self $response): ResponseInterface;
 
     /**
      * Send http response with view file
@@ -58,9 +58,9 @@ interface ResponseInterface extends \Psr\Http\Message\ResponseInterface
 
     /**
      * Get another response class used
-     * @return $this
+     * @return ResponseInterface
      */
-    public function getResponse(): self;
+    public function getResponse(): ResponseInterface;
 
     /**
      * Terminate request and respond with this class

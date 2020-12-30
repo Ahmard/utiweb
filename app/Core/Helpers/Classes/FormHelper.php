@@ -5,6 +5,7 @@ namespace App\Core\Helpers\Classes;
 
 
 use Psr\Http\Message\ServerRequestInterface;
+use Symfony\Component\Validator\ConstraintViolationListInterface;
 
 class FormHelper
 {
@@ -12,12 +13,12 @@ class FormHelper
 
     protected static array $formErrors = [];
 
-    public static function setRequest(ServerRequestInterface $request)
+    public static function setRequest(ServerRequestInterface $request): void
     {
         self::$request = $request;
     }
 
-    public static function addFormError(string $inputName, string $inputError)
+    public static function addFormError(string $inputName, ConstraintViolationListInterface $inputError): void
     {
         if (is_array(self::$formErrors[$inputName] ?? null)) {
             self::$formErrors[$inputName][] = $inputError;
@@ -36,7 +37,7 @@ class FormHelper
         return self::$request->getParsedBody()[$key] ?? null;
     }
 
-    public static function getFormError(string $inputName)
+    public static function getFormError(string $inputName): ConstraintViolationListInterface
     {
         return self::$formErrors[$inputName];
     }

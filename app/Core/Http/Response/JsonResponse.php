@@ -9,6 +9,10 @@ use Throwable;
 
 final class JsonResponse extends BaseResponse
 {
+    /**
+     * @param array|object $body
+     * @return ResponseInterface
+     */
     public static function create($body = []): ResponseInterface
     {
         return (new JsonResponse())->withJson($body)

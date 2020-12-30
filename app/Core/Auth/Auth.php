@@ -9,13 +9,13 @@ final class Auth
 
     private static bool $isAuthenticated = false;
 
-    public static function handle(string $token)
+    public static function handle(string $token): void
     {
         self::$token = $token;
         static::authToken();
     }
 
-    private static function authToken()
+    private static function authToken(): void
     {
         if (self::$token) {
             $verified = Token::decode(self::$token);
@@ -31,7 +31,7 @@ final class Auth
      * Check if user is authenticated
      * @return bool
      */
-    public static function check()
+    public static function check(): bool
     {
         return static::$isAuthenticated;
     }
@@ -40,7 +40,7 @@ final class Auth
      * Get user token
      * @return string
      */
-    public static function token()
+    public static function token(): string
     {
         return self::$token;
     }

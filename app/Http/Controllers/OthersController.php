@@ -4,9 +4,11 @@
 namespace App\Http\Controllers;
 
 
+use App\Core\Http\Response\ResponseInterface;
+
 class OthersController extends Controller
 {
-    public function index()
+    public function index(): ResponseInterface
     {
         return view('app/others/index', [
             'title' => 'File Downloader',
@@ -15,7 +17,7 @@ class OthersController extends Controller
         ]);
     }
 
-    public function zippyShare()
+    public function zippyShare(): ResponseInterface
     {
         return view('app/others/zippyshare', [
             'title' => 'ZippyShare downloader',

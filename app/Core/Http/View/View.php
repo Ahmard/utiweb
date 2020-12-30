@@ -13,7 +13,7 @@ use Twig\TwigFunction;
 
 class View
 {
-    public static function load(string $viewFile, array $data = [])
+    public static function load(string $viewFile, array $data = []): string
     {
         if (!strpos($viewFile, '.twig')) {
             $viewFile .= '.twig';
@@ -55,7 +55,7 @@ class View
      * @return string
      * @throws Exception
      */
-    public static function find(string $viewFilePath)
+    public static function find(string $viewFilePath): string
     {
         $viewFile = view_path($viewFilePath);
 
@@ -65,7 +65,7 @@ class View
         throw new Exception("View file($viewFile) not found");
     }
 
-    private static function preparePageData(array $data)
+    private static function preparePageData(array $data): array
     {
         return array_merge($data, [
             'notifications' => Notification::getAll(),

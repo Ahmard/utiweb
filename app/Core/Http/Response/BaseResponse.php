@@ -20,7 +20,7 @@ abstract class BaseResponse extends Response implements ResponseInterface
 
     protected string $jsonData;
 
-    protected $view = null;
+    protected ?string $view = null;
 
     protected ResponseInterface $respondWith;
 
@@ -36,12 +36,15 @@ abstract class BaseResponse extends Response implements ResponseInterface
         return $this;
     }
 
-    public function withView(string $viewFile, array $params = []): ResponseInterface
+    public function withView(string $viewFile, array $viewData = []): ResponseInterface
     {
-        $this->view = View::load($viewFile, $params);
+        $this->view = View::load($viewFile, $viewData);
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function withResponse(ResponseInterface $response): ResponseInterface
     {
         $this->respondWith = $response;

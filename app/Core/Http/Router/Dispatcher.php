@@ -13,7 +13,7 @@ class Dispatcher
 {
     private static DispatchResult $dispatchResult;
 
-    public static function dispatch(ServerRequestInterface $request)
+    public static function dispatch(ServerRequestInterface $request): DispatchResult
     {
         $path = $request->getUri()->getPath();
         $method = $request->getMethod();

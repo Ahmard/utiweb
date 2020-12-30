@@ -4,12 +4,13 @@
 namespace App\Http\Controllers\Admin;
 
 
+use App\Core\Http\Response\ResponseInterface;
 use App\Http\Controllers\Controller;
 use DirectoryIterator;
 
 class ErrorController extends Controller
 {
-    public function index()
+    public function index(): ResponseInterface
     {
         $errorFiles = new DirectoryIterator(storage_path('logs/error'));
         $newErrorFiles = [];

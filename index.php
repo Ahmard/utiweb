@@ -23,7 +23,7 @@ $request = ServerRequestFactory::fromGlobals();
  * @param Throwable $exception
  * @param bool $willTerminate
  */
-function handleApplicationException(Throwable $exception, $willTerminate = true)
+function handleApplicationException(Throwable $exception, bool $willTerminate = true): void
 {
     global $request;
     //Save error log
