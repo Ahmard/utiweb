@@ -4,6 +4,7 @@
 namespace App\Core\Auth;
 
 use Firebase\JWT\JWT;
+use LogicException;
 use Throwable;
 
 final class Token
@@ -20,10 +21,14 @@ final class Token
      */
     public static function decode(string $jwtKey)
     {
+        if (!isset($_ENV['APP_KEY'])) {
+            throw new LogicException('An APP_KEY is required to use authentication service.');
+        }
+
         try {
             $decodedToken = (array)JWT::decode(
                 $jwtKey,
-                $_ENV['APP_KEY'] ?? 'ahmard',
+                $_ENV['APP_KEY'],
                 ['HS256']
             );
         } catch (Throwable $exception) {

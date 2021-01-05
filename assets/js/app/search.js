@@ -29,7 +29,7 @@
                 APP.UI.hideButtonLoader(submitButton);
             };
 
-            $ajax.submitForm(config.form)
+            APP.Ajax.create().submitForm(config.form)
                 .success(function (movies) {
                     if (movies.results.length === 0 || !movies.results[0].title) {
                         $elMovies.html('<div class="alert alert-warning">No movie with such name found.</div>');
@@ -62,6 +62,13 @@
             this.searchFactory({
                 form: form,
                 extractionPage: '/tvshows/480mkv-com'
+            });
+        };
+
+        this.mobiletvshows = function (form) {
+            this.searchFactory({
+                form: form,
+                extractionPage: '/tvshows/mobiletvshows'
             });
         };
     };

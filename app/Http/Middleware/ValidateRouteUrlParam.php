@@ -15,7 +15,7 @@ class ValidateRouteUrlParam extends Middleware
 {
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        if (!Url::isValidParamUrl()) {
+        if (!Url::isParamUrlValid()) {
             return JsonResponse::error('The provided url is invalid, check your url and try again.');
         }
 

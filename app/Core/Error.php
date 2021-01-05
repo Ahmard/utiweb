@@ -11,7 +11,7 @@ class Error extends Exception
 {
     protected Throwable $exception;
 
-    public static function create(Throwable $exception): Error
+    public static function create(?Throwable $exception): Error
     {
         if ($_ENV['APP_ENVIRONMENT'] == 'development') {
             return new self($exception);

@@ -57,6 +57,7 @@ Route::prefix('tvshows')->group(function () {
     Route::get('480mkv-com', 'TVShowController@femkvcom');
     Route::get('o2tvseries-com', 'TVShowController@o2tvseriescom');
     Route::get('o2tvseries-co-za', 'TVShowController@o2tvseriescoza');
+    Route::get('mobiletvshows', 'TVShowController@mobiletvshows');
 });
 
 Route::prefix('others')->group(function () {
@@ -68,4 +69,5 @@ Route::prefix('search')->group(function (){
     Route::get('/', 'SearchController@index');
     Route::get('fzmovies', 'SearchController@fzmovies');
     Route::get('480mkvcom', 'SearchController@femkvcom');
+    Route::get('mobiletvshows', 'SearchController@mobiletvshows');
 });

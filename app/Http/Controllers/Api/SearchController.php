@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Psr\Http\Message\ServerRequestInterface;
 use Uticlass\Video\Search\FEMKVComSearch;
 use Uticlass\Video\Search\FZMoviesSearch;
+use Uticlass\Video\Search\MobileTVShowsSearch;
 
 class SearchController extends Controller
 {
@@ -30,6 +31,17 @@ class SearchController extends Controller
         $params = $request->getQueryParams();
         $results = FEMKVComSearch::create()
             ->search($params['q'])
+            ->get($params['page_number'] ?? 1);
+
+        return JsonResponse::success($results);
+    }
+
+    public function mobiletvshows(ServerRequestInterface $request): ResponseInterface
+    {
+        $params = $request->getQueryParams();
+        $results = MobileTVShowsSearch::create()
+            ->search($params['q'])
+            ->searchBy($params['by'])
             ->get($params['page_number'] ?? 1);
 
         return JsonResponse::success($results);

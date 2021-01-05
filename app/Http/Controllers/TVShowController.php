@@ -43,4 +43,13 @@ class TVShowController extends Controller
             'keywords' => 'o2tvseries downloader, o2tvseries link extractor, o2tvseries ad bypass'
         ]);
     }
+
+    public function mobiletvshows(): ResponseInterface
+    {
+        return view('app/tvshow/mobiletvshows', [
+            'title' => 'mobiletvshows.net downloader',
+            'desc' => 'Extract mobiletvshows.net show download link.',
+            'keywords' => 'mobiletvshows downloader, mobiletvshows link extractor, mobiletvshows ad bypass'
+        ]);
+    }
 }
