@@ -19,7 +19,7 @@ php migrate.php
 
 Start the server
 ```bash
-php -S localhost:8181
+php -S localhost:8181 index.php
 ```
 
 Now visit **http://localhost:8181** in your web browser.
