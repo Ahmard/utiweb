@@ -13,7 +13,6 @@ if ('/' !== $uri && file_exists($uri)) {
     return false;
 }
 
-$start = microtime(true);
 require 'vendor/autoload.php';
 
 //Create request instance

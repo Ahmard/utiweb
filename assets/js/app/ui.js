@@ -17,16 +17,13 @@ window.APP = {};
         return '<i class="' + type + ' fa-' + iconName + size + '"></i>';
     }
 
-
     ns.UI.fa = function (iconName, size) {
         return faFactory('fa', iconName, size);
     };
 
-
     ns.UI.fas = function (iconName, size) {
         return faFactory('fas', iconName, size);
     };
-
 
     ns.UI.alert = function (type, message, closeable = false) {
         let openTag = '<div class="alert alert-' + type + '" role="alert">';
@@ -38,14 +35,12 @@ window.APP = {};
         return openTag + message + closeTag;
     };
 
-
     ns.UI.submitForm = function (form, options) {
         let button = form.querySelector('button[type="submit"]');
         ns.UI.waitButton(button, options);
 
         return ns.UI;
     };
-
 
     ns.UI.waitButton = function (button, options) {
         if (typeof button == 'string') {
@@ -70,7 +65,6 @@ window.APP = {};
         return ns.UI;
     };
 
-
     ns.UI.showButtonLoader = function (button, text = '', faClass = '') {
         let $button = ns.UI.El.getJQ(button);
         //save current state
@@ -87,7 +81,6 @@ window.APP = {};
         return ns.UI;
     };
 
-
     ns.UI.hideButtonLoader = function (button, text) {
         let $button = ns.UI.El.getJQ(button);
         $button.removeClass('disabled')
@@ -103,7 +96,6 @@ window.APP = {};
 
         return ns.UI;
     };
-
 
     ns.UI.animDots = function (el, options) {
         let waitMsg = '';
@@ -160,7 +152,6 @@ window.APP = {};
 
 
     };//animatedDots
-
 
     ns.UI.stopAnimDots = function (elementId) {
         clearInterval(animatedDotInterval[elementId]);

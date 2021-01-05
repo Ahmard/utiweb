@@ -46,6 +46,7 @@ Route::name('scrapper.')->group(function () {
         ->group(function () {
             Route::get('fzmovies', 'SearchController@fzmovies');
             Route::get('femkvcom', 'SearchController@femkvcom');
+            Route::get('mobiletvshows', 'SearchController@mobiletvshows');
         });
 
     //EXTRACTIONS
@@ -69,6 +70,7 @@ Route::name('scrapper.')->group(function () {
                     Route::get('480mkv-com', 'FEMkvComController@index');
                     Route::get('o2tvseries-com', 'O2TvSeriesComController@index');
                     Route::get('o2tvseries-co-za', 'O2TvSeriesCoZaController@index');
+                    Route::get('mobiletvshows', 'MobileTVShowsController@index');
                 });
 
             //OTHERS

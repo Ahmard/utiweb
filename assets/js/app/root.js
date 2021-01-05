@@ -13,7 +13,7 @@ Handlebars.registerHelper('errorMessage', function (message) {
 });
 
 let ajaxErrorHandler = function (error) {
-    console.log('Error occured');
+    console.log('Error occurred');
     console.log(error);
 };
 

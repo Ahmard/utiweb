@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2671ae707c3ac96444231e8e55f9e15",
+    "content-hash": "5cea5c20581f95395913556178994740",
     "packages": [
         {
             "name": "ahmard/guzwrap",
-            "version": "1.2.10",
+            "version": "1.2.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ahmard/guzwrap.git",
-                "reference": "af88fbbc0adff50dcf878e10ccf95c004cfa8f20"
+                "reference": "692acedb7de544b6047335be730a09bd48d184db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ahmard/guzwrap/zipball/af88fbbc0adff50dcf878e10ccf95c004cfa8f20",
-                "reference": "af88fbbc0adff50dcf878e10ccf95c004cfa8f20",
+                "url": "https://api.github.com/repos/Ahmard/guzwrap/zipball/692acedb7de544b6047335be730a09bd48d184db",
+                "reference": "692acedb7de544b6047335be730a09bd48d184db",
                 "shasum": ""
             },
             "require": {
@@ -41,9 +41,9 @@
             "description": "A wrapper around popular php http client, \"GuzzleHttp\"",
             "support": {
                 "issues": "https://github.com/Ahmard/guzwrap/issues",
-                "source": "https://github.com/Ahmard/guzwrap/tree/1.2.10"
+                "source": "https://github.com/Ahmard/guzwrap/tree/1.2.13"
             },
-            "time": "2020-12-30T18:09:31+00:00"
+            "time": "2021-01-05T12:58:27+00:00"
         },
         {
             "name": "ahmard/preact",
@@ -177,16 +177,16 @@
         },
         {
             "name": "ahmard/uticlass",
-            "version": "1.6.0",
+            "version": "1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ahmard/uticlass.git",
-                "reference": "7abaa6e81fb5e08d63139797b6433e206f6fd09b"
+                "reference": "e77ab9ec0db8ad13ffa25066a49a38b17ea79f0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ahmard/uticlass/zipball/7abaa6e81fb5e08d63139797b6433e206f6fd09b",
-                "reference": "7abaa6e81fb5e08d63139797b6433e206f6fd09b",
+                "url": "https://api.github.com/repos/Ahmard/uticlass/zipball/e77ab9ec0db8ad13ffa25066a49a38b17ea79f0c",
+                "reference": "e77ab9ec0db8ad13ffa25066a49a38b17ea79f0c",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "Unlicenced"
+                "MIT"
             ],
             "authors": [
                 {
@@ -219,9 +219,9 @@
             "description": "Pieces of classes jam-packed to ease day-to-day life :)",
             "support": {
                 "issues": "https://github.com/Ahmard/uticlass/issues",
-                "source": "https://github.com/Ahmard/uticlass/tree/1.6.0"
+                "source": "https://github.com/Ahmard/uticlass/tree/1.6.2"
             },
-            "time": "2020-12-30T22:45:03+00:00"
+            "time": "2021-01-05T19:20:30+00:00"
         },
         {
             "name": "cache/adapter-common",
@@ -3747,16 +3747,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.1.1",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "b02fa41f3783a2616eccef7b92fbc2343ffed737"
+                "reference": "f795ca686d38530045859b0350b5352f7d63447d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b02fa41f3783a2616eccef7b92fbc2343ffed737",
-                "reference": "b02fa41f3783a2616eccef7b92fbc2343ffed737",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/f795ca686d38530045859b0350b5352f7d63447d",
+                "reference": "f795ca686d38530045859b0350b5352f7d63447d",
                 "shasum": ""
             },
             "require": {
@@ -3771,7 +3771,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -3807,7 +3807,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.1.1"
+                "source": "https://github.com/twigphp/Twig/tree/v3.2.1"
             },
             "funding": [
                 {
@@ -3819,7 +3819,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-27T19:28:23+00:00"
+            "time": "2021-01-05T15:40:36+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -5977,7 +5977,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4|^8.0",
+        "php": "^7.4 || ^8.0",
         "ext-json": "*",
         "ext-pdo": "*"
     },

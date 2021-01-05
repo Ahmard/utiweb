@@ -10,20 +10,35 @@ class Url
 {
     /**
      * Get url passed in routing parameters
-     * @return false|string
+     * @return string
      */
-    public static function getParamUrl()
+    public static function getParamUrl(): string
     {
         $parameters = Dispatcher::getDispatchResult()->getUrlParameters();
-        return base64_decode($parameters['url']);
+        $url = base64_decode($parameters['url']);
+        if (!self::isUrlValid($url)){
+            throw new \LogicException('Parameter url is invalid');
+        }
+
+        return $url;
     }
 
     /**
      * Check if url passed to routing parameters is valid
      * @return bool
      */
-    public static function isValidParamUrl()
+    public static function isParamUrlValid(): bool
     {
-        return filter_var(self::getParamUrl(), FILTER_VALIDATE_URL) ? true : false;
+        return self::isUrlValid(self::getParamUrl());
+    }
+
+    /**
+     * Check if url is valid
+     * @param string $url
+     * @return bool
+     */
+    public static function isUrlValid(string $url): bool
+    {
+        return filter_var($url, FILTER_VALIDATE_URL) ? true : false;
     }
 }

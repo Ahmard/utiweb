@@ -31,4 +31,12 @@ class SearchController extends Controller
             'desc' => 'Search 480mkv.com tv shows without ads',
         ]);
     }
+
+    public function mobiletvshows(): ResponseInterface
+    {
+        return view('app/search/mobiletvshows', [
+            'title' => 'Search mobiletvshows.net',
+            'desc' => 'Search mobiletvshows.net tv shows without ads',
+        ]);
+    }
 }
