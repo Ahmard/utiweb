@@ -320,4 +320,4 @@
     ns.Ajax = Ajax;
 })(window.APP);
 
-$ajax = APP.Ajax.create();
+const $ajax = APP.Ajax.create();

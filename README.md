@@ -24,7 +24,11 @@ php -S localhost:8181 index.php
 
 Now visit **http://localhost:8181** in your web browser.
 
-**_Enjoy!!!_**
+You can also see [how the project works](HOW_IT_WORKS.md).
+
+Help keep this project alive by adding new features or fixing bugs.
+
+**_Enjoy 😉_**
 
 ### References
 - [UtiClass](http://github.com/Ahmard/uticlass)

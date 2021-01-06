@@ -20,29 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="477ef956-3c4b-41fb-9734-c59e2b50cecc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TVShows/MobileTVShowsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/app/search/mobiletvshows.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HOW_IT_WORKS.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Auth/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Auth/Auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Auth/Token.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Auth/Token.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Core/Error.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Error.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TVShowController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TVShowController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/ValidateRouteUrlParam.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/ValidateRouteUrlParam.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Url.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Url.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app/root.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/root.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/search/femkvcom.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/search/femkvcom.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/search/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/search/index.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app/tvshow/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/tvshow/index.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,6 +188,8 @@
       <workItem from="1609852147483" duration="1117000" />
       <workItem from="1609873383854" duration="774000" />
       <workItem from="1609881742046" duration="918000" />
+      <workItem from="1609925592437" duration="27000" />
+      <workItem from="1609957408472" duration="3262000" />
     </task>
     <servers />
   </component>
