@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 
 use App\Core\Http\Response\ResponseInterface;
-use Uticlass\Video\Search\FZMoviesSearch;
 
 class SearchController extends Controller
 {

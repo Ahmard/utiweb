@@ -205,7 +205,9 @@
                             let response = arguments[0];
                             let returnData = [...arguments];
                             returnData[0] = response["responseJSON"];
-                            returnData[0].__response = response;
+                            if (returnData[0]){
+                                returnData[0].__response = response;
+                            }
                             errorCallback(...returnData);
                         }
                     }
@@ -227,7 +229,9 @@
                     let response = arguments[0];
                     let returnData = [...arguments];
                     returnData[0] = response["responseJSON"];
-                    returnData[0].__response = response;
+                    if (returnData[0]){
+                        returnData[0].__response = response;
+                    }
                     callback(...returnData);
                 });
 

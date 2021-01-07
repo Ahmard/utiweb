@@ -20,11 +20,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="477ef956-3c4b-41fb-9734-c59e2b50cecc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HOW_IT_WORKS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/app/extractor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/ErrorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/ErrorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TVShows/MobileTVShowsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TVShows/MobileTVShowsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/admin/error.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/admin/error.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/movie/coolmoviez.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/movie/coolmoviez.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/movie/fzmovies.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/movie/fzmovies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/movie/netnaija.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/movie/netnaija.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/others/zippyshare.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/others/zippyshare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/root.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/root.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/tvshows/480mkv-com.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/tvshows/480mkv-com.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/tvshows/mobiletvshows.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/tvshows/mobiletvshows.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/tvshows/o2tvseries-co-za.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/tvshows/o2tvseries-co-za.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/tvshows/o2tvseries-com.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/tvshows/o2tvseries-com.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/admin/error/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/admin/error/index.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/admin/statistic.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/admin/statistic.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/movies/coolmoviez.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/movies/coolmoviez.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/movies/fzmovies.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/movies/fzmovies.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/movies/netnaija.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/movies/netnaija.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/others/zippyshare.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/others/zippyshare.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/tvshow/480mkv-com.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/tvshow/480mkv-com.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/tvshow/mobiletvshows.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/tvshow/mobiletvshows.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/tvshow/o2tvseries-co-za.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/tvshow/o2tvseries-co-za.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/tvshow/o2tvseries-com.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/tvshow/o2tvseries-com.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/error/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +214,10 @@
       <workItem from="1609873383854" duration="774000" />
       <workItem from="1609881742046" duration="918000" />
       <workItem from="1609925592437" duration="27000" />
-      <workItem from="1609957408472" duration="3262000" />
+      <workItem from="1609957408472" duration="4006000" />
+      <workItem from="1609966008232" duration="647000" />
+      <workItem from="1609972596187" duration="608000" />
+      <workItem from="1609978101759" duration="7219000" />
     </task>
     <servers />
   </component>

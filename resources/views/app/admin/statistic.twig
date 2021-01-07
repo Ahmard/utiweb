@@ -10,7 +10,7 @@
                 $ajax.delete('admin/statistic/' + TOKEN)
                     .success(function (response) {
                         swal('Delete Stats', response.message, 'success');
-                        $('.statistics').html('');
+                        $('.statistics').html('<div class="text-center font-weight-bold fa-2x">Empty 😊</div>');
                     })
                     .error(function (error) {
                         swal('Delete Stats', error.message, 'success');

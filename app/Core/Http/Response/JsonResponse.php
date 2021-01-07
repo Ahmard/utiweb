@@ -10,16 +10,6 @@ use Throwable;
 final class JsonResponse extends BaseResponse
 {
     /**
-     * @param array|object $body
-     * @return ResponseInterface
-     */
-    public static function create($body = []): ResponseInterface
-    {
-        return (new JsonResponse())->withJson($body)
-            ->withAddedHeader('Content-Type', 'application/json');
-    }
-
-    /**
      * Respond with success response
      * @param array|object $data An array or object
      * @return ResponseInterface
@@ -36,9 +26,10 @@ final class JsonResponse extends BaseResponse
      * @param array|object $body
      * @return ResponseInterface
      */
-    public function withBody($body = []): ResponseInterface
+    public static function create($body = []): ResponseInterface
     {
-        return $this->withJson($body);
+        return (new JsonResponse())->withJson($body)
+            ->withAddedHeader('Content-Type', 'application/json');
     }
 
     /**
@@ -52,6 +43,15 @@ final class JsonResponse extends BaseResponse
             'success' => false,
             'error' => $errorData
         ]);
+    }
+
+    /**
+     * @param array|object $body
+     * @return ResponseInterface
+     */
+    public function withBody($body = []): ResponseInterface
+    {
+        return $this->withJson($body);
     }
 
     public function getBody(): StreamInterface

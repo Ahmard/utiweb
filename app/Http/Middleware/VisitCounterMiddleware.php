@@ -16,7 +16,7 @@ class VisitCounterMiddleware extends Middleware
     {
         $explodedPath = explode('/', $request->getUri()->getPath());
         Statistic::getInstance($request)->addVisit();
-        if (in_array('api', $explodedPath)){
+        if (in_array('api', $explodedPath)) {
             return $handler->handle($request);
         }
 

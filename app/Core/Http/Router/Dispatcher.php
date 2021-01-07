@@ -24,11 +24,11 @@ class Dispatcher
                 'prefix' => 'api',
                 'namespace' => 'Api\\',
             ]);
-            
-        if('production' == $_ENV['APP_ENVIRONMENT']){
+
+        if ('production' == $_ENV['APP_ENVIRONMENT']) {
             $collector->cache(storage_path('cache/routes.php'));
         }
-        
+
         $collector->register();
 
         return self::$dispatchResult =

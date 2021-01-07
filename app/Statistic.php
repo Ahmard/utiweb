@@ -6,6 +6,7 @@ namespace App;
 
 use App\Core\Database;
 use App\Core\Http\Router\Dispatcher;
+use PDO;
 use Psr\Http\Message\ServerRequestInterface;
 
 class Statistic
@@ -31,14 +32,14 @@ class Statistic
     public function get(int $limit = 0): array
     {
         $limitCondition = null;
-        if (0 != $limit){
+        if (0 != $limit) {
             $limitCondition = " ORDER BY id DESC LIMIT {$limit}";
         }
 
         $query = Database::create()->query("SELECT * FROM statistics {$limitCondition}");
         $query->execute();
 
-        return $query->fetchAll(\PDO::FETCH_ASSOC);
+        return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function addVisit(): self

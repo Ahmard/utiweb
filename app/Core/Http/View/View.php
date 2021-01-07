@@ -29,15 +29,15 @@ class View
         $twig = new Environment($loader, $twigOptions);
 
         $twig->addGlobal('site', new TwigSiteHelper());
-        $twig->addFilter(new TwigFilter('json_decode', function ($data){
+        $twig->addFilter(new TwigFilter('json_decode', function ($data) {
             return json_decode($data);
         }));
 
-        $twig->addFilter(new TwigFilter('to_array', function ($data){
+        $twig->addFilter(new TwigFilter('to_array', function ($data) {
             return (array)$data;
         }));
 
-        $twig->addFunction(new TwigFunction('dump', function ($data){
+        $twig->addFunction(new TwigFunction('dump', function ($data) {
             dump($data);
         }));
 
@@ -47,6 +47,13 @@ class View
 
         return $template->render([
             'page' => $pageData,
+        ]);
+    }
+
+    private static function preparePageData(array $data): array
+    {
+        return array_merge($data, [
+            'notifications' => Notification::getAll(),
         ]);
     }
 
@@ -63,12 +70,5 @@ class View
             return $viewFile;
         }
         throw new Exception("View file($viewFile) not found");
-    }
-
-    private static function preparePageData(array $data): array
-    {
-        return array_merge($data, [
-            'notifications' => Notification::getAll(),
-        ]);
     }
 }
