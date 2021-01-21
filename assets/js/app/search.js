@@ -71,5 +71,12 @@
                 extractionPage: '/tvshows/mobiletvshows'
             });
         };
+
+        this.netnaija = function (form) {
+            this.searchFactory({
+                form: form,
+                extractionPage: '/movies/netnaija'
+            });
+        };
     };
 })();

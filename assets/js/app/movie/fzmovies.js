@@ -5,13 +5,7 @@ $(function () {
     let $button = $form.find('button[type="submit"]');
     let $linkExtractionStatus = $('#link-extraction-status');
 
-    if (localStorage.getItem('clicked-search-result')){
-        setTimeout(function () {
-            $inputUrl.val(localStorage.getItem('clicked-search-result'));
-            $form.submit();
-            localStorage.removeItem('clicked-search-result');
-        }, 100);
-    }
+    handleSearchResultClick($form, $inputUrl);
 
     $form.submit(function (event) {
         $extractor.init(event, templateLinkExtractionError, $inputUrl, $button, $linkExtractionStatus);

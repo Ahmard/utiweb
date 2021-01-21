@@ -4,6 +4,7 @@
 namespace App\Core\Http\Middleware;
 
 
+use App\Core\Helpers\Classes\DataSetter;
 use App\Core\Http\Response\PlainResponse;
 use App\Core\Http\Router\Dispatcher;
 use App\Core\Http\Router\Matcher;
@@ -24,6 +25,9 @@ class RoutingMiddleware extends Middleware
 
         switch (true) {
             case $dispatchResult->isFound():
+                //Populate helper data
+                DataSetter::setRouteParameters($dispatchResult->getUrlParameters());
+                DataSetter::setDispatchedRoute($dispatchResult->getRoute());
                 //Run http middlewares defined in App\Kernel
                 $middlewareRunner = new MiddlewarePipe();
                 $middlewares = (new Kernel())->middlewares;

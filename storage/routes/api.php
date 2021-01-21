@@ -48,6 +48,7 @@ Route::name('scrapper.')->group(function () {
             Route::get('fzmovies', 'SearchController@fzmovies');
             Route::get('femkvcom', 'SearchController@femkvcom');
             Route::get('mobiletvshows', 'SearchController@mobiletvshows');
+            Route::get('netnaija', 'SearchController@netnaija');
         });
 
     //EXTRACTIONS
@@ -79,6 +80,7 @@ Route::name('scrapper.')->group(function () {
                 ->namespace('Others')
                 ->group(function () {
                     Route::get('zippyshare', 'ZippyShareController@index');
+                    Route::get('firefiles', 'FireFilesController@index');
                 });
         });
 });

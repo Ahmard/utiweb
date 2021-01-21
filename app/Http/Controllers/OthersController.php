@@ -25,4 +25,13 @@ class OthersController extends Controller
             'keywords' => 'zippyshare downloader, zippyshare link extractor, zippyshare ad bypass'
         ]);
     }
+
+    public function fireFiles(): ResponseInterface
+    {
+        return view('app/others/firefiles', [
+            'title' => 'FireFiles downloader',
+            'desc' => 'Extract firefiles download link.',
+            'keywords' => 'firefiles downloader, firefiles link extractor, firefiles ad bypass'
+        ]);
+    }
 }

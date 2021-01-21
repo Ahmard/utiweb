@@ -1,0 +1,37 @@
+{% extends 'layouts/app.twig' %}
+
+{% block script %}
+    <script src="/assets/js/app/others/firefiles.js"></script>
+    {% include 'js-templates/link-extraction.twig' %}
+{% endblock script %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <a target="_blank" href="https://firefiles.org/">FireFiles</a> Extractor
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                <div>
+                    <i class="fa fa-lightbulb text-warning"></i> Visit <a target="_blank" href="https://firefiles.org/">FireFiles</a>,
+                    copy movie link and paste it in the input field below.
+                </div>
+                <div class="font-italic mt-1">Link sample:
+                    <b>https://firefiles.org/5m6rzmnb7v54</b></div>
+            </div>
+            <div id="link-extraction-status"></div>
+            <form class="mt-2" id="form-firefiles">
+                <div class="input-group">
+                    <input type="url" name="firefiles-url" class="form-control"
+                           placeholder="https://firefiles.org/5m6rzmnb7v54">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-md btn-indigo m-0">
+                            <i class="fa fa-search"></i> Fetch
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+

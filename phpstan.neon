@@ -3,6 +3,8 @@ parameters:
     checkMissingIterableValueType: false
     ignoreErrors:
         - '#Unsafe usage of new static\(\)#'
+        - '#Cannot assign offset (.*) to string.#'
+        - '#string does not accept array.#'
     paths:
         - index.php
         - app
