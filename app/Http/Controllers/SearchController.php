@@ -39,4 +39,12 @@ class SearchController extends Controller
             'desc' => 'Search mobiletvshows.net tv shows without ads',
         ]);
     }
+
+    public function netnaija(): ResponseInterface
+    {
+        return view('app/search/netnaija', [
+            'title' => 'Search netnaija.com',
+            'desc' => 'Search netnaija.com videos without ads',
+        ]);
+    }
 }

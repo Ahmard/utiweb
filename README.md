@@ -2,7 +2,7 @@
 A web-based version of [UtiClass](http://github.com/Ahmard/uticlass)
 
 # Installation
-Make sure that you have **composer** installed in your machine
+Make sure that you have [composer](https://getcomposer.org) installed in your machine
 
 Clone this repository
 ```bash

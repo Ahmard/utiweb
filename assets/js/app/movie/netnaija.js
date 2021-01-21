@@ -3,6 +3,9 @@ $(function () {
     let $inputUrl = $form.find('input[name="netnaija-url"]');
     let $button = $form.find('button[type="submit"]');
     let $linkExtractionStatus = $('#link-extraction-status');
+
+    handleSearchResultClick($form, $inputUrl);
+
     $form.submit(function (event) {
         let link = performBasicLinkAction(event, $inputUrl, $button, $linkExtractionStatus);
 

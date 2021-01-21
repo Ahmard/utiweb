@@ -5,6 +5,7 @@ namespace App\Core\Helpers\Classes;
 
 use Exception;
 use Psr\Http\Message\ServerRequestInterface;
+use QuickRoute\Route\RouteData;
 
 class RequestHelper
 {
@@ -56,5 +57,15 @@ class RequestHelper
         }
 
         return false;
+    }
+
+    public function getDispatchedRoute(): RouteData
+    {
+        return DataSetter::getDispatchedRoute();
+    }
+
+    public function getRouteParameters(): array
+    {
+        return DataSetter::getRouteParameters();
     }
 }

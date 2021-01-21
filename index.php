@@ -7,7 +7,7 @@ use App\Core\ResponseGenerator;
 use Dotenv\Dotenv;
 use Laminas\Diactoros\ServerRequestFactory;
 
-//From line 10-14 should be removed when used in apache
+//Line 10-14 should be removed when used in apache
 $uri = substr($_SERVER['REQUEST_URI'], 1);
 if ('/' !== $uri && file_exists($uri)) {
     return false;

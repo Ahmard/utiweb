@@ -7,17 +7,16 @@ namespace App\Http\Controllers\Api\TVShows;
 use App\Core\Http\Response\JsonResponse;
 use App\Core\Http\Response\ResponseInterface;
 use App\Http\Controllers\Controller;
-use Psr\Http\Message\ServerRequestInterface;
+use App\Url;
 use Throwable;
 use Uticlass\Video\O2TVSeriesCom;
 
 class O2TvSeriesComController extends Controller
 {
-    public function index(ServerRequestInterface $request, array $params): ResponseInterface
+    public function index(): ResponseInterface
     {
-        $showLink = base64_decode($params['url']);
         try {
-            $o2tvseries = O2TVSeriesCom::init($showLink);
+            $o2tvseries = O2TVSeriesCom::init(Url::getParamUrl());
             $seasons = $o2tvseries->getLinks();
 
             $results = [];

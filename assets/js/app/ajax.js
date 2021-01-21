@@ -274,14 +274,19 @@
                 let errors = response.error.errors;
                 let modal = new ns.UI.Modal('general');
                 let html = '<div class="list-group">';
-                html += '<div class="list-group-item">' + response.error.message + '</div>';
-                for (let errorName in errors) {
-                    errors[errorName].forEach(function (errorMessage) {
-                        html += '<div class="list-group-item"><b>' + errorName + ':</b> ' + errorMessage + '</div>';
-                    });
+                if (typeof response.error === 'string'){
+                    html += '<div class="font-weight-bold"><b class="text-danger">ERROR: </b>' + response.error + '</div>';
+                }else {
+                    html += '<div class="list-group-item">' + response.error.message + '</div>';
+                    for (let errorName in errors) {
+                        errors[errorName].forEach(function (errorMessage) {
+                            html += '<div class="list-group-item"><b>' + errorName + ':</b> ' + errorMessage + '</div>';
+                        });
+                    }
                 }
+                html += '</div>';
                 modal.header('Request Error');
-                modal.body(html).show();
+                modal.footer(false).body(html).show();
             }
 
             return response;

@@ -63,6 +63,7 @@ Route::prefix('tvshows')->group(function () {
 Route::prefix('others')->group(function () {
     Route::get('/', 'OthersController@index');
     Route::get('zippers', 'OthersController@zippyShare');
+    Route::get('firefiles', 'OthersController@fireFiles');
 });
 
 Route::prefix('search')->group(function (){
@@ -70,4 +71,5 @@ Route::prefix('search')->group(function (){
     Route::get('fzmovies', 'SearchController@fzmovies');
     Route::get('480mkvcom', 'SearchController@femkvcom');
     Route::get('mobiletvshows', 'SearchController@mobiletvshows');
+    Route::get('netnaija', 'SearchController@netnaija');
 });

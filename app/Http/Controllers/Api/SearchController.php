@@ -11,6 +11,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Uticlass\Video\Search\FEMKVComSearch;
 use Uticlass\Video\Search\FZMoviesSearch;
 use Uticlass\Video\Search\MobileTVShowsSearch;
+use Uticlass\Video\Search\NetNaijaSearch;
 
 class SearchController extends Controller
 {
@@ -42,6 +43,17 @@ class SearchController extends Controller
         $results = MobileTVShowsSearch::create()
             ->search($params['q'])
             ->searchBy($params['by'])
+            ->get($params['page_number'] ?? 1);
+
+        return JsonResponse::success($results);
+    }
+
+    public function netnaija(ServerRequestInterface $request): ResponseInterface
+    {
+        $params = $request->getQueryParams();
+        $results = NetNaijaSearch::create()
+            ->search($params['q'])
+            ->category($params['category'] ?? '')
             ->get($params['page_number'] ?? 1);
 
         return JsonResponse::success($results);

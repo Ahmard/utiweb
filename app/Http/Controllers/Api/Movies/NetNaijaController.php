@@ -7,15 +7,19 @@ namespace App\Http\Controllers\Api\Movies;
 use App\Core\Http\Response\JsonResponse;
 use App\Core\Http\Response\ResponseInterface;
 use App\Http\Controllers\Controller;
-use Psr\Http\Message\ServerRequestInterface;
+use App\Url;
 use Uticlass\Video\NetNaija;
 
 class NetNaijaController extends Controller
 {
-    public function index(ServerRequestInterface $request, array $params): ResponseInterface
+    public function index(): ResponseInterface
     {
-        $movieLink = base64_decode($params['url']);
-        $downloadLink = NetNaija::init($movieLink)->get()->linkTwo();
+        $url = Url::getParamUrl();
+        if (!NetNaija::isVideoUrl($url)) {
+            return JsonResponse::error('The provided url is not valid video url, please check and try again.');
+        }
+
+        $downloadLink = NetNaija::init($url)->get()->linkTwo();
         $expName = explode('/', $downloadLink);
         $fileName = end($expName);
         $fileName = explode('netnaija', $fileName);

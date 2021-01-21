@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Api\TVShows;
 use App\Core\Http\Response\JsonResponse;
 use App\Core\Http\Response\ResponseInterface;
 use App\Http\Controllers\Controller;
+use App\Url;
 use Psr\Http\Message\ServerRequestInterface;
 use Throwable;
 use Uticlass\Video\O2TVSeriesCoZa;
@@ -15,9 +16,8 @@ class O2TvSeriesCoZaController extends Controller
 {
     public function index(ServerRequestInterface $request, array $params): ResponseInterface
     {
-        $showLink = base64_decode($params['url']);
         try {
-            $o2tvseries = O2TVSeriesCoZa::init($showLink);
+            $o2tvseries = O2TVSeriesCoZa::init(Url::getParamUrl());
             $seasons = $o2tvseries->getLinks();
 
             $results = [];

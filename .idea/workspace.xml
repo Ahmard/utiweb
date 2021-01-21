@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="477ef956-3c4b-41fb-9734-c59e2b50cecc" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TVShows/MobileTVShowsController.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/app/search/mobiletvshows.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -41,6 +42,38 @@
       <change beforePath="$PROJECT_DIR$/resources/views/app/search/femkvcom.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/search/femkvcom.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/app/search/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/search/index.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/app/tvshow/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/tvshow/index.twig" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/app/Core/Helpers/Classes/DataSetter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Others/FireFilesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/app/others/firefiles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/app/others/firefiles.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/app/search/netnaija.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Core/Helpers/Classes/RequestHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Helpers/Classes/RequestHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Core/Http/Middleware/RoutingMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Http/Middleware/RoutingMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Movies/CoolMoviezController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Movies/CoolMoviezController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Movies/FZMoviesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Movies/FZMoviesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Movies/NetNaijaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Movies/NetNaijaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Others/ZippyShareController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Others/ZippyShareController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TVShows/FEMkvComController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TVShows/FEMkvComController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TVShows/O2TvSeriesCoZaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TVShows/O2TvSeriesCoZaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TVShows/O2TvSeriesComController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TVShows/O2TvSeriesComController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OthersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OthersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/movie/fzmovies.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/movie/fzmovies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/movie/netnaija.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/movie/netnaija.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/root.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/root.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpstan.neon" beforeDir="false" afterPath="$PROJECT_DIR$/phpstan.neon" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/others/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/others/index.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/search/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/search/index.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app/tvshow/mobiletvshows.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app/tvshow/mobiletvshows.twig" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/storage/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/routes/web.php" afterDir="false" />
     </list>
@@ -163,7 +196,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1l40UlBjAvHB8ZFshUv4KQk0aRf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -206,6 +241,20 @@
       <workItem from="1609852147483" duration="1117000" />
       <workItem from="1609873383854" duration="774000" />
       <workItem from="1609881742046" duration="918000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1609925592437" duration="27000" />
+      <workItem from="1609957408472" duration="4006000" />
+      <workItem from="1609966008232" duration="647000" />
+      <workItem from="1609972596187" duration="608000" />
+      <workItem from="1609978101759" duration="9730000" />
+      <workItem from="1610130495540" duration="52000" />
+      <workItem from="1610402466110" duration="378000" />
+      <workItem from="1610849046523" duration="408000" />
+      <workItem from="1610927491523" duration="3622000" />
+      <workItem from="1610963018220" duration="22000" />
+      <workItem from="1611180509086" duration="6992000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

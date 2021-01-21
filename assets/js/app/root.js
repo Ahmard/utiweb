@@ -17,6 +17,7 @@ let ajaxErrorHandler = function (error) {
     console.log(error);
 };
 
+<<<<<<< Updated upstream
 let fetchLinkData = function (link) {
     return new Promise(function (resolve, reject) {
         $ajax.get(link).success(function (...arguments) {
@@ -46,3 +47,16 @@ let performBasicLinkAction = function (event, $inputUrl, $button, $linkExtractio
 };
 
 const $modal = $('#modal_general');
+=======
+let handleSearchResultClick = function ($form, $inputUrl) {
+    if (localStorage.getItem('clicked-search-result')){
+        setTimeout(function () {
+            $inputUrl.val(localStorage.getItem('clicked-search-result'));
+            $form.submit();
+            localStorage.removeItem('clicked-search-result');
+        }, 100);
+    }
+};
+
+const $modal = $('#modal_general');
+>>>>>>> Stashed changes
