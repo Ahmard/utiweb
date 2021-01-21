@@ -1,11 +1,10 @@
-window.onerror = function(event){
-    console.log(JSON.stringify(event))
+window.onerror = function (event) {
     //alert('An error occurred, please refresh this page and try again.');
     console.log(event);
 };
 
 Handlebars.registerHelper('errorMessage', function (message) {
-    if (! message){
+    if (!message) {
         return 'Link extraction failed';
     }
 
@@ -17,6 +16,7 @@ let ajaxErrorHandler = function (error) {
     console.log(error);
 };
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 let fetchLinkData = function (link) {
     return new Promise(function (resolve, reject) {
@@ -60,3 +60,6 @@ let handleSearchResultClick = function ($form, $inputUrl) {
 
 const $modal = $('#modal_general');
 >>>>>>> Stashed changes
+=======
+const $modal = $('#modal_general');
+>>>>>>> c3531c6ed659c7e1718d4e97afb688ec60fa9411

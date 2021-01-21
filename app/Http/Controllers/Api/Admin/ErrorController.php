@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Api\Admin;
 use App\Core\Http\Response\JsonResponse;
 use App\Core\Http\Response\ResponseInterface;
 use App\Http\Controllers\Controller;
+use DirectoryIterator;
 use Psr\Http\Message\ServerRequestInterface;
 
 class ErrorController extends Controller
@@ -20,6 +21,20 @@ class ErrorController extends Controller
 
         return JsonResponse::success([
             'message' => 'Error log has been deleted.'
+        ]);
+    }
+
+    public function deleteAll(ServerRequestInterface $request): ResponseInterface
+    {
+        $dirIterator = new DirectoryIterator(storage_path('logs/error/'));
+        foreach ($dirIterator as $file) {
+            if ($file->isFile()) {
+                unlink($file->getRealPath());
+            }
+        }
+
+        return JsonResponse::success([
+            'message' => 'Error logs has been deleted.'
         ]);
     }
 }

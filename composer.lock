@@ -131,15 +131,20 @@
         },
         {
             "name": "ahmard/quick-route",
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             "version": "2.5.2",
+=======
+            "version": "2.5.3",
+>>>>>>> c3531c6ed659c7e1718d4e97afb688ec60fa9411
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ahmard/quick-route.git",
-                "reference": "d215bcb768de826f652dd3a46e69105ac8f00464"
+                "reference": "1b9012072256b5de066e8a585a447d9c44a00592"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/Ahmard/quick-route/zipball/d215bcb768de826f652dd3a46e69105ac8f00464",
                 "reference": "d215bcb768de826f652dd3a46e69105ac8f00464",
 =======
@@ -154,6 +159,10 @@
                 "url": "https://api.github.com/repos/Ahmard/quick-route/zipball/9e4ee8fa84ca69577a33b41b341ec7fe978e3de1",
                 "reference": "9e4ee8fa84ca69577a33b41b341ec7fe978e3de1",
 >>>>>>> Stashed changes
+=======
+                "url": "https://api.github.com/repos/Ahmard/quick-route/zipball/1b9012072256b5de066e8a585a447d9c44a00592",
+                "reference": "1b9012072256b5de066e8a585a447d9c44a00592",
+>>>>>>> c3531c6ed659c7e1718d4e97afb688ec60fa9411
                 "shasum": ""
             },
             "require": {
@@ -184,6 +193,7 @@
             "description": "Simple http router designed to look just like Laravel's router",
             "support": {
                 "issues": "https://github.com/Ahmard/quick-route/issues",
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 "source": "https://github.com/Ahmard/quick-route/tree/2.5.2"
             },
@@ -193,6 +203,11 @@
             },
             "time": "2021-01-17T01:59:56+00:00"
 >>>>>>> Stashed changes
+=======
+                "source": "https://github.com/Ahmard/quick-route/tree/2.5.3"
+            },
+            "time": "2021-01-07T00:16:26+00:00"
+>>>>>>> c3531c6ed659c7e1718d4e97afb688ec60fa9411
         },
         {
             "name": "ahmard/uticlass",
@@ -4444,15 +4459,20 @@
         },
         {
             "name": "phpstan/phpstan",
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             "version": "0.12.64",
+=======
+            "version": "0.12.65",
+>>>>>>> c3531c6ed659c7e1718d4e97afb688ec60fa9411
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "23eb1cb7ae125f45f1d0e48051bcf67a9a9b08aa"
+                "reference": "1c7658668b28f8d647a8b874372acf14c4352688"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/phpstan/phpstan/zipball/23eb1cb7ae125f45f1d0e48051bcf67a9a9b08aa",
                 "reference": "23eb1cb7ae125f45f1d0e48051bcf67a9a9b08aa",
 =======
@@ -4467,6 +4487,10 @@
                 "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ddbe01af0706ee094c3f1ce9730b35aebb508d3d",
                 "reference": "ddbe01af0706ee094c3f1ce9730b35aebb508d3d",
 >>>>>>> Stashed changes
+=======
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/1c7658668b28f8d647a8b874372acf14c4352688",
+                "reference": "1c7658668b28f8d647a8b874372acf14c4352688",
+>>>>>>> c3531c6ed659c7e1718d4e97afb688ec60fa9411
                 "shasum": ""
             },
             "require": {
@@ -4497,11 +4521,15 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 "source": "https://github.com/phpstan/phpstan/tree/0.12.64"
 =======
                 "source": "https://github.com/phpstan/phpstan/tree/0.12.68"
 >>>>>>> Stashed changes
+=======
+                "source": "https://github.com/phpstan/phpstan/tree/0.12.65"
+>>>>>>> c3531c6ed659c7e1718d4e97afb688ec60fa9411
             },
             "funding": [
                 {
@@ -4517,11 +4545,15 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             "time": "2020-12-21T11:59:02+00:00"
 =======
             "time": "2021-01-18T12:29:17+00:00"
 >>>>>>> Stashed changes
+=======
+            "time": "2021-01-06T16:51:10+00:00"
+>>>>>>> c3531c6ed659c7e1718d4e97afb688ec60fa9411
         },
         {
             "name": "phpunit/php-code-coverage",

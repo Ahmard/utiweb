@@ -3,6 +3,7 @@ $(function () {
     let $inputUrl = $form.find('input[name="mobiletvshows-url"]');
     let $button = $form.find('button[type="submit"]');
     let $linkExtractionStatus = $('#link-extraction-status');
+    let $extractionMessage = $('#extraction-message');
     let templateMobileTvShowsExtraction = Handlebars.compile($('#template-link-extraction-mobiletvshows').html());
 
     if (localStorage.getItem('clicked-search-result')){
@@ -14,24 +15,20 @@ $(function () {
     }
 
     $form.submit(function (event) {
-        let link = performBasicLinkAction(event, $inputUrl, $button, $linkExtractionStatus);
+        $extractor.init(event, templateLinkExtractionError, $inputUrl, $button, $linkExtractionStatus);
+        let link = $extractor.performBasicLinkAction();
 
         if (link) {
-            fetchLinkData('tvshows/mobiletvshows/' + link)
-                .then(function (response) {
-                    let seasons = response.data;
-                    $button.removeAttr('disabled').html('<i class="fa fa-search"></i> Fetch');
-                    $inputUrl.removeAttr('disabled');
-
-                    $linkExtractionStatus.html('');
+            $extractor.fetchLinkData('tvshows/mobiletvshows/' + link)
+                .then(function (seasons) {
+                    $extractor.stopExtraction();
                     seasons.forEach(function (season) {
                         $linkExtractionStatus.append(templateMobileTvShowsExtraction(season));
                     });
 
                 })
                 .catch(function (error) {
-                    $button.removeAttr('disabled').html('<i class="fa fa-search"></i> Fetch');
-                    $inputUrl.removeAttr('disabled');
+                    $extractor.stopExtraction();
                 });
         }
     });

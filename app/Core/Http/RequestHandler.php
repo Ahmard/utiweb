@@ -5,9 +5,9 @@ namespace App\Core\Http;
 
 
 use App\Core\Http\Response\InternalServerErrorResponse;
-use Psr\Http\Message\ResponseInterface;
 use App\Core\Kernel;
 use Laminas\Stratigility\MiddlewarePipe;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Throwable;
 

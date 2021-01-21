@@ -29,6 +29,7 @@ Route::prefix('admin')
         //Error
         Route::prefix('error')->group(function () {
             Route::delete('/', 'ErrorController@delete');
+            Route::delete('/all', 'ErrorController@deleteAll');
         });
     });
 

@@ -57,7 +57,7 @@ class Notification
 
     public static function getAll(): array
     {
-        $notifications =  Database::create()
+        $notifications = Database::create()
             ->query('SELECT * FROM notifications WHERE status = 1')
             ->fetchAll(PDO::FETCH_ASSOC);
 

@@ -6,7 +6,6 @@ namespace App\Http\Controllers\Api\TVShows;
 
 use App\Core\Http\Response\JsonResponse;
 use App\Core\Http\Response\ResponseInterface;
-use App\Core\Http\Router\Dispatcher;
 use App\Http\Controllers\Controller;
 use App\Url;
 use Guzwrap\Request;
@@ -23,13 +22,13 @@ class MobileTVShowsController extends Controller
             ->useRequest($request)
             ->getSeasons(Url::getParamUrl());
 
-        foreach ($seasons as &$season){
+        foreach ($seasons as &$season) {
             //Get total episodes on season
             $episodes = MobileTvShows::create()
                 ->useRequest($request)
                 ->getEpisodes($season['href']);
 
-            foreach ($episodes as &$episode){
+            foreach ($episodes as &$episode) {
                 //Get stream/download page url
                 $firstEpisodeLinks = MobileTvShows::create()
                     ->useRequest($request)

@@ -8,23 +8,21 @@ $(function () {
     handleSearchResultClick($form, $inputUrl);
 
     $form.submit(function (event) {
-        let link = performBasicLinkAction(event, $inputUrl, $button, $linkExtractionStatus);
+        $extractor.init(event, templateLinkExtractionError, $inputUrl, $button, $linkExtractionStatus);
+        let link = $extractor.performBasicLinkAction();
         let chosenLink = $selectChosenLink.val();
 
         if (link) {
-            fetchLinkData('movies/fzmovies/' + chosenLink + '/' + link)
+            $extractor.fetchLinkData('movies/fzmovies/' + chosenLink + '/' + link)
                 .then(function (movie) {
-                    $button.removeAttr('disabled').html('<i class="fa fa-search"></i> Fetch');
-                    $inputUrl.removeAttr('disabled');
-
+                    $extractor.stopExtraction();
                     $linkExtractionStatus.html(templateLinkExtractionSuccess({
                         href: movie.url,
                         name: movie.name || 'Download'
                     }));
                 })
                 .catch(function (error) {
-                    $button.removeAttr('disabled').html('<i class="fa fa-search"></i> Fetch');
-                    $inputUrl.removeAttr('disabled');
+                    $extractor.stopExtraction();
                 });
         }
     });

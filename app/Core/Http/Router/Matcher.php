@@ -6,16 +6,15 @@ namespace App\Core\Http\Router;
 
 use App\Core\Auth\Auth;
 use App\Core\Helpers\Classes\FormHelper;
-use App\Core\Http\Response;
 use App\Core\Http\Response\InternalServerErrorResponse;
 use App\Kernel;
 use Exception;
 use Laminas\Stratigility\MiddlewarePipe;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use QuickRoute\Route\DispatchResult;
 use Throwable;
 use function Laminas\Stratigility\middleware;
-use Psr\Http\Message\ResponseInterface;
 
 class Matcher
 {

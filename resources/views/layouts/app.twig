@@ -164,9 +164,17 @@
 <script src="/assets/js/jquery.ajax-retry.min.js"></script>
 <script src="/assets/js/app/ui.js"></script>
 <script src="/assets/js/app/ajax.js"></script>
+<script src="/assets/js/app/extractor.js"></script>
 <script src="/assets/js/app/root.js"></script>
 
 <script>
+    const $extractor = APP.Extractor.create();
+    window.onerror = function(){
+        if ($extractor.isExtracting()) {
+            $extractor.stopExtraction();
+        }
+    };
+
     $(function () {
         // Tooltips Initialization
         $('[data-toggle="tooltip"]').tooltip();

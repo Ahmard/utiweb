@@ -9,9 +9,14 @@
     <div class="card">
         <div class="card-header left-border d-flex justify-content-between">
             <div class="p-3 font-weight-bolder text-primary text-uppercase">Errors & Exceptions</div>
+            <div>
+                <button id="btn-delete-all" type="button" class="btn btn-md btn-danger font-weight-bold">
+                    <i class="fa fa-trash-alt"></i> Delete All
+                </button>
+            </div>
         </div>
         <div class="card-body left-border p-4 z-depth-1 font-italic">
-            <div class="list-group">
+            <div class="list-group" id="errors">
                 {% for error in page.errors  %}
                     <a data-error="{{ error|json_encode }}" class="list-group-item list-group-item-action" onclick="viewError(this)">
                         <div class="d-flex justify-content-between">
