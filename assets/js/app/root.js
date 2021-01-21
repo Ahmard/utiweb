@@ -16,8 +16,6 @@ let ajaxErrorHandler = function (error) {
     console.log(error);
 };
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
 let fetchLinkData = function (link) {
     return new Promise(function (resolve, reject) {
         $ajax.get(link).success(function (...arguments) {
@@ -30,24 +28,6 @@ let fetchLinkData = function (link) {
     });
 };
 
-let performBasicLinkAction = function (event, $inputUrl, $button, $linkExtractionStatus) {
-    event.preventDefault();
-    if(! $inputUrl.val()){
-        $linkExtractionStatus.html(templateLinkExtractionError({
-            message: 'You must provide video url first!'
-        }))
-        $inputUrl.focus();
-        return false;
-    }
-
-    $button.attr('disabled', 'disabled').html('<i class="fa fa-spinner fa-pulse"></i> Fetching');
-    $inputUrl.attr('disabled', 'disabled');
-    $linkExtractionStatus.html('');
-    return btoa($inputUrl.val());
-};
-
-const $modal = $('#modal_general');
-=======
 let handleSearchResultClick = function ($form, $inputUrl) {
     if (localStorage.getItem('clicked-search-result')){
         setTimeout(function () {
@@ -59,7 +39,3 @@ let handleSearchResultClick = function ($form, $inputUrl) {
 };
 
 const $modal = $('#modal_general');
->>>>>>> Stashed changes
-=======
-const $modal = $('#modal_general');
->>>>>>> c3531c6ed659c7e1718d4e97afb688ec60fa9411
