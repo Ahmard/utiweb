@@ -19,7 +19,7 @@ class NetNaijaController extends Controller
             return JsonResponse::error('The provided url is not valid video url, please check and try again.');
         }
 
-        $downloadLink = NetNaija::init($url)->get()->linkTwo();
+        $downloadLink = NetNaija::init($url)->get();
         $expName = explode('/', $downloadLink);
         $fileName = end($expName);
         $fileName = explode('netnaija', $fileName);

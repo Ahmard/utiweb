@@ -1,7 +1,7 @@
 # **_How Utiweb Works 😊_**
 Here is a little explanation on how this project works.
 
-- All requests are sent to [index.php](index.php).
+- All requests are sent to [index.php](public/index.php).
 - Request is then passed to [RequestHandler](app/Core/Http/RequestHandler.php) which will load and execute defined middlewares.
 - This project has a couples of middlewares, such as:
   - [RoutingMiddleware](app/Core/Http/Middleware/RoutingMiddleware.php) - For handling http routing.
