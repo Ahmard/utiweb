@@ -13,7 +13,7 @@
         "php": "^7.4 || ^8.0",
         "ext-json": "*",
         "ext-pdo": "*",
-        "ahmard/quick-route": "^2.0",
+        "ahmard/quick-route": "^3.8",
         "ahmard/uticlass": "^1.9",
         "ahmard/preact": "^1.0",
         "twig/twig": "^3.1",
@@ -33,6 +33,7 @@
         }
     },
     "scripts": {
+        "analyse" : "vendor/bin/phpstan analyse",
         "post-autoload-dump": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ]

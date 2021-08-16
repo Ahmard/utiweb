@@ -5,9 +5,9 @@ namespace App\Core\Http\Router;
 
 
 use Psr\Http\Message\ServerRequestInterface;
-use QuickRoute\Route\Collector;
-use QuickRoute\Route\Dispatcher as QuickRouteDispatcher;
-use QuickRoute\Route\DispatchResult;
+use QuickRoute\Router\Dispatcher as QuickRouteDispatcher;
+use QuickRoute\Router\Collector;
+use QuickRoute\Router\DispatchResult;
 
 class Dispatcher
 {

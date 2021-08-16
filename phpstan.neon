@@ -6,7 +6,7 @@ parameters:
         - '#Cannot assign offset (.*) to string.#'
         - '#string does not accept array.#'
     paths:
-        - index.php
+        - public/index.php
         - app
         - resources
         - storage

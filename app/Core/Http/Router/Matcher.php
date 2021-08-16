@@ -12,7 +12,7 @@ use Exception;
 use Laminas\Stratigility\MiddlewarePipe;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use QuickRoute\Route\DispatchResult;
+use QuickRoute\Router\DispatchResult;
 use Throwable;
 use function Laminas\Stratigility\middleware;
 
@@ -26,10 +26,9 @@ class Matcher
         //Run middleware
         $routeMiddlewares = $dispatchResult->getRoute()->getMiddleware();
         if ($routeMiddlewares) {
-            $middlewares = explode('|', $routeMiddlewares);
             $kernelMiddlewares = (new Kernel())->routeMiddlewares;
             $middlewareRunner = new MiddlewarePipe();
-            foreach ($middlewares as $middleware) {
+            foreach ($routeMiddlewares as $middleware) {
                 if ($middleware) {
                     $definedMiddleware = $kernelMiddlewares[$middleware] ?? null;
                     if ($definedMiddleware) {

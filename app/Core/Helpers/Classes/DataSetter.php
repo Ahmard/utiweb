@@ -5,7 +5,7 @@ namespace App\Core\Helpers\Classes;
 
 
 use Psr\Http\Message\ServerRequestInterface;
-use QuickRoute\Route\RouteData;
+use QuickRoute\Router\RouteData;
 
 class DataSetter
 {
