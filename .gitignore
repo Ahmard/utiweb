@@ -1,5 +1,6 @@
-.env
-storage/database/database.db
-storage/logs/error/*.json*
-vendor
-.idea
+/vendor/
+/.idea/
+/.env
+/storage/database/database.db
+/storage/logs/error/*.json*
+/composer.lock
