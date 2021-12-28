@@ -60,7 +60,7 @@ Route::name('scrapper.')->group(function () {
             Route::prefix('movies')
                 ->namespace('Movies')
                 ->group(function () {
-                    Route::get('fzmovies/{chosen}', 'FZMoviesController@index');
+                    Route::get('fzmovies/{link}/{quality}', 'FZMoviesController@index');
                     Route::get('netnaija', 'NetNaijaController@index');
                     Route::get('coolmoviez', 'CoolMoviezController@index');
                 });

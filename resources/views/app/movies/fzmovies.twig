@@ -20,23 +20,35 @@
                     <b>https://fzmovies.net/movie-The%20Equalizer%20--hmp4.htm</b></div>
             </div>
             <div id="link-extraction-status"></div>
-            <form class="mt-2" id="form-fzmovies">
-                <div class="input-group">
-                    <input type="url" name="fzmovies-url" class="form-control"
+            <form class="mt-3" id="form-fzmovies">
+                <div class="form-group">
+                    <label for="fzmovies-url" class="mb-0 text-muted">Movie Address/URL:</label>
+                    <input id="fzmovies-url" type="url" name="fzmovies-url" class="form-control"
                            placeholder="https://fzmovies.net/movie-The%20Equalizer%20--hmp4.htm">
-                    <div class="input-group-prepend">
-                        <select name="chosen" class="form-control">
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-md">
+                        <label for="quality" class="mb-0 text-muted">Quality:</label>
+                        <select id="quality" name="quality" class="form-control">
+                            <option value="0">480p</option>
+                            <option value="1">720p</option>
+                        </select>
+                    </div>
+                    <div class="col-md">
+                        <label for="chosen" class="mb-0 text-muted">Download Links:</label>
+                        <select id="chosen" name="chosen" class="form-control">
                             <option value="0">Link 1</option>
                             <option value="1">Link 2</option>
                             <option value="2">Link 3</option>
                             <option value="3">Link 4</option>
                         </select>
                     </div>
-                    <div class="input-group-prepend">
-                        <button type="submit" class="btn btn-md btn-indigo m-0 ml-1 p-2">
-                            <i class="fa fa-search"></i> Fetch
-                        </button>
-                    </div>
+                </div>
+                <div class="mt-3 text-right">
+                    <button type="submit" class="btn btn-md btn-indigo m-0 z-depth-0 ml-1">
+                        <i class="fa fa-search"></i> Fetch
+                    </button>
                 </div>
             </form>
         </div>

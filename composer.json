@@ -10,12 +10,11 @@
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": ">=8.0",
         "ext-json": "*",
         "ext-pdo": "*",
         "ahmard/quick-route": "^3.8",
-        "ahmard/uticlass": "^1.9",
-        "ahmard/preact": "^1.0",
+        "ahmard/uticlass": "^2.0",
         "twig/twig": "^3.1",
         "vlucas/phpdotenv": "^5.2",
         "symfony/validator": "^5.1",
