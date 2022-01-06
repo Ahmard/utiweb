@@ -28,10 +28,17 @@ let fetchLinkData = function (link) {
     });
 };
 
-let handleSearchResultClick = function ($form, $inputUrl) {
-    if (localStorage.getItem('clicked-search-result')){
+let handleSearchResultClick = function ($form, $inputUrl, $selectChosenQuality = null) {
+    if (localStorage.getItem('clicked-search-result')) {
         setTimeout(function () {
-            $inputUrl.val(localStorage.getItem('clicked-search-result'));
+            let data = JSON.parse(localStorage.getItem('clicked-search-result'));
+
+            $inputUrl.val(data.url);
+
+            if (null !== $selectChosenQuality) {
+                $selectChosenQuality.val(data.quality);
+            }
+
             $form.submit();
             localStorage.removeItem('clicked-search-result');
         }, 100);

@@ -4,12 +4,15 @@
     window.APP.search = new function () {
 
         //Handle search result click
-        this.getVideoLink = function (searchItemElement) {
+        this.getVideoLink = function (searchItemElement, quality = null) {
             localStorage.setItem(
                 'clicked-search-result',
-                encodeURI(searchItemElement.getAttribute('data-href')
-                )
+                JSON.stringify({
+                    url: encodeURI(searchItemElement.getAttribute('data-href')),
+                    quality
+                })
             );
+
             window.open(extractionPage, '_blank');
         };
 

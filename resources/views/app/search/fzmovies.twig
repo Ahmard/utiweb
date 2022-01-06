@@ -76,13 +76,19 @@
             </div>
         </script>
         <script type="text/x-handlebars-template" id="template-search-result">
-            <a onclick="APP.search.getVideoLink(this)" class="search-result media z-depth-1 p-2 my-1" data-href="{{href}}">
+            <div class="search-result media z-depth-1 p-2 my-1" data-href="{{href}}">
                 <img width="80" height="80" class="mx-2 mt-1" src="{{image}}" alt="Generic placeholder image">
                 <div class="media-body">
-                   <h5 class="mt-0 mb-1 text-primary font-weight-bold">{{title}}</h5>
+                    <div class="d-flex justify-content-between">
+                        <h5 class="mt-2 mb-1 text-primary font-weight-bold">{{title}}</h5>
+                        <div>
+                            <a class="btn btn-sm btn-primary z-depth-0 p-2 mr-0" data-href="{{href}}" onclick="APP.search.getVideoLink(this, '0')"><i class="fa fa-download"></i> 480p</a>
+                            <a class="btn btn-sm btn-primary z-depth-0 p-2 m-0" data-href="{{href}}" onclick="APP.search.getVideoLink(this, '1')"><i class="fa fa-download"></i> 720p</a>
+                        </div>
+                    </div>
                    {{desc}}
                 </div>
-            </a>
+            </div>
         </script>
     {% endverbatim %}
 {% endblock content %}

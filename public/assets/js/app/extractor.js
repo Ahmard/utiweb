@@ -36,7 +36,9 @@
                 $linkExtractionStatus.html(templateLinkExtractionError({
                     message: 'You must provide video url first!'
                 }))
+
                 $inputUrl.focus();
+
                 return false;
             }
 

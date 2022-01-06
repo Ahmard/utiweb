@@ -6,11 +6,12 @@ $(function () {
     let $button = $form.find('button[type="submit"]');
     let $linkExtractionStatus = $('#link-extraction-status');
 
-    handleSearchResultClick($form, $inputUrl);
+    handleSearchResultClick($form, $inputUrl, $selectChosenQuality);
 
     $form.submit(function (event) {
         $extractor.init(event, templateLinkExtractionError, $inputUrl, $button, $linkExtractionStatus);
-        let link = $extractor.performBasicLinkAction();
+
+        let link = $extractor.performBasicLinkAction(event);
         let chosenLink = $selectChosenLink.val();
         let chosenQuality = $selectChosenQuality.val();
 
