@@ -11,5 +11,6 @@ Dotenv::createImmutable(__DIR__)->load();
 Server::create($_SERVER['SERVER_HOST'], $_SERVER['SERVER_PORT'])
     ->setRouterScript(__DIR__ . '/public/index.php')
     ->setDocumentRoot(__DIR__ . '/public')
+    ->setWorkers(3)
     ->start()
     ->logOutputToConsole();
