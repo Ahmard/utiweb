@@ -13,7 +13,9 @@ if ('/' !== $uri && file_exists($uri)) {
     return false;
 }
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+define("BASE_DIR", dirname(__DIR__) . '/');
+
+require BASE_DIR . 'vendor/autoload.php';
 
 //Create request instance
 $request = ServerRequestFactory::fromGlobals();
@@ -26,7 +28,7 @@ function handleApplicationException(Throwable $exception, bool $willTerminate = 
 {
     global $request;
     //Save error log
-    $filename = dirname(__DIR__) . '/storage/logs/error/' . date('d_m_Y-H_i_s') . '.json';
+    $filename = BASE_DIR . 'storage/logs/error/' . date('d_m_Y-H_i_s') . '.json';
     file_put_contents($filename, json_encode([
         'file' => $exception->getFile(),
         'line' => $exception->getLine(),
@@ -45,7 +47,7 @@ function handleApplicationException(Throwable $exception, bool $willTerminate = 
 set_exception_handler('handleApplicationException');
 
 //Load environment variables
-$dotenv = Dotenv::createImmutable(dirname(__DIR__));
+$dotenv = Dotenv::createImmutable(BASE_DIR);
 $dotenv->load();
 
 if ('production' === $_ENV['APP_ENVIRONMENT']) {
@@ -57,7 +59,7 @@ try {
     RequestHelper::setRequest($request);
 
     //Helper functions
-    require(dirname(__DIR__) . '/app/Core/Helpers/helperFunctions.php');
+    require(BASE_DIR . 'app/Core/Helpers/helperFunctions.php');
 
     $response = RequestHandler::handle($request);
 
