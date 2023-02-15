@@ -4,7 +4,7 @@ use QuickRoute\Route;
 
 Route::get('/', 'MainController@index');
 
-Route::prefix('admin')
+Route::prefix(substr($_ENV['ADMIN_ROUTE'], 0, -1))
     ->namespace('Admin')
     ->group(function () {
         Route::get('/', 'MainController@index');
