@@ -14,7 +14,7 @@
         "ext-json": "*",
         "ext-pdo": "*",
         "ahmard/quick-route": "^3.9",
-        "ahmard/uticlass": "^2.0",
+        "ahmard/uticlass": "^2.0.2",
         "twig/twig": "^3.5",
         "vlucas/phpdotenv": "^5.5",
         "symfony/validator": "^6.2",
