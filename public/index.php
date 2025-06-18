@@ -13,9 +13,9 @@ if ('/' !== $uri && file_exists($uri)) {
     return false;
 }
 
-define("BASE_DIR", dirname(__DIR__) . '/');
+define("ROOT_DIR", dirname(__DIR__));
 
-require BASE_DIR . 'vendor/autoload.php';
+require ROOT_DIR . '/vendor/autoload.php';
 
 //Create request instance
 $request = ServerRequestFactory::fromGlobals();
@@ -28,7 +28,7 @@ function handleApplicationException(Throwable $exception, bool $willTerminate = 
 {
     global $request;
     //Save error log
-    $filename = BASE_DIR . 'storage/logs/error/' . date('d_m_Y-H_i_s') . '.json';
+    $filename = ROOT_DIR . '/storage/logs/error/' . date('d_m_Y-H_i_s') . '.json';
     file_put_contents($filename, json_encode([
         'file' => $exception->getFile(),
         'line' => $exception->getLine(),
@@ -47,7 +47,7 @@ function handleApplicationException(Throwable $exception, bool $willTerminate = 
 set_exception_handler('handleApplicationException');
 
 //Load environment variables
-$dotenv = Dotenv::createImmutable(BASE_DIR);
+$dotenv = Dotenv::createImmutable(ROOT_DIR);
 $dotenv->load();
 
 if ('production' === $_ENV['APP_ENVIRONMENT']) {
@@ -57,9 +57,6 @@ if ('production' === $_ENV['APP_ENVIRONMENT']) {
 try {
     //Http request helper
     RequestHelper::setRequest($request);
-
-    //Helper functions
-    require(BASE_DIR . 'app/Core/Helpers/helperFunctions.php');
 
     $response = RequestHandler::handle($request);
 

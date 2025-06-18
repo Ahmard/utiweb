@@ -22,8 +22,7 @@ function url(?string $url = null): string
  */
 function root_path(?string $path = null): string
 {
-    global $root, $slash;
-    return "{$root}{$slash}{$path}";
+    return sprintf('%s%s%s', ROOT_DIR, DIRECTORY_SEPARATOR, $path);
 }
 
 
@@ -34,8 +33,7 @@ function root_path(?string $path = null): string
  */
 function app_path(?string $path = null): string
 {
-    global $root, $slash;
-    return "{$root}{$slash}app{$slash}{$path}";
+    return sprintf('%s%sapp%s%s', ROOT_DIR, DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $path);
 }
 
 /**
@@ -45,8 +43,7 @@ function app_path(?string $path = null): string
  */
 function view_path(?string $path = null): string
 {
-    global $root, $slash;
-    return "{$root}{$slash}resources{$slash}views{$slash}{$path}";
+    return sprintf('%s%sresources%sviews%s%s', ROOT_DIR, DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $path);
 }
 
 /**
@@ -56,8 +53,7 @@ function view_path(?string $path = null): string
  */
 function storage_path(?string $path = null): string
 {
-    global $root, $slash;
-    return "{$root}{$slash}storage{$slash}{$path}";
+    return sprintf('%s%sstorage%s%s', ROOT_DIR, DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $path);
 }
 
 /**
@@ -67,8 +63,7 @@ function storage_path(?string $path = null): string
  */
 function controller_path(?string $path = null): string
 {
-    global $root, $slash;
-    return "{$root}{$slash}app{$slash}Http{$slash}Controllers{$slash}{$path}";
+    return sprintf('%s%sapp%sHttp%sControllers%s%s', ROOT_DIR, DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $path);
 }
 
 $loadedConfig = [];

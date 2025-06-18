@@ -12,11 +12,22 @@ Navigate to the project directory and run below command
 ```bash
 composer install
 ```
+
+### Database
 Now, install database table for saving messages
 ```bash
 php migrate.php
 ```
 
+### Authentication
+JWT public and private keys are stored in `resources/keys` directory.
+
+Below keys are required
+> resources/keys/app-public-key.pem
+
+> resources/keys/app-private-key.pem
+
+### Running the server
 Start the server
 ```bash
 php serve

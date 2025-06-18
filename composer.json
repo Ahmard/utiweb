@@ -30,7 +30,8 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": ["app/Core/Helpers/helperFunctions.php"]
     },
     "scripts": {
         "analyse" : "vendor/bin/phpstan analyse",

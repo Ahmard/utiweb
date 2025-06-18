@@ -1,10 +1,15 @@
 #!/usr/bin/php
 <?php
 
+use App\Core\Bootstrap;
 use Dotenv\Dotenv;
 use PHPServer\BuiltIn\Server;
 
 require 'vendor/autoload.php';
+
+const ROOT_DIR = __DIR__;
+
+Bootstrap::performInitialChecks();
 
 Dotenv::createImmutable(__DIR__)->load();
 

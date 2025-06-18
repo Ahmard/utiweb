@@ -12,7 +12,11 @@ final class Token
     public static function encode(array $user): string
     {
         $user['expiry'] = time() + $_ENV['AUTH_TOKEN_LIFE_TIME'];
-        return JWT::encode($user, $_ENV['APP_KEY'] ?? uniqid());
+        return JWT::encode(
+            payload: $user,
+            key: file_get_contents(dirname(__DIR__, 3) . '/resources/keys/app-private-key.pem'),
+            alg: 'RS256'
+        );
     }
 
     /**

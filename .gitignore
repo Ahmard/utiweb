@@ -4,3 +4,5 @@
 /storage/database/database.db
 /storage/logs/error/*.json*
 /composer.lock
+
+resources/keys/*.pem
